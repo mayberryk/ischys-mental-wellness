@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <g transform="translate(10, 15)">
+    <rect x="0" y="0" width="36" height="36" rx="8" fill="#003B5C"/>
+    <text x="7" y="25" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="18" fill="#00A3E0">P</text>
+  </g>
+  <text x="56" y="36" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="24" fill="#003B5C" letter-spacing="1">PEHP</text>
+  <text x="56" y="52" font-family="'Inter', Arial, sans-serif" font-weight="600" font-size="12" fill="#00A3E0" letter-spacing="0.5">HEALTH BENEFITS</text>
+</svg>

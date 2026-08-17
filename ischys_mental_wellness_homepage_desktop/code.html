@@ -28,11 +28,11 @@
                       "tertiary": "#424e5b",
                       "tertiary-fixed-dim": "#bbc8d7",
                       "on-surface-variant": "#454841",
-                      "clay-warm": "#C6946D",
+                      "clay-warm": "#C89547",
                       "on-primary": "#ffffff",
                       "inverse-primary": "#c1c9b8",
                       "on-surface": "#1b1c18",
-                      "secondary": "#7f5533",
+                      "secondary": "#C89547",
                       "inverse-on-surface": "#f3f1ea",
                       "on-tertiary-fixed": "#101d28",
                       "on-tertiary-fixed-variant": "#3c4854",
@@ -40,15 +40,15 @@
                       "surface-dim": "#dcdad3",
                       "secondary-container": "#fec69c",
                       "background": "#fbf9f2",
-                      "sage-muted": "#5F6759",
+                      "sage-muted": "#0B4F54",
                       "on-error": "#ffffff",
                       "surface": "#fbf9f2",
-                      "primary": "#474f42",
+                      "primary": "#0B4F54",
                       "text-charcoal": "#1A1A1A",
                       "outline-variant": "#c5c7bf",
                       "surface-container-highest": "#e4e2dc",
                       "on-primary-fixed": "#161e13",
-                      "slate-blue": "#313D49",
+                      "slate-blue": "#0B4F54",
                       "on-secondary-fixed-variant": "#633e1e",
                       "primary-fixed-dim": "#c1c9b8",
                       "on-tertiary-container": "#d7e4f3",
@@ -60,9 +60,9 @@
                       "surface-container-lowest": "#ffffff",
                       "tertiary-fixed": "#d7e4f3",
                       "primary-fixed": "#dde5d4",
-                      "primary-container": "#5f6759",
+                      "primary-container": "#0B4F54",
                       "on-tertiary": "#ffffff",
-                      "surface-tint": "#596153",
+                      "surface-tint": "#115D63",
                       "surface-container-low": "#f6f4ec",
                       "secondary-fixed": "#ffdcc3",
                       "on-secondary-container": "#79512f",
@@ -187,14 +187,82 @@
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/comprehensive_services_medication_management/code.html">Services</a>
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/what_to_expect_patient_journey/code.html">Patient Journey</a>
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/mental_health_learning_center/code.html">Resources</a>
-<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/meet_laura_jane_hyte_garner/code.html">About</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/meet_laura_jane_hyte_garner/code.html">About Laura</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/fees_and_insurance/code.html">Pricing &amp; Insurance</a>
 </nav>
 <a href="/schedule_contact_ischys_mental_wellness/code.html" class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-tint transition-colors">Schedule an Appointment</a>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
+<button onclick="toggleMobileMenu()" class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Open Navigation Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
 </header>
+
+<!-- Mobile Navigation Drawer -->
+<div id="mobileMenu" class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300">
+<div class="fixed inset-y-0 right-0 w-full max-w-xs bg-background-ivory p-6 shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300" id="mobileMenuCard">
+<div class="space-y-6">
+<div class="flex items-center justify-between border-b border-on-surface/10 pb-4">
+<img src="/assets/logo.png" alt="Ischys Mental Wellness" class="h-12 w-auto object-contain" />
+<button onclick="toggleMobileMenu()" class="p-2 rounded-full text-primary hover:bg-surface-container transition-colors" aria-label="Close Menu">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-2 font-body-md text-base font-medium">
+<a href="/comprehensive_services_medication_management/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Services</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/what_to_expect_patient_journey/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Patient Journey</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/mental_health_learning_center/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Resources</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/meet_laura_jane_hyte_garner/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>About Laura</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/fees_and_insurance/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Pricing &amp; Insurance</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</nav>
+</div>
+<div class="pt-6 border-t border-on-surface/10 space-y-4">
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="w-full inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3.5 rounded-full font-label-md text-sm font-semibold hover:bg-surface-tint transition-colors shadow-sm">
+Schedule an Appointment
+</a>
+<div class="text-center text-xs text-on-surface-variant space-y-1">
+<p class="font-bold text-primary">(801) 796-2552</p>
+<p>802 Bamberger Dr, American Fork, UT</p>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const card = document.getElementById('mobileMenuCard');
+  if (menu.classList.contains('hidden')) {
+    menu.classList.remove('hidden');
+    setTimeout(() => {
+      menu.classList.remove('opacity-0');
+      card.classList.remove('translate-x-full');
+    }, 10);
+    document.body.style.overflow = 'hidden';
+  } else {
+    menu.classList.add('opacity-0');
+    card.classList.add('translate-x-full');
+    setTimeout(() => {
+      menu.classList.add('hidden');
+    }, 300);
+    document.body.style.overflow = '';
+  }
+}
+</script>
 <main>
 <!-- Hero Section -->
 <section class="max-w-[1400px] mx-auto px-margin-desktop py-section-gap grid md:grid-cols-2 gap-section-gap items-center">
@@ -467,6 +535,7 @@ This quiz is not a diagnostic tool. It is only for informational purposes and to
 <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
 <span>© 2026 All rights reserved</span>
 <nav class="flex items-center gap-6 font-label-md text-label-md">
+<a href="/fees_and_insurance/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Pricing &amp; Insurance</a>
 <a href="/privacy_policy/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Privacy Policy</a>
 <a href="/legal/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Legal</a>
 </nav>

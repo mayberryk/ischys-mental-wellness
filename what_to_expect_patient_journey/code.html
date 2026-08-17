@@ -48,23 +48,23 @@
                         "on-background": "#1b1c18",
                         "on-primary-fixed": "#161e13",
                         "on-secondary-container": "#79512f",
-                        "clay-warm": "#C6946D",
-                        "secondary": "#7f5533",
+                        "clay-warm": "#C89547",
+                        "secondary": "#C89547",
                         "surface": "#fbf9f2",
                         "secondary-fixed": "#ffdcc3",
                         "text-charcoal": "#1A1A1A",
                         "background": "#fbf9f2",
-                        "sage-muted": "#5F6759",
+                        "sage-muted": "#0B4F54",
                         "primary-fixed": "#dde5d4",
                         "on-tertiary-fixed": "#101d28",
                         "tertiary-fixed": "#d7e4f3",
                         "on-tertiary-fixed-variant": "#3c4854",
                         "outline-variant": "#c5c7bf",
-                        "slate-blue": "#313D49",
+                        "slate-blue": "#0B4F54",
                         "on-surface-variant": "#454841",
                         "surface-container": "#f0eee7",
                         "on-secondary": "#ffffff",
-                        "primary": "#474f42",
+                        "primary": "#0B4F54",
                         "on-primary": "#ffffff",
                         "tertiary-fixed-dim": "#bbc8d7",
                         "on-secondary-fixed-variant": "#633e1e",
@@ -120,14 +120,82 @@
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/comprehensive_services_medication_management/code.html">Services</a>
 <a class="relative py-1 text-primary font-semibold border-b-2 border-primary" href="/what_to_expect_patient_journey/code.html" aria-current="page">Patient Journey</a>
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/mental_health_learning_center/code.html">Resources</a>
-<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/meet_laura_jane_hyte_garner/code.html">About</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/meet_laura_jane_hyte_garner/code.html">About Laura</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/fees_and_insurance/code.html">Pricing &amp; Insurance</a>
 </nav>
 <a href="/schedule_contact_ischys_mental_wellness/code.html" class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-tint transition-colors">Schedule an Appointment</a>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
+<button onclick="toggleMobileMenu()" class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Open Navigation Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
 </header>
+
+<!-- Mobile Navigation Drawer -->
+<div id="mobileMenu" class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300">
+<div class="fixed inset-y-0 right-0 w-full max-w-xs bg-background-ivory p-6 shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300" id="mobileMenuCard">
+<div class="space-y-6">
+<div class="flex items-center justify-between border-b border-on-surface/10 pb-4">
+<img src="/assets/logo.png" alt="Ischys Mental Wellness" class="h-12 w-auto object-contain" />
+<button onclick="toggleMobileMenu()" class="p-2 rounded-full text-primary hover:bg-surface-container transition-colors" aria-label="Close Menu">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-2 font-body-md text-base font-medium">
+<a href="/comprehensive_services_medication_management/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Services</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/what_to_expect_patient_journey/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Patient Journey</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/mental_health_learning_center/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Resources</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/meet_laura_jane_hyte_garner/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>About Laura</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/fees_and_insurance/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Pricing &amp; Insurance</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</nav>
+</div>
+<div class="pt-6 border-t border-on-surface/10 space-y-4">
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="w-full inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3.5 rounded-full font-label-md text-sm font-semibold hover:bg-surface-tint transition-colors shadow-sm">
+Schedule an Appointment
+</a>
+<div class="text-center text-xs text-on-surface-variant space-y-1">
+<p class="font-bold text-primary">(801) 796-2552</p>
+<p>802 Bamberger Dr, American Fork, UT</p>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const card = document.getElementById('mobileMenuCard');
+  if (menu.classList.contains('hidden')) {
+    menu.classList.remove('hidden');
+    setTimeout(() => {
+      menu.classList.remove('opacity-0');
+      card.classList.remove('translate-x-full');
+    }, 10);
+    document.body.style.overflow = 'hidden';
+  } else {
+    menu.classList.add('opacity-0');
+    card.classList.add('translate-x-full');
+    setTimeout(() => {
+      menu.classList.add('hidden');
+    }, 300);
+    document.body.style.overflow = '';
+  }
+}
+</script>
 <main>
 <!-- Hero Section -->
 <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto text-center mt-8">
@@ -182,6 +250,22 @@
 </div>
 </div>
 </section>
+
+<!-- Journey Map Connector: Step 01 -> Step 02 -->
+<div class="relative max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop my-0 flex items-center justify-center pointer-events-none">
+<svg class="w-full h-28 md:h-36 text-clay-warm hidden md:block" viewBox="0 0 1000 140" fill="none" preserveAspectRatio="none">
+<defs>
+<marker id="map-arrow-left" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="currentColor"/>
+</marker>
+<marker id="map-arrow-right" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="currentColor"/>
+</marker>
+</defs>
+<path d="M 780 10 C 650 130, 350 10, 220 130" stroke="currentColor" stroke-width="2.5" stroke-dasharray="10 7" stroke-linecap="round" marker-end="url(#map-arrow-left)"/>
+</svg>
+</div>
+
 <!-- Section 2: During the Initial Evaluation -->
 <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto">
 <div class="grid md:grid-cols-12 gap-gutter items-center">
@@ -224,6 +308,14 @@
 </div>
 </div>
 </section>
+
+<!-- Journey Map Connector: Step 02 -> Step 03 -->
+<div class="relative max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop my-0 flex items-center justify-center pointer-events-none">
+<svg class="w-full h-28 md:h-36 text-clay-warm hidden md:block" viewBox="0 0 1000 140" fill="none" preserveAspectRatio="none">
+<path d="M 220 10 C 350 130, 650 10, 780 130" stroke="currentColor" stroke-width="2.5" stroke-dasharray="10 7" stroke-linecap="round" marker-end="url(#map-arrow-right)"/>
+</svg>
+</div>
+
 <!-- Section 3: The Plan -->
 <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto">
 <div class="grid md:grid-cols-12 gap-gutter items-center">
@@ -266,13 +358,21 @@
 </div>
 </div>
 </section>
+
+<!-- Journey Map Connector: Step 03 -> Step 04 -->
+<div class="relative max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop my-0 flex items-center justify-center pointer-events-none">
+<svg class="w-full h-28 md:h-36 text-clay-warm hidden md:block" viewBox="0 0 1000 140" fill="none" preserveAspectRatio="none">
+<path d="M 780 10 C 650 130, 350 10, 220 130" stroke="currentColor" stroke-width="2.5" stroke-dasharray="10 7" stroke-linecap="round" marker-end="url(#map-arrow-left)"/>
+</svg>
+</div>
+
 <!-- Section 4: Ongoing Care -->
 <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto">
 <div class="grid md:grid-cols-12 gap-gutter items-center">
 <div class="md:col-span-6 order-1">
 <span class="text-clay-warm font-label-md text-label-md uppercase tracking-wider mb-2 block">Step 04</span>
 <h2 class="font-headline-lg md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-8">Ongoing Care</h2>
-<ul class="space-y-6">
+<ul class="space-y-6 mb-10">
 <li class="flex items-start gap-4">
 <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
 <span class="material-symbols-outlined text-primary text-[18px]">update</span>
@@ -301,28 +401,19 @@
 </div>
 </li>
 </ul>
+
+<!-- Embedded Step 4 CTA -->
+<div class="pt-2">
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="inline-flex items-center gap-3 bg-primary text-on-primary font-label-md text-label-md rounded-xl px-8 py-4 hover:bg-primary/90 transition-all duration-300 shadow-2xs active:scale-95">
+<span>Schedule an Appointment</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
 </div>
 <div class="md:col-span-5 md:col-start-8 order-2 relative">
 <div class="absolute inset-0 bg-sage-muted/20 translate-x-4 translate-y-4 rounded-xl -z-10 hidden md:block"></div>
 <img class="w-full h-auto aspect-square object-cover rounded-xl shadow-sm" alt="A serene garden path bathed in soft morning light representing ongoing healing and growth" src="/assets/step4_journey.jpg"/>
 </div>
-</div>
-</section>
-<!-- Divider -->
-<div class="max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop mb-12">
-<div class="h-px w-full bg-on-surface/10"></div>
-</div>
-<!-- Final CTA -->
-<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto text-center mb-16">
-<div class="bg-surface-container-high rounded-2xl p-12 md:p-20 relative overflow-hidden">
-<div class="relative z-10">
-<h2 class="font-display-lg text-headline-md md:text-display-lg text-primary mb-8">Ready to feel heard?</h2>
-<a href="/schedule_contact_ischys_mental_wellness/code.html" class="inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md rounded px-8 py-4 hover:bg-primary/90 transition-colors duration-300 shadow-sm active:scale-95">
-                        Schedule an Appointment
-                    </a>
-</div>
-<!-- Decorative subtle circle -->
-<div class="absolute -right-20 -bottom-20 w-64 h-64 rounded-full bg-primary-fixed-dim/20 blur-3xl pointer-events-none"></div>
 </div>
 </section>
 
@@ -436,6 +527,7 @@
 <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
 <span>© 2026 All rights reserved</span>
 <nav class="flex items-center gap-6 font-label-md text-label-md">
+<a href="/fees_and_insurance/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Pricing &amp; Insurance</a>
 <a href="/privacy_policy/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Privacy Policy</a>
 <a href="/legal/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Legal</a>
 </nav>

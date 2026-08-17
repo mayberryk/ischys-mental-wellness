@@ -56,16 +56,19 @@
                     "surface-container-highest": "#e4e2dc",
                     "tertiary": "#424e5b",
                     "background-ivory": "#F2F0E9",
-                    "clay-warm": "#C6946D",
+                    "clay-warm": "#C89547",
                     "on-tertiary-fixed-variant": "#3c4854",
-                    "sage-muted": "#5F6759",
-                    "primary": "#474f42",
+                    "sage-muted": "#0B4F54",
+                    "primary": "#0B4F54",
                     "secondary-fixed": "#ffdcc3",
                     "on-secondary-container": "#79512f",
                     "surface-container": "#f0eee7",
                     "surface-container-high": "#eae8e1",
                     "surface-variant": "#e4e2dc",
-                    "secondary": "#7f5533",
+                    "secondary": "#C89547",
+                    "slate-blue": "#0B4F54",
+                    "surface-tint": "#115D63",
+                    "primary-container": "#0B4F54",
                     "on-primary-fixed-variant": "#41493c",
                     "inverse-primary": "#c1c9b8",
                     "surface-bright": "#fbf9f2",
@@ -129,165 +132,210 @@
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/comprehensive_services_medication_management/code.html">Services</a>
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/what_to_expect_patient_journey/code.html">Patient Journey</a>
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/mental_health_learning_center/code.html">Resources</a>
-<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/meet_laura_jane_hyte_garner/code.html">About</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/meet_laura_jane_hyte_garner/code.html">About Laura</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/fees_and_insurance/code.html">Pricing &amp; Insurance</a>
 </nav>
 <a href="/schedule_contact_ischys_mental_wellness/code.html" class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-tint transition-colors">Schedule an Appointment</a>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
+<button onclick="toggleMobileMenu()" class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Open Navigation Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
 </header>
+
+<!-- Mobile Navigation Drawer -->
+<div id="mobileMenu" class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300">
+<div class="fixed inset-y-0 right-0 w-full max-w-xs bg-background-ivory p-6 shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300" id="mobileMenuCard">
+<div class="space-y-6">
+<div class="flex items-center justify-between border-b border-on-surface/10 pb-4">
+<img src="/assets/logo.png" alt="Ischys Mental Wellness" class="h-12 w-auto object-contain" />
+<button onclick="toggleMobileMenu()" class="p-2 rounded-full text-primary hover:bg-surface-container transition-colors" aria-label="Close Menu">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-2 font-body-md text-base font-medium">
+<a href="/comprehensive_services_medication_management/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Services</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/what_to_expect_patient_journey/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Patient Journey</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/mental_health_learning_center/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Resources</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/meet_laura_jane_hyte_garner/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>About Laura</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/fees_and_insurance/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Pricing &amp; Insurance</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</nav>
+</div>
+<div class="pt-6 border-t border-on-surface/10 space-y-4">
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="w-full inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3.5 rounded-full font-label-md text-sm font-semibold hover:bg-surface-tint transition-colors shadow-sm">
+Schedule an Appointment
+</a>
+<div class="text-center text-xs text-on-surface-variant space-y-1">
+<p class="font-bold text-primary">(801) 796-2552</p>
+<p>802 Bamberger Dr, American Fork, UT</p>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const card = document.getElementById('mobileMenuCard');
+  if (menu.classList.contains('hidden')) {
+    menu.classList.remove('hidden');
+    setTimeout(() => {
+      menu.classList.remove('opacity-0');
+      card.classList.remove('translate-x-full');
+    }, 10);
+    document.body.style.overflow = 'hidden';
+  } else {
+    menu.classList.add('opacity-0');
+    card.classList.add('translate-x-full');
+    setTimeout(() => {
+      menu.classList.add('hidden');
+    }, 300);
+    document.body.style.overflow = '';
+  }
+}
+</script>
 <main>
 <!-- Hero Section -->
-<section class="relative w-full py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto flex flex-col items-center text-center">
-<!-- Decorative Ambient Background (Subtle Organic Shape) -->
-<div class="absolute inset-0 pointer-events-none opacity-20 -z-10 bg-cover bg-center" data-alt="A highly abstract, extremely soft and blurred digital texture serving as a background. The image consists entirely of fluid, amorphous shapes blending muted sage greens, warm ivory, and soft clay tones together seamlessly. The lighting is diffused and ambient, creating a serene, unhurried, and deeply calming medical-spa atmosphere. There are no sharp lines, specific subjects, or distracting patterns, only a tranquil wash of professional wellness colors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZZD7XtnnDxCF5rXgG1fX47m_ynPHMJUch9iPaU4dr8BAcZ6jVOUxzydEy9sHbBgNTobVlMdA27Ey6_UcrKpgfHrs-Y0DOuIl0KmGWU9bezSGfNZsAcKwJRkCZYoQqdL_ib95HETPrXncXHzeua_TOVN5Fapzog0gfQ09isV6ZqNE40hD97girn0L2jV5ZzALdIK7a8g5nSZ7KllMHCmU1x6Es4dN3YCGhOQeCiD8V29Py3eCkzwLrfg')">
-</div>
-<h1 class="font-display-lg text-display-lg text-primary max-w-[1000px] mb-8">
+<section class="relative w-full pt-16 pb-12 px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto flex flex-col items-center text-center">
+<span class="text-clay-warm font-label-md text-xs font-semibold uppercase tracking-widest block mb-3">Begin Your Journey</span>
+<h1 class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-primary font-bold max-w-[900px] mb-6 tracking-tight">
                 Take the next step toward thoughtful psychiatric care.
             </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[600px]">
-                Whether you're ready to begin your journey or simply have a few questions, we're here to provide clear, unhurried guidance.
+<p class="font-body-lg text-lg md:text-xl text-on-surface-variant max-w-[640px] leading-relaxed">
+                Whether you're ready to establish care or simply have a few questions, we're here to provide clear, unhurried guidance.
             </p>
 </section>
-<!-- Emergency Disclaimer -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto mb-section-gap">
-<div class="bg-error-container text-on-error-container p-6 md:p-8 rounded-lg flex flex-col md:flex-row items-start gap-4 shadow-sm border border-error/10">
-<span class="material-symbols-outlined text-error mt-1" style="font-variation-settings: 'FILL' 1;">warning</span>
-<div>
-<h2 class="font-label-md text-label-md uppercase tracking-wider mb-2 text-error">Not for Emergencies</h2>
-<p class="font-body-md text-body-md">
-                        This website, contact forms, and chat are not monitored 24/7. If you are experiencing a mental health crisis or emergency, please call <strong class="font-semibold">911</strong>, text <strong class="font-semibold">988</strong>, or go to the nearest emergency room immediately.
+
+<!-- Emergency Disclaimer (Clean & Subtle) -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto mb-12">
+<div class="bg-error-container/20 border border-error/20 text-on-surface-variant p-5 md:p-6 rounded-2xl flex flex-col sm:flex-row items-start gap-4 shadow-2xs">
+<span class="material-symbols-outlined text-error text-2xl shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">error</span>
+<div class="text-xs md:text-sm leading-relaxed">
+<h2 class="font-label-md font-bold uppercase tracking-wider mb-1 text-error">Not for Emergencies</h2>
+<p>
+                        This website, contact forms, and chat are not monitored 24/7. If you are experiencing a mental health crisis or emergency, please call <strong class="text-primary font-bold">911</strong>, text <strong class="text-primary font-bold">988</strong>, or go to the nearest emergency room immediately.
                     </p>
 </div>
 </div>
 </section>
-<!-- Scheduling Options Grid -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto mb-section-gap">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<!-- Card 1 -->
-<a class="group block bg-surface-container-low hover:bg-surface-container transition-colors duration-300 p-8 rounded-xl flex flex-col h-full border border-on-surface/5" href="#">
-<div class="bg-surface-container-highest w-12 h-12 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
-<span class="material-symbols-outlined">calendar_month</span>
+
+<!-- Action Cards Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto mb-16">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+<!-- Card 1: Schedule an Appointment -->
+<a class="bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-8 shadow-2xs hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between" href="#">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">calendar_month</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Schedule an Appointment</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-6">
-                        For new patients who are ready to proceed with a comprehensive psychiatric evaluation and establish care.
+<h3 class="font-headline-md text-2xl font-semibold text-primary mb-3">Schedule an Appointment</h3>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed mb-6">
+                        For new patients ready to proceed with a comprehensive 90-minute psychiatric evaluation and establish care.
                     </p>
-<div class="flex items-center text-sage-muted font-label-md text-label-md group-hover:text-primary transition-colors">
-                        Begin Intake <span class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+<div class="inline-flex items-center gap-2 text-primary font-label-md text-sm font-semibold group-hover:translate-x-1 transition-transform">
+<span>Begin Intake</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
 </div>
 </a>
-<!-- Card 2 -->
-<a class="group block bg-surface-container-low hover:bg-surface-container transition-colors duration-300 p-8 rounded-xl flex flex-col h-full border border-on-surface/5" href="#">
-<div class="bg-surface-container-highest w-12 h-12 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
-<span class="material-symbols-outlined">forum</span>
+
+<!-- Card 2: Free Consultation -->
+<a class="bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-8 shadow-2xs hover:shadow-md hover:border-clay-warm/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between" href="#">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-clay-warm/15 text-clay-warm flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">forum</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Request a Free Consultation</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-6">
+<h3 class="font-headline-md text-2xl font-semibold text-primary mb-3">Request a Free Consultation</h3>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed mb-6">
                         A brief 15-minute introductory call to discuss your needs and ensure our practice is the right fit before committing.
                     </p>
-<div class="flex items-center text-sage-muted font-label-md text-label-md group-hover:text-primary transition-colors">
-                        Request Call <span class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+<div class="inline-flex items-center gap-2 text-clay-warm font-label-md text-sm font-semibold group-hover:translate-x-1 transition-transform">
+<span>Request Call</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
 </div>
 </a>
-<!-- Card 3 -->
-<a class="group block bg-surface-container-low hover:bg-surface-container transition-colors duration-300 p-8 rounded-xl flex flex-col h-full border border-on-surface/5" href="#">
-<div class="bg-surface-container-highest w-12 h-12 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
-<span class="material-symbols-outlined">login</span>
+
+<!-- Card 3: Existing Patient Portal -->
+<a class="bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-8 shadow-2xs hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between" href="#">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">login</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Existing Patient Portal</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-6">
+<h3 class="font-headline-md text-2xl font-semibold text-primary mb-3">Existing Patient Portal</h3>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed mb-6">
                         Securely access your SimplePractice portal to manage appointments, view documents, and message your provider.
                     </p>
-<div class="flex items-center text-sage-muted font-label-md text-label-md group-hover:text-primary transition-colors">
-                        Access Portal <span class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+<div class="inline-flex items-center gap-2 text-primary font-label-md text-sm font-semibold group-hover:translate-x-1 transition-transform">
+<span>Access Portal</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
 </div>
 </a>
-<!-- Card 4 -->
-<a class="group block bg-surface-container-low hover:bg-surface-container transition-colors duration-300 p-8 rounded-xl flex flex-col h-full border border-on-surface/5" href="#">
-<div class="bg-surface-container-highest w-12 h-12 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
-<span class="material-symbols-outlined">help</span>
+
+<!-- Card 4: Ask a Question -->
+<a class="bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-8 shadow-2xs hover:shadow-md hover:border-clay-warm/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between" href="#">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-clay-warm/15 text-clay-warm flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">help</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Ask a Question</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-6">
-                        For general administrative, billing, or insurance inquiries. We aim to respond within 24-48 business hours.
+<h3 class="font-headline-md text-2xl font-semibold text-primary mb-3">Ask a Question</h3>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed mb-6">
+                        For general administrative, billing, or insurance inquiries. We aim to respond within 24–48 business hours.
                     </p>
-<div class="flex items-center text-sage-muted font-label-md text-label-md group-hover:text-primary transition-colors">
-                        Send Message <span class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+<div class="inline-flex items-center gap-2 text-clay-warm font-label-md text-sm font-semibold group-hover:translate-x-1 transition-transform">
+<span>Send Message</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
 </div>
 </a>
 </div>
 </section>
-<!-- Contact Details & Admin Info -->
-<section class="bg-surface-container-low py-section-gap border-y border-on-surface/5">
-<div class="px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-content-gap">
-<!-- Contact Info -->
-<div class="md:col-span-5 flex flex-col gap-8">
-<h2 class="font-headline-lg text-headline-lg md:font-headline-lg-mobile md:text-headline-lg-mobile text-primary mb-4">Contact Information</h2>
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-sage-muted mt-1">call</span>
-<div>
-<h4 class="font-label-md text-label-md text-primary mb-1">Phone &amp; Fax</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">P: (555) 123-4567</p>
-<p class="font-body-md text-body-md text-on-surface-variant">F: (555) 123-4568</p>
+
+<!-- Direct Practice Contact Information Card -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto mb-20">
+<div class="bg-surface-container-high rounded-2xl p-8 md:p-12 border border-on-surface/5 shadow-2xs grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+<div class="flex flex-col items-center md:items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">call</span>
+</div>
+<h4 class="font-headline-md text-lg font-semibold text-primary">Phone</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Call or text us directly during office hours:</p>
+<a href="tel:8017962552" class="text-primary font-bold hover:underline text-base">(801) 796-2552</a>
+</div>
+
+<div class="flex flex-col items-center md:items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-clay-warm/15 text-clay-warm flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">location_on</span>
+</div>
+<h4 class="font-headline-md text-lg font-semibold text-primary">Clinic Address</h4>
+<p class="font-body-md text-sm text-on-surface-variant">802 Bamberger Dr<br/>American Fork, UT 84003</p>
+<span class="text-xs text-sage-muted font-medium">In-person &amp; Telehealth visits available</span>
+</div>
+
+<div class="flex flex-col items-center md:items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">schedule</span>
+</div>
+<h4 class="font-headline-md text-lg font-semibold text-primary">Practice Hours</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Monday – Thursday: 9:00 AM – 5:00 PM<br/>Friday: By Appointment</p>
+<span class="text-xs text-sage-muted font-medium">Closed Weekends &amp; Major Holidays</span>
 </div>
 </div>
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-sage-muted mt-1">location_on</span>
-<div>
-<h4 class="font-label-md text-label-md text-primary mb-1">Location</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">
-                                123 Tranquility Lane, Suite 200<br/>
-                                Wellness City, ST 12345
-                            </p>
-<p class="font-label-sm text-label-sm text-sage-muted mt-2 italic">
-                                * Telehealth appointments available for residents statewide.
-                            </p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-sage-muted mt-1">schedule</span>
-<div>
-<h4 class="font-label-md text-label-md text-primary mb-1">Office Hours</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">Mon - Thu: 9:00 AM - 5:00 PM</p>
-<p class="font-body-md text-body-md text-on-surface-variant">Fri: 9:00 AM - 1:00 PM</p>
-<p class="font-body-md text-body-md text-on-surface-variant">Sat - Sun: Closed</p>
-</div>
-</div>
-</div>
-<!-- Spacer -->
-<div class="hidden md:block md:col-span-1"></div>
-<!-- Admin Chat & Image -->
-<div class="md:col-span-6 flex flex-col justify-between">
-<div class="bg-surface rounded-xl p-8 border border-on-surface/5 mb-8 shadow-sm">
-<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-3">
-<span class="material-symbols-outlined text-sage-muted">info</span>
-                            Admin Chat Expectations
-                        </h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                            Our administrative chat and secure messaging are available strictly for scheduling, billing questions, and general inquiries. <br/><br/>
-<strong class="font-semibold text-primary">Please note:</strong> Clinical care, medication adjustments, and medical advice are provided <span class="italic">only</span> during scheduled appointments to ensure the highest standard of thoughtful, unhurried care.
-                        </p>
-</div>
-<div class="w-full h-48 rounded-xl overflow-hidden bg-surface-container-highest">
-<img alt="Office detail" class="w-full h-full object-cover grayscale-[20%] opacity-90" data-alt="A close-up, highly detailed photograph of a beautifully organized, modern reception desk in a high-end psychiatric clinic. The desk features light oak wood and smooth ivory stone. A minimalist ceramic vase holding a few fresh, muted green eucalyptus branches sits near a sleek computer monitor. The lighting is bright, natural, and inviting, creating a warm, professional, and calming atmosphere that perfectly embodies unhurried excellence and compassionate care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7n4bzfBufJYjGRaejq_uVAu7NUGCEYbOhQWoZMM1GQIzQXIRLHSlHZ7EznteRgy_5mzuzWcCGiU9yxIMq6qrmRt2hW5UNIGacAyI1ftrBPfMwVcYN7CJXPOAsx5tBehDUqddTqCTHOx9R3rMI9kQ-WrvVk7yMAxO4EzICTnb4_CDzQvBM3HG4sKvZF0BUCFAh-TT9mjkg-3vuZvOBo5Hq_mEvlvydOAMeuf4fdhup-eKcPjGa4puBxg"/>
-</div>
-</div>
-</div>
-</section>
-<!-- Final CTA Section -->
-<section class="py-section-gap px-margin-mobile md:px-margin-desktop text-center flex flex-col items-center">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-6 max-w-[600px]">
-                Ready to begin your journey?
-            </h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-[500px]">
-                Take the first step by accessing our secure portal to view availability and request your initial consultation.
-            </p>
-<a class="inline-flex items-center justify-center bg-primary text-on-primary px-8 py-4 rounded font-label-md text-label-md hover:opacity-90 transition-opacity shadow-sm" href="#">
-                Schedule Through SimplePractice
-                <span class="material-symbols-outlined ml-2 text-[20px]">open_in_new</span>
-</a>
 </section>
 </main>
 <!-- Footer -->
@@ -360,6 +408,7 @@
 <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
 <span>© 2026 Ischys Mental Wellness. Licensed in TX &amp; CA.</span>
 <nav class="flex items-center gap-6 font-label-md text-label-md">
+<a href="/fees_and_insurance/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Pricing &amp; Insurance</a>
 <a href="/privacy_policy/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Privacy Policy</a>
 <a href="/legal/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Legal</a>
 </nav>

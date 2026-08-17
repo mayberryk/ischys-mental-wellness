@@ -47,7 +47,7 @@
                         "slate-blue": "#313D49",
                         "on-tertiary-fixed": "#101d28",
                         "on-surface": "#1b1c18",
-                        "clay-warm": "#C6946D",
+                        "clay-warm": "#C89547",
                         "surface-container-low": "#f6f4ec",
                         "surface": "#fbf9f2",
                         "on-tertiary-container": "#d7e4f3",
@@ -59,7 +59,10 @@
                         "inverse-primary": "#c1c9b8",
                         "secondary-container": "#fec69c",
                         "error": "#ba1a1a",
-                        "primary": "#474f42",
+                        "primary": "#0B4F54",
+                        "secondary": "#C89547",
+                        "sage-muted": "#0B4F54",
+                        "slate-blue": "#0B4F54",
                         "surface-container-highest": "#e4e2dc",
                         "on-background": "#1b1c18",
                         "inverse-surface": "#30312c",
@@ -129,14 +132,82 @@
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/comprehensive_services_medication_management/code.html">Services</a>
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/what_to_expect_patient_journey/code.html">Patient Journey</a>
 <a class="relative py-1 text-primary font-semibold border-b-2 border-primary" href="/mental_health_learning_center/code.html" aria-current="page">Resources</a>
-<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/meet_laura_jane_hyte_garner/code.html">About</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/meet_laura_jane_hyte_garner/code.html">About Laura</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/fees_and_insurance/code.html">Pricing &amp; Insurance</a>
 </nav>
 <a href="/schedule_contact_ischys_mental_wellness/code.html" class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-tint transition-colors">Schedule an Appointment</a>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
+<button onclick="toggleMobileMenu()" class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Open Navigation Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
 </header>
+
+<!-- Mobile Navigation Drawer -->
+<div id="mobileMenu" class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300">
+<div class="fixed inset-y-0 right-0 w-full max-w-xs bg-background-ivory p-6 shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300" id="mobileMenuCard">
+<div class="space-y-6">
+<div class="flex items-center justify-between border-b border-on-surface/10 pb-4">
+<img src="/assets/logo.png" alt="Ischys Mental Wellness" class="h-12 w-auto object-contain" />
+<button onclick="toggleMobileMenu()" class="p-2 rounded-full text-primary hover:bg-surface-container transition-colors" aria-label="Close Menu">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-2 font-body-md text-base font-medium">
+<a href="/comprehensive_services_medication_management/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Services</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/what_to_expect_patient_journey/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Patient Journey</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/mental_health_learning_center/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Resources</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/meet_laura_jane_hyte_garner/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>About Laura</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/fees_and_insurance/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Pricing &amp; Insurance</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</nav>
+</div>
+<div class="pt-6 border-t border-on-surface/10 space-y-4">
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="w-full inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3.5 rounded-full font-label-md text-sm font-semibold hover:bg-surface-tint transition-colors shadow-sm">
+Schedule an Appointment
+</a>
+<div class="text-center text-xs text-on-surface-variant space-y-1">
+<p class="font-bold text-primary">(801) 796-2552</p>
+<p>802 Bamberger Dr, American Fork, UT</p>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const card = document.getElementById('mobileMenuCard');
+  if (menu.classList.contains('hidden')) {
+    menu.classList.remove('hidden');
+    setTimeout(() => {
+      menu.classList.remove('opacity-0');
+      card.classList.remove('translate-x-full');
+    }, 10);
+    document.body.style.overflow = 'hidden';
+  } else {
+    menu.classList.add('opacity-0');
+    card.classList.add('translate-x-full');
+    setTimeout(() => {
+      menu.classList.add('hidden');
+    }, 300);
+    document.body.style.overflow = '';
+  }
+}
+</script>
 <main>
 <!-- Hero Section -->
 <section class="max-w-[1400px] mx-auto px-gutter mb-section-gap pt-16">
@@ -277,28 +348,47 @@
 </div>
 </div>
 </section>
-<!-- Newsletter & CTA -->
-<section class="max-w-[1400px] mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-<div class="bg-surface-container-high p-12 rounded-2xl">
-<h2 class="font-headline-md text-headline-md text-text-charcoal mb-4">Thoughtful Updates</h2>
-<p class="font-body-md text-body-md text-sage-muted mb-8">Receive occasional insights, new resources, and reflections from our clinical team directly in your inbox.</p>
-<form class="flex flex-col sm:flex-row gap-4">
-<input class="flex-grow bg-surface border border-outline-variant rounded px-4 py-3 font-body-md focus:ring-1 focus:ring-sage-muted focus:border-sage-muted outline-none transition-shadow" placeholder="Your email address" type="email"/>
-<button class="bg-secondary text-on-secondary px-6 py-3 rounded font-label-md text-label-md hover:bg-on-secondary-container transition-colors whitespace-nowrap" type="submit">
+<!-- Newsletter & CTA Section -->
+<section class="max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop my-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+<!-- Card 1: Thoughtful Updates -->
+<div class="bg-surface-container-high rounded-2xl p-6 md:p-8 border border-on-surface/5 shadow-2xs flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<div class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">mail</span>
+</div>
+<h2 class="font-headline-md text-xl md:text-2xl text-primary font-semibold">Thoughtful Updates</h2>
+</div>
+<p class="font-body-md text-xs md:text-sm text-on-surface-variant leading-relaxed mb-5">Receive occasional insights, new resources, and reflections from our clinical team directly in your inbox.</p>
+</div>
+<form class="flex flex-col sm:flex-row gap-2.5">
+<input class="flex-grow bg-surface-bright border border-outline-variant/80 rounded-xl px-3.5 py-2.5 text-xs md:text-sm font-body-md text-primary placeholder:text-on-surface-variant/60 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="Enter your email address" type="email" required />
+<button class="bg-primary text-on-primary px-5 py-2.5 rounded-xl font-label-md text-xs md:text-sm font-semibold hover:bg-primary/90 transition-all duration-300 shadow-2xs shrink-0 active:scale-95" type="submit">
                         Subscribe
                     </button>
 </form>
 </div>
-<div class="text-center md:text-left">
-<h2 class="font-headline-lg text-headline-lg text-text-charcoal mb-6">Ready to begin your journey?</h2>
-<p class="font-body-lg text-body-lg text-sage-muted mb-8 max-w-md">Our approach is deliberate, compassionate, and tailored to you. We are currently accepting new patients.</p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-<a href="/schedule_contact_ischys_mental_wellness/code.html" class="bg-primary text-on-primary px-8 py-4 rounded font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all">
+
+<!-- Card 2: Ready to Begin -->
+<div class="bg-surface-container-high rounded-2xl p-6 md:p-8 border border-on-surface/5 shadow-2xs flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<div class="w-9 h-9 rounded-full bg-clay-warm/15 text-clay-warm flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">event_available</span>
+</div>
+<h2 class="font-headline-md text-xl md:text-2xl text-primary font-semibold">Ready to begin your journey?</h2>
+</div>
+<p class="font-body-md text-xs md:text-sm text-on-surface-variant leading-relaxed mb-5">Our approach is deliberate, compassionate, and tailored to you. We are currently accepting new patients.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-2.5">
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="inline-flex items-center justify-center bg-primary text-on-primary px-5 py-2.5 rounded-xl font-label-md text-xs md:text-sm font-semibold hover:bg-primary/90 transition-all duration-300 shadow-2xs active:scale-95 text-center flex-grow">
                         Schedule an Appointment
-                    </button></a>
-<button class="border-2 border-slate-blue text-slate-blue bg-transparent px-8 py-4 rounded font-label-md text-label-md hover:bg-slate-blue hover:text-white active:scale-95 transition-all">
+                    </a>
+<a href="/comprehensive_services_medication_management/code.html" class="inline-flex items-center justify-center border-2 border-slate-blue text-slate-blue bg-transparent px-5 py-2.5 rounded-xl font-label-md text-xs md:text-sm font-semibold hover:bg-slate-blue hover:text-white transition-all duration-300 active:scale-95 text-center flex-grow">
                         Explore Our Services
-                    </button>
+                    </a>
+</div>
 </div>
 </div>
 </section>
@@ -373,6 +463,7 @@
 <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
 <span>© 2026 All rights reserved</span>
 <nav class="flex items-center gap-6 font-label-md text-label-md">
+<a href="/fees_and_insurance/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Pricing &amp; Insurance</a>
 <a href="/privacy_policy/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Privacy Policy</a>
 <a href="/legal/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Legal</a>
 </nav>

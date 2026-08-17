@@ -22,7 +22,7 @@
                         "surface": "#fbf9f2",
                         "secondary-fixed-dim": "#f2bb92",
                         "on-surface": "#1b1c18",
-                        "primary": "#474f42",
+                        "primary": "#0B4F54",
                         "surface-container-low": "#f6f4ec",
                         "text-charcoal": "#1A1A1A",
                         "on-primary-container": "#dde5d4",
@@ -30,7 +30,7 @@
                         "primary-fixed-dim": "#c1c9b8",
                         "on-primary-fixed": "#161e13",
                         "tertiary-container": "#5a6673",
-                        "slate-blue": "#313D49",
+                        "slate-blue": "#0B4F54",
                         "surface-container": "#f0eee7",
                         "outline": "#757871",
                         "on-primary": "#ffffff",
@@ -43,26 +43,26 @@
                         "surface-container-lowest": "#ffffff",
                         "error-container": "#ffdad6",
                         "on-tertiary-container": "#d7e4f3",
-                        "clay-warm": "#C6946D",
+                        "clay-warm": "#C89547",
                         "outline-variant": "#c5c7bf",
-                        "surface-tint": "#596153",
+                        "surface-tint": "#115D63",
                         "on-secondary-fixed-variant": "#633e1e",
                         "on-error-container": "#93000a",
                         "on-error": "#ffffff",
                         "on-secondary-container": "#79512f",
                         "tertiary": "#424e5b",
-                        "secondary": "#7f5533",
+                        "secondary": "#C89547",
                         "on-secondary": "#ffffff",
                         "primary-fixed": "#dde5d4",
                         "on-tertiary": "#ffffff",
                         "background": "#fbf9f2",
-                        "primary-container": "#5f6759",
+                        "primary-container": "#0B4F54",
                         "background-ivory": "#F2F0E9",
                         "surface-bright": "#fbf9f2",
                         "surface-container-high": "#eae8e1",
                         "surface-dim": "#dcdad3",
                         "on-background": "#1b1c18",
-                        "sage-muted": "#5F6759",
+                        "sage-muted": "#0B4F54",
                         "inverse-surface": "#30312c",
                         "on-primary-fixed-variant": "#41493c",
                         "surface-container-highest": "#e4e2dc",
@@ -120,121 +120,181 @@
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/comprehensive_services_medication_management/code.html">Services</a>
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/what_to_expect_patient_journey/code.html">Patient Journey</a>
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/mental_health_learning_center/code.html">Resources</a>
-<a class="relative py-1 text-primary font-semibold border-b-2 border-primary" href="/meet_laura_jane_hyte_garner/code.html" aria-current="page">About</a>
+<a class="relative py-1 text-primary font-semibold border-b-2 border-primary" href="/meet_laura_jane_hyte_garner/code.html" aria-current="page">About Laura</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/fees_and_insurance/code.html">Pricing &amp; Insurance</a>
 </nav>
 <a href="/schedule_contact_ischys_mental_wellness/code.html" class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-tint transition-colors">Schedule an Appointment</a>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
+<button onclick="toggleMobileMenu()" class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Open Navigation Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
 </header>
+
+<!-- Mobile Navigation Drawer -->
+<div id="mobileMenu" class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300">
+<div class="fixed inset-y-0 right-0 w-full max-w-xs bg-background-ivory p-6 shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300" id="mobileMenuCard">
+<div class="space-y-6">
+<div class="flex items-center justify-between border-b border-on-surface/10 pb-4">
+<img src="/assets/logo.png" alt="Ischys Mental Wellness" class="h-12 w-auto object-contain" />
+<button onclick="toggleMobileMenu()" class="p-2 rounded-full text-primary hover:bg-surface-container transition-colors" aria-label="Close Menu">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-2 font-body-md text-base font-medium">
+<a href="/comprehensive_services_medication_management/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Services</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/what_to_expect_patient_journey/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Patient Journey</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/mental_health_learning_center/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Resources</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/meet_laura_jane_hyte_garner/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>About Laura</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/fees_and_insurance/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Pricing &amp; Insurance</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</nav>
+</div>
+<div class="pt-6 border-t border-on-surface/10 space-y-4">
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="w-full inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3.5 rounded-full font-label-md text-sm font-semibold hover:bg-surface-tint transition-colors shadow-sm">
+Schedule an Appointment
+</a>
+<div class="text-center text-xs text-on-surface-variant space-y-1">
+<p class="font-bold text-primary">(801) 796-2552</p>
+<p>802 Bamberger Dr, American Fork, UT</p>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const card = document.getElementById('mobileMenuCard');
+  if (menu.classList.contains('hidden')) {
+    menu.classList.remove('hidden');
+    setTimeout(() => {
+      menu.classList.remove('opacity-0');
+      card.classList.remove('translate-x-full');
+    }, 10);
+    document.body.style.overflow = 'hidden';
+  } else {
+    menu.classList.add('opacity-0');
+    card.classList.add('translate-x-full');
+    setTimeout(() => {
+      menu.classList.add('hidden');
+    }, 300);
+    document.body.style.overflow = '';
+  }
+}
+</script>
 <main class="flex-grow">
 <!-- Hero Section -->
-<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-section-gap items-center">
-<div class="order-2 md:order-1 flex flex-col gap-content-gap">
-<div>
-<h1 class="font-display-lg text-display-lg text-primary mb-6">Meet Laura Jane Hyte-Garner</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">A psychiatric mental health nurse practitioner with 30+ years of nursing experience and a whole-person approach to care.</p>
-</div>
-<div class="flex gap-4">
-<span class="inline-flex items-center px-4 py-2 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm">MSN</span>
-<span class="inline-flex items-center px-4 py-2 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm">APRN</span>
-<span class="inline-flex items-center px-4 py-2 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm">PMHNP-BC</span>
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+<div class="order-2 md:order-1 flex flex-col gap-6">
+<div class="space-y-4">
+<h1 class="font-display-lg text-display-lg text-primary">Meet Laura Jane Hyte-Garner</h1>
+<p class="text-clay-warm font-label-md text-sm font-semibold tracking-wider uppercase">MSN, APRN, PMHNP-BC &bull; Board-Certified Psychiatric Specialist</p>
+<blockquote class="font-headline-md text-xl md:text-2xl text-primary font-medium italic border-l-4 border-clay-warm pl-5 py-1 my-4">
+"I believe healing happens when people feel truly seen, heard, and connected."
+</blockquote>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+For more than 30 years, I’ve walked alongside people through their hardest moments—as a nurse, a Psychiatric-Mental Health Nurse Practitioner, a mentor, and an advocate.
+</p>
 </div>
 </div>
 <div class="order-1 md:order-2">
-<img class="w-full h-auto rounded-xl object-cover aspect-[4/5]" data-alt="A professional, warm portrait of Laura Jane Hyte-Garner, a psychiatric mental health nurse practitioner. She has a welcoming smile and is seated in a calm, modern office setting with natural light and a soft ivory and sage green color palette. The aesthetic is unhurried, professional, and deeply human, reflecting the boutique psychiatric practice identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj0nUphAdlIsW7b7ftJLplCsUrVvj8-IaeYa-52pC7rOwUAvf3j1QNtx-si-liyCSc_LEL9OadCCc1oRUCXh0aQqrgq0AerUENx5_xoyiJ2UUAMC2yJ3QqYDp1uGnCWcnGrYF3j4c3X0vljmmZWS9j579eLPxm20gbhm7Ceb6pC3xNv6r23QcU6ui1AZU5mE3HUZbOBrzNexUJig70W7NvVG_LwK8i7jSUSdKmOdYjMUl5PzKaPKAwiw"/>
+<img class="w-full h-auto rounded-2xl object-cover aspect-[4/5] shadow-md" data-alt="A professional, warm portrait of Laura Jane Hyte-Garner, a psychiatric mental health nurse practitioner. She has a welcoming smile and is seated in a calm, modern office setting with natural light and a soft ivory and sage green color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj0nUphAdlIsW7b7ftJLplCsUrVvj8-IaeYa-52pC7rOwUAvf3j1QNtx-si-liyCSc_LEL9OadCCc1oRUCXh0aQqrgq0AerUENx5_xoyiJ2UUAMC2yJ3QqYDp1uGnCWcnGrYF3j4c3X0vljmmZWS9j579eLPxm20gbhm7Ceb6pC3xNv6r23QcU6ui1AZU5mE3HUZbOBrzNexUJig70W7NvVG_LwK8i7jSUSdKmOdYjMUl5PzKaPKAwiw"/>
 </div>
 </section>
-<!-- Personal Welcome Blockquote -->
-<section class="bg-surface-container-low py-section-gap px-margin-mobile md:px-margin-desktop">
-<div class="max-w-[1000px] mx-auto text-center">
-<span class="material-symbols-outlined text-primary-fixed-dim text-4xl mb-6" style="font-variation-settings: 'FILL' 1;">format_quote</span>
-<blockquote class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-8 italic">
-                    "I know reaching out for psychiatric care can feel overwhelming. My goal is to create a place where you feel heard, respected, and never rushed."
-                </blockquote>
-<p class="font-label-md text-label-md text-tertiary tracking-widest uppercase">— Laura Jane Hyte-Garner</p>
+
+<!-- Laura's Personal Story & Practice Philosophy -->
+<section class="bg-surface-container-low py-16 md:py-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-[1100px] mx-auto space-y-16">
+<!-- Top Intro -->
+<div class="text-center max-w-3xl mx-auto space-y-4">
+<span class="text-clay-warm font-label-md text-xs font-semibold uppercase tracking-widest block">My Story &amp; Mission</span>
+<h2 class="font-headline-lg text-3xl md:text-4xl text-primary font-bold">Why I Dedicated My Life to Mental Healthcare</h2>
 </div>
-</section>
-<!-- Professional Credibility Bento Grid -->
-<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto">
-<div class="mb-content-gap text-center">
-<h2 class="font-headline-md text-headline-md text-primary">Experience &amp; Expertise</h2>
+
+<!-- Narrative Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
+<!-- Card 1: 30+ Years of Walking Alongside People -->
+<div class="bg-surface-bright p-8 md:p-10 rounded-2xl border border-on-surface/5 shadow-2xs flex flex-col gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">favorite</span>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<div class="bg-surface-bright border border-on-surface/10 rounded-xl p-8 flex flex-col gap-4">
-<span class="material-symbols-outlined text-sage-muted text-3xl" style="font-variation-settings: 'FILL' 0;">history</span>
-<h3 class="font-label-md text-label-md text-primary">30+ Years</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Extensive nursing experience forming the foundation of a compassionate approach.</p>
+<h3 class="font-headline-md text-xl text-primary font-semibold">30+ Years of Lifelong Compassion</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+My career has taken me from hospital rooms to veterans’ clinics, from community health programs to private practice, but my heart has always stayed the same: I am here to help people find hope and strength, even when life feels overwhelming.
+</p>
 </div>
-<div class="bg-surface-bright border border-on-surface/10 rounded-xl p-8 flex flex-col gap-4">
-<span class="material-symbols-outlined text-sage-muted text-3xl" style="font-variation-settings: 'FILL' 0;">psychology</span>
-<h3 class="font-label-md text-label-md text-primary">Psychiatric Expertise</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Specialized knowledge in mental health diagnosis and management.</p>
+
+<!-- Card 2: Specialized Whole-Person Care -->
+<div class="bg-surface-bright p-8 md:p-10 rounded-2xl border border-on-surface/5 shadow-2xs flex flex-col gap-4">
+<div class="w-10 h-10 rounded-full bg-clay-warm/15 text-clay-warm flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">diversity_3</span>
 </div>
-<div class="bg-surface-bright border border-on-surface/10 rounded-xl p-8 flex flex-col gap-4">
-<span class="material-symbols-outlined text-sage-muted text-3xl" style="font-variation-settings: 'FILL' 0;">military_tech</span>
-<h3 class="font-label-md text-label-md text-primary">VA Experience</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Dedicated service working with veterans and understanding complex trauma.</p>
+<h3 class="font-headline-md text-xl text-primary font-semibold">Advocating for Overlooked Communities</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+I specialize in mental health and addiction care, serving veterans, families, individuals with autism, and the LGBTQ+ community. These groups hold a special place in my heart because I know how often they are overlooked, dismissed, or told to "just deal with it." My approach combines evidence-based medicine with natural, whole-person care—restoring balance, resilience, and joy.
+</p>
 </div>
-<div class="bg-surface-bright border border-on-surface/10 rounded-xl p-8 flex flex-col gap-4">
-<span class="material-symbols-outlined text-sage-muted text-3xl" style="font-variation-settings: 'FILL' 0;">healing</span>
-<h3 class="font-label-md text-label-md text-primary">Addiction Medicine</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Comprehensive experience in supporting individuals through addiction recovery.</p>
+
+<!-- Card 3: Empathy Born of Experience -->
+<div class="bg-surface-bright p-8 md:p-10 rounded-2xl border border-on-surface/5 shadow-2xs flex flex-col gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">psychology_alt</span>
 </div>
-<div class="bg-surface-bright border border-on-surface/10 rounded-xl p-8 flex flex-col gap-4 md:col-span-2">
-<span class="material-symbols-outlined text-sage-muted text-3xl" style="font-variation-settings: 'FILL' 0;">favorite</span>
-<h3 class="font-label-md text-label-md text-primary">Trauma-Informed &amp; Complex Care</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Providing a safe space and expert care for complex medical and psychiatric concerns, always viewed through a trauma-informed lens.</p>
+<h3 class="font-headline-md text-xl text-primary font-semibold">Empathy Born of Personal Experience</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+I know what it feels like to struggle. My own journey hasn’t been easy—navigating grief, setbacks, and obstacles in both my personal life and my career. But those experiences shaped me into the clinician I am today. They taught me empathy, grit, and the belief that no one is ever broken beyond repair.
+</p>
+</div>
+
+<!-- Card 4: Sanctuaries & Rural Utah Access -->
+<div class="bg-surface-bright p-8 md:p-10 rounded-2xl border border-on-surface/5 shadow-2xs flex flex-col gap-4">
+<div class="w-10 h-10 rounded-full bg-clay-warm/15 text-clay-warm flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">holiday_village</span>
+</div>
+<h3 class="font-headline-md text-xl text-primary font-semibold">Creating Sanctuaries &amp; Expanding Access</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+When I dreamed of building my own clinics, I imagined spaces that felt less like doctor’s offices and more like sanctuaries—welcoming, calm, and stigma-free. And because I believe access matters, I am passionate about bringing these resources not only to Utah cities, but also to rural Utah where care is scarce.
+</p>
 </div>
 </div>
-</section>
-<!-- Philosophy Section -->
-<section class="bg-surface-container py-section-gap px-margin-mobile md:px-margin-desktop">
-<div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-section-gap items-start">
-<div>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">An Unhurried Approach to Care</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">My philosophy centers on creating a space where true healing can begin. It requires time, patience, and a deep respect for your unique journey.</p>
-<ul class="space-y-6">
-<li class="flex gap-4">
-<span class="material-symbols-outlined text-clay-warm mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
-<div>
-<span class="font-label-md text-label-md text-primary block mb-1">Listen before recommending</span>
-<span class="font-body-md text-body-md text-on-surface-variant">Understanding your story is the crucial first step.</span>
+
+<!-- Special Focus Banner: Mentoring the Next Generation -->
+<div class="bg-surface-bright border border-on-surface/10 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center">
+<div class="w-14 h-14 rounded-2xl bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">school</span>
 </div>
-</li>
-<li class="flex gap-4">
-<span class="material-symbols-outlined text-clay-warm mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
-<div>
-<span class="font-label-md text-label-md text-primary block mb-1">Understand the whole person</span>
-<span class="font-body-md text-body-md text-on-surface-variant">Looking beyond symptoms to see the complete picture of your health.</span>
+<div class="space-y-3">
+<h3 class="font-headline-md text-2xl text-primary font-semibold">Shaping the Future of Mental Health Care</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+I know how difficult it is for students to find clinical placements—it was one of the hardest parts of my own training. That’s why I’m building a practice that also functions as a training hub for future therapists and Psychiatric-Mental Health Nurse Practitioners. Supporting the next generation is one of the best ways I can give back to the profession that has given me so much.
+</p>
 </div>
-</li>
-<li class="flex gap-4">
-<span class="material-symbols-outlined text-clay-warm mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
-<div>
-<span class="font-label-md text-label-md text-primary block mb-1">Explain options clearly</span>
-<span class="font-body-md text-body-md text-on-surface-variant">Ensuring you have the knowledge to make informed decisions.</span>
 </div>
-</li>
-<li class="flex gap-4">
-<span class="material-symbols-outlined text-clay-warm mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
-<div>
-<span class="font-label-md text-label-md text-primary block mb-1">Collaborate on treatment decisions</span>
-<span class="font-body-md text-body-md text-on-surface-variant">You are an active partner in your care plan.</span>
+
+<!-- Warm Personal Closing Quote Box -->
+<div class="bg-surface-container rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto space-y-6 border border-clay-warm/30 shadow-2xs">
+<span class="material-symbols-outlined text-clay-warm text-4xl">format_quote</span>
+<p class="font-headline-md text-lg md:text-xl text-primary font-medium leading-relaxed italic">
+"So, if you’re here, I want you to know—you don’t have to walk this journey alone. Whether you’re a veteran seeking healing, a family coping with addiction, or someone simply trying to find your way through the stress of life, you belong here. And together, we’ll find a path forward."
+</p>
+<div class="pt-2">
+<p class="font-label-md text-sm font-bold text-primary uppercase tracking-widest">— Laura Jane Hyte-Garner</p>
+<p class="text-xs text-sage-muted">MSN, APRN, PMHNP-BC</p>
 </div>
-</li>
-<li class="flex gap-4">
-<span class="material-symbols-outlined text-clay-warm mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
-<div>
-<span class="font-label-md text-label-md text-primary block mb-1">Medication as one tool</span>
-<span class="font-body-md text-body-md text-on-surface-variant">Utilizing prescriptions as part of a broader, holistic strategy, not the entire plan.</span>
-</div>
-</li>
-</ul>
-</div>
-<div class="h-full min-h-[400px]">
-<img class="w-full h-full object-cover rounded-xl" data-alt="A serene, detailed still life capturing the unhurried atmosphere of a boutique psychiatric practice. An open journal rests on a natural wood table beside a warm cup of tea and a small, delicate potted plant. Soft, diffused daylight filters in, creating a calm, modern light-mode aesthetic with a palette of ivory, sage green, and natural textures. The mood is peaceful and intentional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvmH4BANwr8jOknWI9i2fib0fBWJnScfEw1tuXw4JOnjyV2lqtr-ZhpGiuX_9mmk_oeFcZ9OV4PocL9x2LJMvlugx8dv8BLWc3uPPou4uFvk6sA8wP0TwR_Tu_LPB5mvo5LYhODDbh2AmDFMewCAhkiGY_W6hNy_pLkjq5vreN8MxkZbFPuPmx7Q2tSPuX6HJGBvcWxNOt-uec44Sts1_efINy5g7H-pgzTMic4qcU9v-5TnY01NURQQ"/>
 </div>
 </div>
 </section>
@@ -327,6 +387,7 @@
 <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
 <span>© 2026 All rights reserved</span>
 <nav class="flex items-center gap-6 font-label-md text-label-md">
+<a href="/fees_and_insurance/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Pricing &amp; Insurance</a>
 <a href="/privacy_policy/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Privacy Policy</a>
 <a href="/legal/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Legal</a>
 </nav>

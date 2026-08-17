@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <g transform="translate(10, 15)">
+    <!-- Cross Symbol -->
+    <path d="M 12 0 H 24 V 12 H 36 V 24 H 24 V 36 H 12 V 24 H 0 V 12 H 12 Z" fill="#005495"/>
+    <!-- Shield Symbol -->
+    <path d="M 52 0 H 76 L 82 18 C 82 32 64 42 64 42 C 64 42 46 32 46 18 Z" fill="#005495"/>
+    <path d="M 58 6 H 70 L 74 18 C 74 26 64 34 64 34 C 64 34 54 26 54 18 Z" fill="#ffffff"/>
+    <!-- Person figure inside shield -->
+    <circle cx="64" cy="14" r="3" fill="#005495"/>
+    <path d="M 59 26 C 59 20 69 20 69 26 Z" fill="#005495"/>
+  </g>
+  <!-- Brand Text -->
+  <text x="102" y="36" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="20" fill="#005495" letter-spacing="-0.5">BlueCross</text>
+  <text x="102" y="58" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="20" fill="#005495" letter-spacing="-0.5">BlueShield</text>
+</svg>

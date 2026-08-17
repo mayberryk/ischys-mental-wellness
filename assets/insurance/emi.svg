@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <g transform="translate(10, 15)">
+    <circle cx="18" cy="18" r="18" fill="#00A3B1"/>
+    <path d="M 8 18 Q 18 6 28 18 Q 18 30 8 18 Z" fill="#ffffff"/>
+  </g>
+  <text x="56" y="36" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="24" fill="#00A3B1" letter-spacing="-0.5">EMI Health</text>
+  <text x="56" y="52" font-family="'Inter', Arial, sans-serif" font-weight="500" font-size="11" fill="#666666" letter-spacing="1">UTAH BENEFIT NETWORK</text>
+</svg>

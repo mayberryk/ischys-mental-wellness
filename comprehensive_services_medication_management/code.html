@@ -37,7 +37,7 @@
                     "tertiary-container": "#5a6673",
                     "primary-fixed": "#dde5d4",
                     "outline": "#757871",
-                    "slate-blue": "#313D49",
+                    "slate-blue": "#0B4F54",
                     "on-error": "#ffffff",
                     "on-background": "#1b1c18",
                     "text-charcoal": "#1A1A1A",
@@ -51,12 +51,12 @@
                     "outline-variant": "#c5c7bf",
                     "background-ivory": "#F2F0E9",
                     "surface-container": "#f0eee7",
-                    "surface-tint": "#596153",
+                    "surface-tint": "#115D63",
                     "secondary-container": "#fec69c",
-                    "primary-container": "#5f6759",
+                    "primary-container": "#0B4F54",
                     "error-container": "#ffdad6",
-                    "clay-warm": "#C6946D",
-                    "sage-muted": "#5F6759",
+                    "clay-warm": "#C89547",
+                    "sage-muted": "#0B4F54",
                     "on-tertiary": "#ffffff",
                     "on-tertiary-fixed": "#101d28",
                     "surface-container-high": "#eae8e1",
@@ -68,12 +68,12 @@
                     "secondary-fixed-dim": "#f2bb92",
                     "tertiary": "#424e5b",
                     "tertiary-fixed": "#d7e4f3",
-                    "secondary": "#7f5533",
+                    "secondary": "#C89547",
                     "on-error-container": "#93000a",
                     "surface-variant": "#e4e2dc",
                     "on-secondary-container": "#79512f",
                     "secondary-fixed": "#ffdcc3",
-                    "primary": "#474f42"
+                    "primary": "#0B4F54"
             },
             "borderRadius": {
                     "DEFAULT": "0.25rem",
@@ -140,14 +140,82 @@
 <a class="relative py-1 text-primary font-semibold border-b-2 border-primary" href="/comprehensive_services_medication_management/code.html" aria-current="page">Services</a>
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/what_to_expect_patient_journey/code.html">Patient Journey</a>
 <a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/mental_health_learning_center/code.html">Resources</a>
-<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/meet_laura_jane_hyte_garner/code.html">About</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/meet_laura_jane_hyte_garner/code.html">About Laura</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/fees_and_insurance/code.html">Pricing &amp; Insurance</a>
 </nav>
 <a href="/schedule_contact_ischys_mental_wellness/code.html" class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-tint transition-colors">Schedule an Appointment</a>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
+<button onclick="toggleMobileMenu()" class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Open Navigation Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
 </header>
+
+<!-- Mobile Navigation Drawer -->
+<div id="mobileMenu" class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300">
+<div class="fixed inset-y-0 right-0 w-full max-w-xs bg-background-ivory p-6 shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300" id="mobileMenuCard">
+<div class="space-y-6">
+<div class="flex items-center justify-between border-b border-on-surface/10 pb-4">
+<img src="/assets/logo.png" alt="Ischys Mental Wellness" class="h-12 w-auto object-contain" />
+<button onclick="toggleMobileMenu()" class="p-2 rounded-full text-primary hover:bg-surface-container transition-colors" aria-label="Close Menu">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-2 font-body-md text-base font-medium">
+<a href="/comprehensive_services_medication_management/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Services</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/what_to_expect_patient_journey/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Patient Journey</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/mental_health_learning_center/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Resources</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/meet_laura_jane_hyte_garner/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>About Laura</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="/fees_and_insurance/code.html" class="py-3 px-4 rounded-xl text-on-surface hover:bg-primary/10 hover:text-primary transition-colors flex items-center justify-between">
+<span>Pricing &amp; Insurance</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</nav>
+</div>
+<div class="pt-6 border-t border-on-surface/10 space-y-4">
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="w-full inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3.5 rounded-full font-label-md text-sm font-semibold hover:bg-surface-tint transition-colors shadow-sm">
+Schedule an Appointment
+</a>
+<div class="text-center text-xs text-on-surface-variant space-y-1">
+<p class="font-bold text-primary">(801) 796-2552</p>
+<p>802 Bamberger Dr, American Fork, UT</p>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const card = document.getElementById('mobileMenuCard');
+  if (menu.classList.contains('hidden')) {
+    menu.classList.remove('hidden');
+    setTimeout(() => {
+      menu.classList.remove('opacity-0');
+      card.classList.remove('translate-x-full');
+    }, 10);
+    document.body.style.overflow = 'hidden';
+  } else {
+    menu.classList.add('opacity-0');
+    card.classList.add('translate-x-full');
+    setTimeout(() => {
+      menu.classList.add('hidden');
+    }, 300);
+    document.body.style.overflow = '';
+  }
+}
+</script>
 <main>
 <!-- Unified Hero & Clinical Approach Section -->
 <section class="max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop pt-section-gap pb-16 text-center space-y-10 relative overflow-hidden">
@@ -212,6 +280,273 @@ Combining 30+ years of nursing foundation, specialized trauma care, and root-cau
 </div>
 </div>
 </section>
+
+<!-- What We Treat Section (Condensed) -->
+<section class="w-full bg-surface-container py-12 md:py-16 border-t border-on-surface/10">
+<div class="max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop space-y-8">
+<!-- Header -->
+<div class="text-center max-w-2xl mx-auto space-y-2">
+<span class="text-clay-warm font-label-md text-xs font-semibold uppercase tracking-widest block">Care Specialization</span>
+<h2 class="font-display-lg text-3xl md:text-4xl text-primary font-bold">What We Treat</h2>
+<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+      Comprehensive, evidence-based psychiatric evaluations, medication management, and whole-person care.
+</p>
+</div>
+
+<!-- Condensed 7-Card Grid (Clickable to open Detail Modal) -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-7 gap-4">
+<!-- Card 1 -->
+<button onclick="openConditionModal('anxiety')" class="bg-surface-bright p-5 rounded-2xl border border-outline-variant/60 shadow-2xs hover:border-primary hover:shadow-md transition-all text-center flex flex-col items-center justify-between h-48 group cursor-pointer w-full text-left">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-2 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-xl">psychology</span>
+</div>
+<div class="w-full text-center">
+<h3 class="font-headline-md text-sm font-bold text-primary mb-1">Anxiety &amp; OCD</h3>
+<p class="text-xs text-on-surface-variant leading-tight mb-2">GAD, Panic Attacks, Social Anxiety, OCD &amp; Tension</p>
+</div>
+<span class="text-[11px] font-semibold text-clay-warm group-hover:underline inline-flex items-center gap-1">Learn More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
+</button>
+
+<!-- Card 2 -->
+<button onclick="openConditionModal('depression')" class="bg-surface-bright p-5 rounded-2xl border border-outline-variant/60 shadow-2xs hover:border-primary hover:shadow-md transition-all text-center flex flex-col items-center justify-between h-48 group cursor-pointer w-full text-left">
+<div class="w-10 h-10 rounded-xl bg-clay-warm/15 text-clay-warm flex items-center justify-center mb-2 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-xl">mood</span>
+</div>
+<div class="w-full text-center">
+<h3 class="font-headline-md text-sm font-bold text-primary mb-1">Depression &amp; Mood</h3>
+<p class="text-xs text-on-surface-variant leading-tight mb-2">MDD, Bipolar I/II, Treatment-Resistant &amp; Postpartum</p>
+</div>
+<span class="text-[11px] font-semibold text-clay-warm group-hover:underline inline-flex items-center gap-1">Learn More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
+</button>
+
+<!-- Card 3 -->
+<button onclick="openConditionModal('ptsd')" class="bg-surface-bright p-5 rounded-2xl border border-outline-variant/60 shadow-2xs hover:border-primary hover:shadow-md transition-all text-center flex flex-col items-center justify-between h-48 group cursor-pointer w-full text-left">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-2 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-xl">shield_person</span>
+</div>
+<div class="w-full text-center">
+<h3 class="font-headline-md text-sm font-bold text-primary mb-1">PTSD &amp; Veterans</h3>
+<p class="text-xs text-on-surface-variant leading-tight mb-2">PTSD, Complex Trauma, VA Care &amp; Burnout</p>
+</div>
+<span class="text-[11px] font-semibold text-clay-warm group-hover:underline inline-flex items-center gap-1">Learn More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
+</button>
+
+<!-- Card 4 -->
+<button onclick="openConditionModal('adhd')" class="bg-surface-bright p-5 rounded-2xl border border-outline-variant/60 shadow-2xs hover:border-primary hover:shadow-md transition-all text-center flex flex-col items-center justify-between h-48 group cursor-pointer w-full text-left">
+<div class="w-10 h-10 rounded-xl bg-clay-warm/15 text-clay-warm flex items-center justify-center mb-2 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-xl">mindfulness</span>
+</div>
+<div class="w-full text-center">
+<h3 class="font-headline-md text-sm font-bold text-primary mb-1">ADHD &amp; Autism</h3>
+<p class="text-xs text-on-surface-variant leading-tight mb-2">Adult ADHD, Brain Fog &amp; Neurodivergent Support</p>
+</div>
+<span class="text-[11px] font-semibold text-clay-warm group-hover:underline inline-flex items-center gap-1">Learn More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
+</button>
+
+<!-- Card 5 -->
+<button onclick="openConditionModal('addiction')" class="bg-surface-bright p-5 rounded-2xl border border-outline-variant/60 shadow-2xs hover:border-primary hover:shadow-md transition-all text-center flex flex-col items-center justify-between h-48 group cursor-pointer w-full text-left">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-2 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-xl">health_and_safety</span>
+</div>
+<div class="w-full text-center">
+<h3 class="font-headline-md text-sm font-bold text-primary mb-1">Addiction &amp; Recovery</h3>
+<p class="text-xs text-on-surface-variant leading-tight mb-2">Alcohol, Substance Use &amp; Dual Diagnosis</p>
+</div>
+<span class="text-[11px] font-semibold text-clay-warm group-hover:underline inline-flex items-center gap-1">Learn More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
+</button>
+
+<!-- Card 6: LGBTQ+ Affirming Care -->
+<button onclick="openConditionModal('lgbtq')" class="bg-surface-bright p-5 rounded-2xl border border-outline-variant/60 shadow-2xs hover:border-primary hover:shadow-md transition-all text-center flex flex-col items-center justify-between h-48 group cursor-pointer w-full text-left">
+<div class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center mb-2 group-hover:bg-primary transition-colors shrink-0">
+<svg class="w-6 h-6 shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
+<defs>
+<linearGradient id="rainbowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#E53935"/>
+<stop offset="25%" stop-color="#FB8C00"/>
+<stop offset="50%" stop-color="#FDD835"/>
+<stop offset="75%" stop-color="#43A047"/>
+<stop offset="100%" stop-color="#1E88E5"/>
+</linearGradient>
+</defs>
+<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#rainbowGrad)"/>
+</svg>
+</div>
+<div class="w-full text-center">
+<h3 class="font-headline-md text-sm font-bold text-primary mb-1">LGBTQ+ Affirming</h3>
+<p class="text-xs text-on-surface-variant leading-tight mb-2">Inclusive Care, Minority Stress &amp; Identity Support</p>
+</div>
+<span class="text-[11px] font-semibold text-clay-warm group-hover:underline inline-flex items-center gap-1">Learn More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
+</button>
+
+<!-- Card 7: Sleep & Somatic Care -->
+<button onclick="openConditionModal('sleep')" class="bg-surface-bright p-5 rounded-2xl border border-outline-variant/60 shadow-2xs hover:border-primary hover:shadow-md transition-all text-center flex flex-col items-center justify-between h-48 group cursor-pointer w-full text-left">
+<div class="w-10 h-10 rounded-xl bg-clay-warm/15 text-clay-warm flex items-center justify-center mb-2 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-xl">bedtime</span>
+</div>
+<div class="w-full text-center">
+<h3 class="font-headline-md text-sm font-bold text-primary mb-1">Sleep &amp; Somatic Care</h3>
+<p class="text-xs text-on-surface-variant leading-tight mb-2">Insomnia, Physical Stress &amp; Root Cause Testing</p>
+</div>
+<span class="text-[11px] font-semibold text-clay-warm group-hover:underline inline-flex items-center gap-1">Learn More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
+</button>
+</div>
+</div>
+</section>
+
+<!-- Condition Detail Modal -->
+<div id="conditionModal" class="fixed inset-0 bg-on-surface/50 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300 items-center justify-center p-4">
+<div id="conditionModalCard" class="bg-background-ivory border border-outline-variant/60 rounded-3xl max-w-xl w-full p-6 md:p-8 shadow-2xl space-y-6 transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto">
+<!-- Modal Header -->
+<div class="flex items-start justify-between border-b border-on-surface/10 pb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span id="modalIcon" class="material-symbols-outlined text-2xl">psychology</span>
+</div>
+<div>
+<span id="modalBadge" class="text-xs font-semibold text-clay-warm uppercase tracking-wider block">Care Specialization</span>
+<h3 id="modalTitle" class="font-headline-md text-2xl font-bold text-primary">Condition Details</h3>
+</div>
+</div>
+<button onclick="closeConditionModal()" class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container transition-colors" aria-label="Close modal">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+
+<!-- Modal Description & Condition List -->
+<div class="space-y-4">
+<p id="modalDesc" class="font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed">
+      Detailed explanation about Laura's clinical approach...
+</p>
+<div class="bg-surface-bright rounded-2xl p-5 border border-outline-variant/50 space-y-2">
+<span class="text-xs font-bold text-primary uppercase tracking-wider block">Specific Conditions Evaluated &amp; Treated:</span>
+<ul id="modalList" class="space-y-2">
+<!-- Dynamic list items injected via JS -->
+</ul>
+</div>
+</div>
+
+<!-- Modal Footer CTA -->
+<div class="pt-4 border-t border-on-surface/10 flex flex-col sm:flex-row items-center gap-3 justify-end">
+<button onclick="closeConditionModal()" class="w-full sm:w-auto px-5 py-3 rounded-full border border-outline-variant text-primary font-label-md text-sm font-semibold hover:bg-surface-container transition-colors">
+      Close
+</button>
+<a id="modalCtaLink" href="/schedule_contact_ischys_mental_wellness/code.html" class="w-full sm:w-auto bg-primary text-on-primary px-7 py-3 rounded-full font-label-md text-sm font-semibold hover:bg-surface-tint transition-colors text-center shadow-sm">
+<span id="modalCta">Schedule an Evaluation</span>
+</a>
+</div>
+</div>
+</div>
+
+<script>
+const conditionData = {
+  anxiety: {
+    title: "Anxiety, Panic & OCD Care",
+    badge: "Nervous System & Tension Regulation",
+    icon: "psychology",
+    description: "Chronic anxiety, panic attacks, and OCD often stem from a nervous system stuck in hyperarousal mode. Laura conducts an unhurried, thorough assessment to differentiate between situational stress, physical contributors (such as iron deficiency or sleep disruption), and psychiatric factors, pairing evidence-based medication management with somatic regulation.",
+    list: ["Generalized Anxiety Disorder (GAD)", "Panic Disorder & Agoraphobia", "Social & Performance Anxiety", "Obsessive-Compulsive Disorder (OCD)", "Nervous System Dysregulation & Physical Tension"],
+    cta: "Schedule an Anxiety Evaluation"
+  },
+  depression: {
+    title: "Depression & Mood Disorders",
+    badge: "Restoring Balance & Vitality",
+    icon: "mood",
+    description: "Depression impacts motivation, sleep, energy, and physical vitality. Laura evaluates root physiological factors including thyroid function, iron levels, and hormonal shifts, providing tailored medication management and supportive holistic care.",
+    list: ["Major Depressive Disorder (MDD)", "Treatment-Resistant Depression", "Bipolar I & II Spectrum Disorders", "Perinatal & Postpartum Mood Changes", "Seasonal Affective Disorder (SAD)"],
+    cta: "Schedule a Depression Evaluation"
+  },
+  ptsd: {
+    title: "Trauma, PTSD & Veteran Care",
+    badge: "Trauma-Informed & VA Specialized",
+    icon: "shield_person",
+    description: "Drawing from extensive clinical experience in VA medical centers and trauma care, Laura provides a safe, unhurried sanctuary for veterans, first responders, and individuals navigating complex trauma, C-PTSD, and severe grief.",
+    list: ["Post-Traumatic Stress Disorder (PTSD)", "Complex Trauma (C-PTSD)", "Military & Combat Veteran Trauma", "First Responder Burnout & Moral Injury", "Complicated Grief & Sudden Loss"],
+    cta: "Schedule a Trauma Evaluation"
+  },
+  adhd: {
+    title: "Adult ADHD & Neurodivergence",
+    badge: "Executive Functioning & Clarity",
+    icon: "mindfulness",
+    description: "Navigating ADHD or autism as an adult requires a supportive, neurodivergent-affirming lens. Laura evaluates attention challenges, executive dysfunction, and sensory overwhelm to build a clear, balanced treatment plan.",
+    list: ["Adult ADHD & ADD Evaluation", "Executive Functioning & Task Initiation", "Autism Spectrum Affirming Support", "Brain Fog & Overwhelm Management"],
+    cta: "Schedule an ADHD Evaluation"
+  },
+  addiction: {
+    title: "Addiction & Dual Diagnosis Care",
+    badge: "Compassionate Recovery Support",
+    icon: "health_and_safety",
+    description: "Substance use disorders often co-occur with underlying anxiety, depression, or unaddressed trauma. Laura offers non-judgmental, whole-person addiction medicine, medication-assisted recovery, and family support.",
+    list: ["Alcohol Use Disorder (AUD) Recovery", "Substance Use & Dual-Diagnosis Care", "Prescription Medication Stabilization", "Family Recovery & Relapse Prevention"],
+    cta: "Schedule a Recovery Consultation"
+  },
+  lgbtq: {
+    title: "LGBTQ+ & Affirming Care",
+    badge: "Inclusive, Safe & Trauma-Informed",
+    icon: "favorite",
+    description: "Laura is deeply committed to providing an inclusive, safe, and trauma-informed space for LGBTQ+ individuals and families. Recognizing how often gender and sexual minorities face misunderstanding or discrimination in healthcare, Laura offers compassionate, evidence-based psychiatric evaluations, medication management, and supportive care tailored to your unique journey.",
+    list: [
+      "LGBTQ+ Affirming Mental Healthcare & Medication Management",
+      "Gender Affirming Mental Health Support",
+      "Identity Exploration & Minority Stress Relief",
+      "Anxiety, Mood & Trauma Support for LGBTQ+ Youth & Adults",
+      "Family Acceptance & Relationship Support"
+    ],
+    cta: "Schedule an Affirming Care Consultation"
+  },
+  sleep: {
+    title: "Sleep, Somatic & Integrative Care",
+    badge: "Mind-Body Restoration",
+    icon: "bedtime",
+    description: "Sleep disruptions and physical stress symptoms frequently exacerbate mental health struggles. Laura investigates sleep architecture, iron deficiency, hormone balance, and somatic tension to restore overall wellness.",
+    list: ["Insomnia & Sleep Architecture Disruptions", "Physical Stress Symptoms & Tension", "Iron & Hormonal Root-Cause Investigation", "Holistic Mind-Body Wellness Support"],
+    cta: "Schedule a Wellness Evaluation"
+  }
+};
+
+function openConditionModal(key) {
+  const data = conditionData[key];
+  if (!data) return;
+  document.getElementById('modalTitle').textContent = data.title;
+  document.getElementById('modalBadge').textContent = data.badge;
+  document.getElementById('modalIcon').textContent = data.icon;
+  document.getElementById('modalDesc').textContent = data.description;
+  document.getElementById('modalCta').textContent = data.cta;
+
+  const listContainer = document.getElementById('modalList');
+  listContainer.innerHTML = data.list.map(item => `
+    <li class="flex items-center gap-2.5 text-xs md:text-sm text-on-surface-variant">
+      <span class="w-2 h-2 rounded-full bg-clay-warm shrink-0"></span>
+      <span>${item}</span>
+    </li>
+  `).join('');
+
+  const modal = document.getElementById('conditionModal');
+  const card = document.getElementById('conditionModalCard');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  setTimeout(() => {
+    modal.classList.remove('opacity-0');
+    modal.classList.add('opacity-100');
+    card.classList.remove('scale-95');
+    card.classList.add('scale-100');
+  }, 10);
+  document.body.style.overflow = 'hidden';
+}
+
+function closeConditionModal() {
+  const modal = document.getElementById('conditionModal');
+  const card = document.getElementById('conditionModalCard');
+  modal.classList.remove('opacity-100');
+  modal.classList.add('opacity-0');
+  card.classList.remove('scale-100');
+  card.classList.add('scale-95');
+  setTimeout(() => {
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+  }, 300);
+  document.body.style.overflow = '';
+}
+</script>
 
 <!-- Core Services Grid -->
 <section class="w-full bg-surface-container-low border-y border-on-surface/10 py-section-gap">
@@ -505,6 +840,7 @@ Stopping medication requires careful planning and a gradual taper to avoid withd
 <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
 <span>© 2026 All rights reserved</span>
 <nav class="flex items-center gap-6 font-label-md text-label-md">
+<a href="/fees_and_insurance/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Pricing &amp; Insurance</a>
 <a href="/privacy_policy/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Privacy Policy</a>
 <a href="/legal/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Legal</a>
 </nav>
