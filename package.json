@@ -1,0 +1,10 @@
+{
+  "name": "stitch-ischys-mental-wellness-redesign",
+  "version": "1.0.0",
+  "description": "Ischys Mental Wellness Redesign Web Application",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "dev": "python3 -m http.server 8080"
+  }
+}

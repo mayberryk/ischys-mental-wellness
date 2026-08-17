@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ischys Mental Wellness</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "on-secondary": "#ffffff",
+                      "surface-bright": "#fbf9f2",
+                      "on-error-container": "#93000a",
+                      "background-ivory": "#F2F0E9",
+                      "surface-variant": "#e4e2dc",
+                      "on-primary-fixed-variant": "#41493c",
+                      "tertiary": "#424e5b",
+                      "tertiary-fixed-dim": "#bbc8d7",
+                      "on-surface-variant": "#454841",
+                      "clay-warm": "#C6946D",
+                      "on-primary": "#ffffff",
+                      "inverse-primary": "#c1c9b8",
+                      "on-surface": "#1b1c18",
+                      "secondary": "#7f5533",
+                      "inverse-on-surface": "#f3f1ea",
+                      "on-tertiary-fixed": "#101d28",
+                      "on-tertiary-fixed-variant": "#3c4854",
+                      "on-background": "#1b1c18",
+                      "surface-dim": "#dcdad3",
+                      "secondary-container": "#fec69c",
+                      "background": "#fbf9f2",
+                      "sage-muted": "#5F6759",
+                      "on-error": "#ffffff",
+                      "surface": "#fbf9f2",
+                      "primary": "#474f42",
+                      "text-charcoal": "#1A1A1A",
+                      "outline-variant": "#c5c7bf",
+                      "surface-container-highest": "#e4e2dc",
+                      "on-primary-fixed": "#161e13",
+                      "slate-blue": "#313D49",
+                      "on-secondary-fixed-variant": "#633e1e",
+                      "primary-fixed-dim": "#c1c9b8",
+                      "on-tertiary-container": "#d7e4f3",
+                      "outline": "#757871",
+                      "surface-container-high": "#eae8e1",
+                      "secondary-fixed-dim": "#f2bb92",
+                      "inverse-surface": "#30312c",
+                      "on-primary-container": "#dde5d4",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#d7e4f3",
+                      "primary-fixed": "#dde5d4",
+                      "primary-container": "#5f6759",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#596153",
+                      "surface-container-low": "#f6f4ec",
+                      "secondary-fixed": "#ffdcc3",
+                      "on-secondary-container": "#79512f",
+                      "tertiary-container": "#5a6673",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed": "#2f1500",
+                      "surface-container": "#f0eee7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "80px",
+                      "gutter": "24px",
+                      "content-gap": "32px",
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.03em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky bg-background-ivory border-b border-on-surface/10 z-50">
+<div class="flex justify-between items-center max-w-[1400px] mx-auto px-margin-desktop py-3 md:py-4 h-24 md:h-28">
+<a href="/index.html" aria-label="Ischys Mental Wellness Home" class="relative z-10 inline-flex items-center hover:opacity-90 transition-opacity"><img src="/assets/logo.png" alt="Ischys Mental Wellness" class="h-[120px] md:h-[144px] lg:h-[168px] w-auto object-contain" /></a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-content-gap font-body-md text-body-md font-label-md text-label-md items-center">
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/comprehensive_services_medication_management/code.html">Services</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/what_to_expect_patient_journey/code.html">Patient Journey</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/mental_health_learning_center/code.html">Resources</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/meet_laura_jane_hyte_garner/code.html">About</a>
+</nav>
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-tint transition-colors">Schedule an Appointment</a>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="max-w-[1400px] mx-auto px-margin-desktop py-section-gap grid md:grid-cols-2 gap-section-gap items-center">
+<div class="flex flex-col gap-6">
+<!-- Reassuring Eyebrow Badge -->
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-surface-container-high w-fit border border-on-surface/5">
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase font-semibold">You’re Not Broken — You’re Overloaded</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-display-lg text-4xl md:text-5xl lg:text-[52px] leading-[1.15] text-primary font-semibold">
+Let’s bring you back to calm.
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">Expert psychiatric evaluation and medication management for anxiety, depression, ADHD, and trauma. Providing thoughtful, collaborative care—in-person and via telehealth in Utah—with dedicated time to understand your health, experiences, medications, lifestyle, and goals.</p>
+<div class="flex flex-wrap gap-base pt-2">
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="inline-flex items-center justify-center bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-tint transition-all shadow-sm">
+                        Schedule an Appointment
+                    </a>
+<a href="/what_to_expect_patient_journey/code.html" class="inline-flex items-center justify-center border border-outline text-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container-low transition-colors">
+                        What to Expect
+                    </a>
+</div>
+<!-- Trust Indicators -->
+<div class="flex flex-wrap gap-x-8 gap-y-3 mt-6 pt-6 border-t border-on-surface/10">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-sage-muted text-xl">verified</span>
+<span class="font-label-md text-label-md font-semibold text-primary">30+ Years Experience</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-sage-muted text-xl">medical_services</span>
+<span class="font-label-md text-label-md font-semibold text-primary">PMHNP-BC</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-sage-muted text-xl">spa</span>
+<span class="font-label-md text-label-md font-semibold text-primary">Integrative Care</span>
+</div>
+</div>
+</div>
+<div class="relative h-[600px] rounded-2xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover object-top md:object-[center_20%]" alt="A happy patient smiling radiantly in a warm, welcoming therapy office setting" src="/assets/happy_patient_portrait.jpg" />
+</div>
+</section>
+<!-- What I Treat Section (Soft Organic Design - 100% Site Harmonious) -->
+<section class="bg-surface-container-low py-16 md:py-24">
+<div class="max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop space-y-12">
+<!-- Section Header -->
+<div class="text-center max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-3xl md:text-4xl text-primary font-semibold">At Ischys Wellness, we can help with:</h2>
+</div>
+
+<!-- Soft Organic Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+<!-- Card 1: Anxiety -->
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-7 shadow-2xs hover:shadow-md hover:border-sage-muted/40 hover:-translate-y-1 transition-all duration-300 group">
+<div class="w-14 h-14 rounded-2xl bg-sage-muted/10 text-sage-muted flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<!-- Scribble Ball Icon -->
+<svg class="w-9 h-9 stroke-current fill-none" viewBox="0 0 100 100" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M 25,50 C 10,25 35,8 60,15 C 85,22 92,45 80,68 C 68,90 40,92 20,80 C 2,68 8,40 28,25 C 48,10 78,18 86,40 C 94,62 72,88 48,84 C 24,80 12,52 28,34 C 44,16 76,26 80,50 C 84,74 56,86 38,72 C 20,58 26,32 46,26 C 66,20 80,42 70,62 C 60,82 34,74 30,54 C 26,34 50,24 64,36 C 78,48 68,70 50,70 C 32,70 34,48 48,40 C 62,32 68,54 56,60 C 44,66 42,46 54,48"/>
+</svg>
+</div>
+<h3 class="font-headline-md text-xl font-semibold text-primary mb-3">Anxiety</h3>
+<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Generalized anxiety, panic attacks, social anxiety, chronic worry, and stress management.</p>
+</div>
+
+<!-- Card 2: Depression -->
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-7 shadow-2xs hover:shadow-md hover:border-sage-muted/40 hover:-translate-y-1 transition-all duration-300 group">
+<div class="w-14 h-14 rounded-2xl bg-sage-muted/10 text-sage-muted flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<!-- Cloud with Rain Icon -->
+<svg class="w-8 h-8 stroke-current fill-none" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M6.5 15.5A4.5 4.5 0 0 1 5 7.5a6 6 0 0 1 11.8-1.5 4 4 0 0 1 3.7 4.2A4.5 4.5 0 0 1 17.5 15.5H6.5z"/>
+<path d="M8 18v2M12 17v3M16 18v2" stroke-linecap="round"/>
+</svg>
+</div>
+<h3 class="font-headline-md text-xl font-semibold text-primary mb-3">Depression</h3>
+<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Major depressive disorder, persistent low mood, emotional burnout, and seasonal depression.</p>
+</div>
+
+<!-- Card 3: Relationships -->
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-7 shadow-2xs hover:shadow-md hover:border-sage-muted/40 hover:-translate-y-1 transition-all duration-300 group">
+<div class="w-14 h-14 rounded-2xl bg-clay-warm/10 text-clay-warm flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<!-- Interlocking Hearts Icon -->
+<svg class="w-8 h-8 stroke-current fill-none" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M7 13.5C4.8 11.5 3.5 9.5 3.5 7.5A3.5 3.5 0 0 1 7 4c1.8 0 3.2 1 4 2.5C11.8 5 13.2 4 15 4a3.5 3.5 0 0 1 3.5 3.5c0 2-1.3 4-3.5 6L11 17.5l-4-4z"/>
+<path d="M12.5 17.5c-2.2-2-3.5-4-3.5-6a3.5 3.5 0 0 1 3.5-3.5c1.8 0 3.2 1 4 2.5 0.8-1.5 2.2-2.5 4-2.5a3.5 3.5 0 0 1 3.5 3.5c0 2-1.3 4-3.5 6l-4 4-4-4z" opacity="0.75"/>
+</svg>
+</div>
+<h3 class="font-headline-md text-xl font-semibold text-primary mb-3">Relationships</h3>
+<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Interpersonal conflict, emotional communication, family stress, and life transition challenges.</p>
+</div>
+
+<!-- Card 4: Addiction -->
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-7 shadow-2xs hover:shadow-md hover:border-sage-muted/40 hover:-translate-y-1 transition-all duration-300 group">
+<div class="w-14 h-14 rounded-2xl bg-sage-muted/10 text-sage-muted flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<!-- Pills & Capsule Icon -->
+<svg class="w-8 h-8 stroke-current fill-none" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3.5" y="10.5" width="13" height="7" rx="3.5" transform="rotate(-30 10 14)"/>
+<line x1="7.5" y1="15" x2="12.5" y2="12"/>
+<circle cx="17.5" cy="7.5" r="3"/>
+<line x1="15.5" y1="7.5" x2="19.5" y2="7.5"/>
+</svg>
+</div>
+<h3 class="font-headline-md text-xl font-semibold text-primary mb-3">Addiction</h3>
+<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Substance use recovery support, habit change, impulse management, and relapse prevention.</p>
+</div>
+
+<!-- Card 5: And More -->
+<a href="/comprehensive_services_medication_management/code.html" class="bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-7 flex flex-col justify-between shadow-2xs hover:shadow-md hover:border-sage-muted/40 hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<!-- Blooming Flower Icon -->
+<svg class="w-8 h-8 stroke-current fill-none" viewBox="0 0 24 24" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="2.5"/>
+<path d="M12 4.5a3.5 3.5 0 0 0-3.5 3.5c0 2 3.5 4 3.5 4s3.5-2 3.5-4a3.5 3.5 0 0 0-3.5-3.5z"/>
+<path d="M12 19.5a3.5 3.5 0 0 0 3.5-3.5c0-2-3.5-4-3.5-4s-3.5 2-3.5 4a3.5 3.5 0 0 0 3.5 3.5z"/>
+<path d="M4.5 12a3.5 3.5 0 0 0 3.5 3.5c2 0 4-3.5 4-3.5s-2-3.5-4-3.5a3.5 3.5 0 0 0-3.5 3.5z"/>
+<path d="M19.5 12a3.5 3.5 0 0 0-3.5-3.5c-2 0-4 3.5-4 3.5s2 3.5 4 3.5a3.5 3.5 0 0 0 3.5-3.5z"/>
+</svg>
+</div>
+<h3 class="font-headline-md text-xl font-semibold text-primary mb-3">And More</h3>
+<p class="font-body-md text-sm text-on-surface-variant leading-relaxed">ADHD evaluation &amp; management, trauma / PTSD, bipolar, insomnia, grief, and custom care plans.</p>
+</div>
+<div class="mt-8 pt-4 border-t border-on-surface/5 flex items-center justify-between text-xs font-semibold text-primary group-hover:text-sage-muted transition-colors">
+<span>Learn More</span>
+<span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</a>
+</div>
+
+<!-- Text Beneath Cards -->
+<p class="text-center font-body-lg text-on-surface-variant text-base md:text-lg max-w-4xl mx-auto pt-8 leading-relaxed italic">
+"Healing isn’t just about medication. It’s about safety, trust, and care that understands your whole story. With years in nursing, trauma-informed training, and a mission fueled by my own experiences with healing, I help you find relief without feeling rushed, judged, or dismissed."
+</p>
+</section>
+
+<!-- Free Assessment Quiz Banner -->
+<section class="bg-surface-container-lowest border-y border-on-surface/10 py-16 md:py-20 text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-sage-muted/5 via-transparent to-clay-warm/5 pointer-events-none"></div>
+<div class="max-w-[1000px] mx-auto px-margin-mobile md:px-margin-desktop relative z-10 space-y-6">
+
+<h2 class="font-display-lg text-headline-lg md:text-display-lg text-primary leading-snug">
+Not sure where to start? Take the free quiz to identify your top challenges and get personalized recommendations.
+</h2>
+<p class="font-body-sm text-xs md:text-sm text-on-surface-variant max-w-2xl mx-auto">
+This quiz is not a diagnostic tool. It is only for informational purposes and to help guide you to the right resources.
+</p>
+<div class="pt-2">
+<button onclick="openQuizModal()" class="inline-flex items-center gap-3 bg-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-full hover:bg-primary/90 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+<span>Take Quiz</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+
+<!-- Services Grid -->
+<section class="max-w-[1400px] mx-auto px-margin-desktop py-section-gap">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-content-gap">Services</h2>
+<div class="grid md:grid-cols-2 gap-gutter">
+<div class="border border-outline-variant rounded-2xl p-8 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-sage-muted text-3xl">psychology</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Psychiatric Evaluation</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Comprehensive assessments that look at the whole person, not just a checklist of symptoms.</p>
+</div>
+<div class="border border-outline-variant rounded-2xl p-8 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-sage-muted text-3xl">medication</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Medication Management</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Thoughtful prescribing practices prioritizing collaborative decisions and minimizing side effects.</p>
+</div>
+<div class="border border-outline-variant rounded-2xl p-8 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-sage-muted text-3xl">compare_arrows</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Second Opinions</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Reviewing your current treatment plan to ensure it aligns with your long-term wellness goals.</p>
+</div>
+<div class="border border-outline-variant rounded-2xl p-8 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-sage-muted text-3xl">local_florist</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Integrative Approach</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Addressing lifestyle, sleep, and nutrition alongside conventional psychiatric care.</p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-sage-muted text-on-primary py-section-gap text-center">
+<div class="max-w-[1000px] mx-auto px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg mb-6">Ready to feel heard and understand your options?</h2>
+<div class="flex justify-center gap-4">
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="bg-surface-container-lowest text-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-bright transition-colors">
+                        Schedule an Appointment
+                    </button></a>
+<button class="border border-on-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-on-primary/10 transition-colors">
+                        Contact Us
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-background-ivory border-t border-on-surface/10 py-10 md:py-12">
+<div class="max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop space-y-8">
+<!-- Top Tier: Brand & Contact, Crisis Notice, Social & BBB -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<!-- Left: Logo & Contact Info -->
+<div class="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left gap-3">
+<a href="/index.html" aria-label="Ischys Mental Wellness Home" class="inline-flex items-center hover:opacity-90 transition-opacity mb-1">
+<img src="/assets/logo.png" alt="Ischys Mental Wellness" class="h-20 md:h-28 w-auto object-contain" />
+</a>
+<div class="space-y-1 text-xs text-on-surface-variant">
+<p class="flex items-center justify-center md:justify-start gap-2 font-medium text-primary">
+<span class="material-symbols-outlined text-sm text-sage-muted">call</span>
+<a href="tel:8017962552" class="hover:underline">(801) 796-2552</a>
+</p>
+<p class="flex items-center justify-center md:justify-start gap-2">
+<span class="material-symbols-outlined text-sm text-sage-muted">location_on</span>
+<span>802 Bamberger Dr, American Fork, UT 84003</span>
+</p>
+</div>
+</div>
+
+<!-- Center: Crisis Notice -->
+<div class="md:col-span-5 bg-error-container/20 border border-error/15 rounded-xl p-4 text-center md:text-left flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-xl shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">error</span>
+<div class="text-xs text-on-surface-variant leading-relaxed">
+<p class="font-semibold text-error mb-0.5">If you are in crisis, do not use this service.</p>
+<p>Please dial <strong class="text-primary font-bold">911</strong> or the suicide and crisis hotline at <strong class="text-primary font-bold">988</strong>.</p>
+</div>
+</div>
+
+<!-- Right: Social Icons & BBB Seal -->
+<div class="md:col-span-3 flex flex-col items-center md:items-end gap-4">
+<!-- Social Icons -->
+<div class="flex items-center gap-2.5">
+<a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+</a>
+<a href="#" aria-label="Twitter" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.936 9.936 0 0024 4.59z"/></svg>
+</a>
+<a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+</a>
+<a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+</a>
+<a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525 0h3.08c.024 1.343.469 2.502 1.336 3.477.866.974 1.993 1.545 3.38 1.71v3.31a8.03 8.03 0 01-3.328-.73 6.946 6.946 0 01-1.388-.865v7.26c0 1.832-.505 3.432-1.516 4.8-1.011 1.368-2.38 2.053-4.108 2.053-1.637 0-3.037-.638-4.2-1.914C4.564 17.876 3.98 16.32 3.98 14.47c0-1.85.584-3.407 1.752-4.67 1.168-1.264 2.568-1.896 4.205-1.896.48 0 .978.064 1.494.192v3.36a3.869 3.869 0 00-1.494-.288c-.91 0-1.677.312-2.302.936-.625.624-.937 1.392-.937 2.304 0 .912.312 1.68.937 2.304.625.624 1.392.936 2.302.936.912 0 1.68-.312 2.304-.936.624-.624.936-1.392.936-2.304V0z"/></svg>
+</a>
+</div>
+
+<!-- BBB Badge -->
+<div class="flex items-center gap-2.5 border border-on-surface/10 bg-surface-bright px-3.5 py-2 rounded-lg shadow-2xs">
+<img src="/assets/bbb_accredited.png" alt="BBB Accredited Business A+ Rating" class="h-10 md:h-11 w-auto object-contain rounded" />
+<div class="flex flex-col text-xs leading-tight font-medium text-primary">
+<span class="font-semibold">BBB Accredited</span>
+<span class="text-sage-muted text-[11px]">A+ Rating</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Divider -->
+<div class="w-full border-t border-on-surface/10"></div>
+
+<!-- Bottom Tier: Copyright & Legal Links -->
+<div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+<span>© 2026 All rights reserved</span>
+<nav class="flex items-center gap-6 font-label-md text-label-md">
+<a href="/privacy_policy/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Privacy Policy</a>
+<a href="/legal/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Legal</a>
+</nav>
+</div>
+</div>
+</footer>
+
+<!-- Interactive Quiz Modal -->
+<div id="quizModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 md:p-6 overflow-y-auto bg-primary/40 backdrop-blur-md transition-opacity duration-300 opacity-0">
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded-3xl max-w-2xl w-full p-6 md:p-10 shadow-2xl relative my-auto transform transition-transform duration-300 scale-95" id="quizModalCard">
+<!-- Close Button -->
+<button onclick="closeQuizModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary flex items-center justify-center transition-colors" aria-label="Close quiz">
+<span class="material-symbols-outlined">close</span>
+</button>
+
+<!-- Quiz Content Container -->
+<div id="quizQuestionsContainer" class="space-y-8">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-muted/10 text-sage-muted text-xs font-semibold mb-3">
+<span>6-Question Wellness Check</span>
+</div>
+<h2 class="font-display-lg text-2xl md:text-3xl font-semibold text-primary mb-2">Is Your Nervous System in Survival Mode?</h2>
+<p class="font-body-md text-sm text-on-surface-variant">Answer these 6 quick questions to learn your state—and get free tools to shift toward calm.</p>
+</div>
+
+<!-- Questions List -->
+<form id="quizForm" class="space-y-6 max-h-[55vh] overflow-y-auto pr-2">
+<!-- Q1 -->
+<div class="border border-outline-variant/70 rounded-2xl p-5 bg-background-ivory/50">
+<label class="block font-headline-md text-sm md:text-base font-semibold text-primary mb-3">1. Do you feel “on edge” even when nothing is wrong?</label>
+<div class="flex flex-wrap gap-3">
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q1" value="2" class="accent-primary" onchange="updateQuizProgress()"> Yes
+</label>
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q1" value="1" class="accent-primary" onchange="updateQuizProgress()"> Sometimes
+</label>
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q1" value="0" class="accent-primary" onchange="updateQuizProgress()"> No
+</label>
+</div>
+</div>
+
+<!-- Q2 -->
+<div class="border border-outline-variant/70 rounded-2xl p-5 bg-background-ivory/50">
+<label class="block font-headline-md text-sm md:text-base font-semibold text-primary mb-3">2. Do you often zone out or lose track of time?</label>
+<div class="flex flex-wrap gap-3">
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q2" value="2" class="accent-primary" onchange="updateQuizProgress()"> Yes
+</label>
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q2" value="1" class="accent-primary" onchange="updateQuizProgress()"> Sometimes
+</label>
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q2" value="0" class="accent-primary" onchange="updateQuizProgress()"> No
+</label>
+</div>
+</div>
+
+<!-- Q3 -->
+<div class="border border-outline-variant/70 rounded-2xl p-5 bg-background-ivory/50">
+<label class="block font-headline-md text-sm md:text-base font-semibold text-primary mb-3">3. Is your sleep restless or interrupted?</label>
+<div class="flex flex-wrap gap-3">
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q3" value="2" class="accent-primary" onchange="updateQuizProgress()"> Yes
+</label>
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q3" value="1" class="accent-primary" onchange="updateQuizProgress()"> Sometimes
+</label>
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q3" value="0" class="accent-primary" onchange="updateQuizProgress()"> No
+</label>
+</div>
+</div>
+
+<!-- Q4 -->
+<div class="border border-outline-variant/70 rounded-2xl p-5 bg-background-ivory/50">
+<label class="block font-headline-md text-sm md:text-base font-semibold text-primary mb-3">4. Do you get headaches, stomach issues, or muscle tension?</label>
+<div class="flex flex-wrap gap-3">
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q4" value="2" class="accent-primary" onchange="updateQuizProgress()"> Yes
+</label>
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q4" value="1" class="accent-primary" onchange="updateQuizProgress()"> Sometimes
+</label>
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q4" value="0" class="accent-primary" onchange="updateQuizProgress()"> No
+</label>
+</div>
+</div>
+
+<!-- Q5 -->
+<div class="border border-outline-variant/70 rounded-2xl p-5 bg-background-ivory/50">
+<label class="block font-headline-md text-sm md:text-base font-semibold text-primary mb-3">5. Do you avoid certain situations without knowing why?</label>
+<div class="flex flex-wrap gap-3">
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q5" value="2" class="accent-primary" onchange="updateQuizProgress()"> Yes
+</label>
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q5" value="1" class="accent-primary" onchange="updateQuizProgress()"> Sometimes
+</label>
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q5" value="0" class="accent-primary" onchange="updateQuizProgress()"> No
+</label>
+</div>
+</div>
+
+<!-- Q6 -->
+<div class="border border-outline-variant/70 rounded-2xl p-5 bg-background-ivory/50">
+<label class="block font-headline-md text-sm md:text-base font-semibold text-primary mb-3">6. Do you feel tired but wired?</label>
+<div class="flex flex-wrap gap-3">
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q6" value="2" class="accent-primary" onchange="updateQuizProgress()"> Yes
+</label>
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q6" value="1" class="accent-primary" onchange="updateQuizProgress()"> Sometimes
+</label>
+<label class="quiz-option cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-outline-variant/60 bg-surface-bright text-xs font-medium text-on-surface hover:border-primary hover:bg-primary/5 transition-all">
+<input type="radio" name="q6" value="0" class="accent-primary" onchange="updateQuizProgress()"> No
+</label>
+</div>
+</div>
+</form>
+
+<!-- Bottom Bar with Live Progress & Submit Button -->
+<div class="pt-4 border-t border-on-surface/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<span id="quizCounter" class="text-xs font-medium text-on-surface-variant shrink-0">Answered 0/6</span>
+<div class="w-32 h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div id="quizProgressBar" class="h-full bg-sage-muted w-0 transition-all duration-300"></div>
+</div>
+</div>
+<button id="seeResultsBtn" onclick="calculateQuizResults()" class="w-full sm:w-auto bg-primary text-on-primary font-label-md text-sm px-6 py-3 rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-sm">
+See Results
+</button>
+</div>
+</div>
+
+<!-- Quiz Results Screen (Hidden initially) -->
+<div id="quizResultsContainer" class="hidden space-y-6 text-center py-4">
+<div class="w-16 h-16 rounded-full bg-sage-muted/15 text-sage-muted flex items-center justify-center mx-auto mb-2">
+<span class="material-symbols-outlined text-3xl">psychology_alt</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-on-surface/5 text-xs font-medium text-primary">
+<span>Your Personal Assessment Insight</span>
+</div>
+<h3 id="resultTitle" class="font-display-lg text-2xl md:text-3xl text-primary font-semibold">
+Nervous System Dysregulation &amp; Hyperarousal
+</h3>
+<p id="resultDescription" class="font-body-md text-sm md:text-base text-on-surface-variant max-w-lg mx-auto leading-relaxed">
+Your answers suggest that your nervous system may currently be stuck in a state of high alert or survival mode. This is common when chronic stress, anxiety, or unaddressed tension accumulates over time.
+</p>
+
+<div class="bg-surface-container-low rounded-2xl p-6 text-left border border-outline-variant/60 space-y-3 max-w-lg mx-auto">
+<h4 class="font-headline-md text-sm font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-sage-muted text-lg">check_circle</span>
+<span>Recommended Next Steps at Ischys:</span>
+</h4>
+<ul class="text-xs text-on-surface-variant space-y-2 list-disc list-inside leading-relaxed">
+<li><strong>Unhurried Initial Evaluation</strong> to explore root somatic &amp; psychiatric factors.</li>
+<li>Comprehensive medication &amp; wellness optimization.</li>
+<li>Personalized regulation tools for chronic worry and physical tension.</li>
+</ul>
+</div>
+
+<div class="pt-4 flex flex-col sm:flex-row justify-center gap-3">
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="bg-primary text-on-primary font-label-md text-sm px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-all shadow-sm">
+Schedule Evaluation
+</a>
+<button onclick="resetQuiz()" class="border border-outline-variant text-primary font-label-md text-sm px-6 py-3.5 rounded-xl hover:bg-surface-container transition-all">
+Retake Quiz
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function openQuizModal() {
+  const modal = document.getElementById('quizModal');
+  const card = document.getElementById('quizModalCard');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  setTimeout(() => {
+    modal.classList.remove('opacity-0');
+    modal.classList.add('opacity-100');
+    card.classList.remove('scale-95');
+    card.classList.add('scale-100');
+  }, 10);
+  document.body.style.overflow = 'hidden';
+}
+
+function closeQuizModal() {
+  const modal = document.getElementById('quizModal');
+  const card = document.getElementById('quizModalCard');
+  modal.classList.remove('opacity-100');
+  modal.classList.add('opacity-0');
+  card.classList.remove('scale-100');
+  card.classList.add('scale-95');
+  setTimeout(() => {
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }, 300);
+}
+
+function updateQuizProgress() {
+  const form = document.getElementById('quizForm');
+  let answered = 0;
+  for (let i = 1; i <= 6; i++) {
+    if (form.elements['q' + i] && form.elements['q' + i].value !== '') {
+      answered++;
+    }
+  }
+  document.getElementById('quizCounter').textContent = `Answered ${answered}/6`;
+  const pct = Math.round((answered / 6) * 100);
+  document.getElementById('quizProgressBar').style.width = pct + '%';
+}
+
+function calculateQuizResults() {
+  const form = document.getElementById('quizForm');
+  let totalScore = 0;
+  for (let i = 1; i <= 6; i++) {
+    const val = form.elements['q' + i] ? form.elements['q' + i].value : '';
+    if (val !== '') {
+      totalScore += parseInt(val, 10);
+    }
+  }
+
+  const questionsContainer = document.getElementById('quizQuestionsContainer');
+  const resultsContainer = document.getElementById('quizResultsContainer');
+  const title = document.getElementById('resultTitle');
+  const desc = document.getElementById('resultDescription');
+
+  if (totalScore >= 7) {
+    title.textContent = "High Nervous System Survival Mode";
+    desc.textContent = "Your responses indicate your nervous system is working overtime in high hyperarousal mode. Chronic tension, disrupted sleep, and feeling 'tired but wired' are signs that your body needs dedicated, unhurried psychiatric care and regulation support.";
+  } else if (totalScore >= 3) {
+    title.textContent = "Moderate Stress & Nervous System Tension";
+    desc.textContent = "You are experiencing periodic nervous system dysregulation. While you may have calm moments, stress and worry are taking a toll on your focus, energy, and physical well-being.";
+  } else {
+    title.textContent = "Mild Nervous System Strain";
+    desc.textContent = "Your nervous system appears relatively balanced, though occasional stress or sleep disruptions may still benefit from proactive wellness strategies and holistic guidance.";
+  }
+
+  questionsContainer.classList.add('hidden');
+  resultsContainer.classList.remove('hidden');
+}
+
+function resetQuiz() {
+  document.getElementById('quizForm').reset();
+  updateQuizProgress();
+  document.getElementById('quizResultsContainer').classList.add('hidden');
+  document.getElementById('quizQuestionsContainer').classList.remove('hidden');
+}
+</script>
+</body></html>

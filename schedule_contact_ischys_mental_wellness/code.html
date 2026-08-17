@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Schedule &amp; Contact | Ischys Mental Wellness</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Design System Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#d7e4f3",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "background": "#fbf9f2",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#c5c7bf",
+                    "surface": "#fbf9f2",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "primary-container": "#5f6759",
+                    "on-surface-variant": "#454841",
+                    "tertiary-fixed-dim": "#bbc8d7",
+                    "tertiary-container": "#5a6673",
+                    "on-tertiary-fixed": "#101d28",
+                    "on-background": "#1b1c18",
+                    "primary-fixed-dim": "#c1c9b8",
+                    "on-primary-fixed": "#161e13",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#fec69c",
+                    "slate-blue": "#313D49",
+                    "primary-fixed": "#dde5d4",
+                    "text-charcoal": "#1A1A1A",
+                    "on-primary-container": "#dde5d4",
+                    "on-secondary-fixed-variant": "#633e1e",
+                    "surface-tint": "#596153",
+                    "surface-container-low": "#f6f4ec",
+                    "on-tertiary-container": "#d7e4f3",
+                    "secondary-fixed-dim": "#f2bb92",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#1b1c18",
+                    "surface-container-highest": "#e4e2dc",
+                    "tertiary": "#424e5b",
+                    "background-ivory": "#F2F0E9",
+                    "clay-warm": "#C6946D",
+                    "on-tertiary-fixed-variant": "#3c4854",
+                    "sage-muted": "#5F6759",
+                    "primary": "#474f42",
+                    "secondary-fixed": "#ffdcc3",
+                    "on-secondary-container": "#79512f",
+                    "surface-container": "#f0eee7",
+                    "surface-container-high": "#eae8e1",
+                    "surface-variant": "#e4e2dc",
+                    "secondary": "#7f5533",
+                    "on-primary-fixed-variant": "#41493c",
+                    "inverse-primary": "#c1c9b8",
+                    "surface-bright": "#fbf9f2",
+                    "surface-dim": "#dcdad3",
+                    "outline": "#757871",
+                    "inverse-on-surface": "#f3f1ea",
+                    "inverse-surface": "#30312c",
+                    "on-secondary-fixed": "#2f1500"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "content-gap": "32px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "margin-mobile": "20px",
+                    "section-gap": "80px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky bg-background-ivory border-b border-on-surface/10 z-50">
+<div class="flex justify-between items-center max-w-[1400px] mx-auto px-margin-desktop py-3 md:py-4 h-24 md:h-28">
+<a href="/index.html" aria-label="Ischys Mental Wellness Home" class="relative z-10 inline-flex items-center hover:opacity-90 transition-opacity"><img src="/assets/logo.png" alt="Ischys Mental Wellness" class="h-[120px] md:h-[144px] lg:h-[168px] w-auto object-contain" /></a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-content-gap font-body-md text-body-md font-label-md text-label-md items-center">
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/comprehensive_services_medication_management/code.html">Services</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/what_to_expect_patient_journey/code.html">Patient Journey</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/mental_health_learning_center/code.html">Resources</a>
+<a class="relative py-1 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300" href="/meet_laura_jane_hyte_garner/code.html">About</a>
+</nav>
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-tint transition-colors">Schedule an Appointment</a>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative w-full py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto flex flex-col items-center text-center">
+<!-- Decorative Ambient Background (Subtle Organic Shape) -->
+<div class="absolute inset-0 pointer-events-none opacity-20 -z-10 bg-cover bg-center" data-alt="A highly abstract, extremely soft and blurred digital texture serving as a background. The image consists entirely of fluid, amorphous shapes blending muted sage greens, warm ivory, and soft clay tones together seamlessly. The lighting is diffused and ambient, creating a serene, unhurried, and deeply calming medical-spa atmosphere. There are no sharp lines, specific subjects, or distracting patterns, only a tranquil wash of professional wellness colors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZZD7XtnnDxCF5rXgG1fX47m_ynPHMJUch9iPaU4dr8BAcZ6jVOUxzydEy9sHbBgNTobVlMdA27Ey6_UcrKpgfHrs-Y0DOuIl0KmGWU9bezSGfNZsAcKwJRkCZYoQqdL_ib95HETPrXncXHzeua_TOVN5Fapzog0gfQ09isV6ZqNE40hD97girn0L2jV5ZzALdIK7a8g5nSZ7KllMHCmU1x6Es4dN3YCGhOQeCiD8V29Py3eCkzwLrfg')">
+</div>
+<h1 class="font-display-lg text-display-lg text-primary max-w-[1000px] mb-8">
+                Take the next step toward thoughtful psychiatric care.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[600px]">
+                Whether you're ready to begin your journey or simply have a few questions, we're here to provide clear, unhurried guidance.
+            </p>
+</section>
+<!-- Emergency Disclaimer -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto mb-section-gap">
+<div class="bg-error-container text-on-error-container p-6 md:p-8 rounded-lg flex flex-col md:flex-row items-start gap-4 shadow-sm border border-error/10">
+<span class="material-symbols-outlined text-error mt-1" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<h2 class="font-label-md text-label-md uppercase tracking-wider mb-2 text-error">Not for Emergencies</h2>
+<p class="font-body-md text-body-md">
+                        This website, contact forms, and chat are not monitored 24/7. If you are experiencing a mental health crisis or emergency, please call <strong class="font-semibold">911</strong>, text <strong class="font-semibold">988</strong>, or go to the nearest emergency room immediately.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Scheduling Options Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<a class="group block bg-surface-container-low hover:bg-surface-container transition-colors duration-300 p-8 rounded-xl flex flex-col h-full border border-on-surface/5" href="#">
+<div class="bg-surface-container-highest w-12 h-12 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Schedule an Appointment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-6">
+                        For new patients who are ready to proceed with a comprehensive psychiatric evaluation and establish care.
+                    </p>
+<div class="flex items-center text-sage-muted font-label-md text-label-md group-hover:text-primary transition-colors">
+                        Begin Intake <span class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="group block bg-surface-container-low hover:bg-surface-container transition-colors duration-300 p-8 rounded-xl flex flex-col h-full border border-on-surface/5" href="#">
+<div class="bg-surface-container-highest w-12 h-12 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Request a Free Consultation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-6">
+                        A brief 15-minute introductory call to discuss your needs and ensure our practice is the right fit before committing.
+                    </p>
+<div class="flex items-center text-sage-muted font-label-md text-label-md group-hover:text-primary transition-colors">
+                        Request Call <span class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="group block bg-surface-container-low hover:bg-surface-container transition-colors duration-300 p-8 rounded-xl flex flex-col h-full border border-on-surface/5" href="#">
+<div class="bg-surface-container-highest w-12 h-12 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined">login</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Existing Patient Portal</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-6">
+                        Securely access your SimplePractice portal to manage appointments, view documents, and message your provider.
+                    </p>
+<div class="flex items-center text-sage-muted font-label-md text-label-md group-hover:text-primary transition-colors">
+                        Access Portal <span class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</a>
+<!-- Card 4 -->
+<a class="group block bg-surface-container-low hover:bg-surface-container transition-colors duration-300 p-8 rounded-xl flex flex-col h-full border border-on-surface/5" href="#">
+<div class="bg-surface-container-highest w-12 h-12 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined">help</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Ask a Question</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-6">
+                        For general administrative, billing, or insurance inquiries. We aim to respond within 24-48 business hours.
+                    </p>
+<div class="flex items-center text-sage-muted font-label-md text-label-md group-hover:text-primary transition-colors">
+                        Send Message <span class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</div>
+</a>
+</div>
+</section>
+<!-- Contact Details & Admin Info -->
+<section class="bg-surface-container-low py-section-gap border-y border-on-surface/5">
+<div class="px-margin-mobile md:px-margin-desktop max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-content-gap">
+<!-- Contact Info -->
+<div class="md:col-span-5 flex flex-col gap-8">
+<h2 class="font-headline-lg text-headline-lg md:font-headline-lg-mobile md:text-headline-lg-mobile text-primary mb-4">Contact Information</h2>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-sage-muted mt-1">call</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-1">Phone &amp; Fax</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">P: (555) 123-4567</p>
+<p class="font-body-md text-body-md text-on-surface-variant">F: (555) 123-4568</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-sage-muted mt-1">location_on</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-1">Location</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                123 Tranquility Lane, Suite 200<br/>
+                                Wellness City, ST 12345
+                            </p>
+<p class="font-label-sm text-label-sm text-sage-muted mt-2 italic">
+                                * Telehealth appointments available for residents statewide.
+                            </p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-sage-muted mt-1">schedule</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-1">Office Hours</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Mon - Thu: 9:00 AM - 5:00 PM</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Fri: 9:00 AM - 1:00 PM</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Sat - Sun: Closed</p>
+</div>
+</div>
+</div>
+<!-- Spacer -->
+<div class="hidden md:block md:col-span-1"></div>
+<!-- Admin Chat & Image -->
+<div class="md:col-span-6 flex flex-col justify-between">
+<div class="bg-surface rounded-xl p-8 border border-on-surface/5 mb-8 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-sage-muted">info</span>
+                            Admin Chat Expectations
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Our administrative chat and secure messaging are available strictly for scheduling, billing questions, and general inquiries. <br/><br/>
+<strong class="font-semibold text-primary">Please note:</strong> Clinical care, medication adjustments, and medical advice are provided <span class="italic">only</span> during scheduled appointments to ensure the highest standard of thoughtful, unhurried care.
+                        </p>
+</div>
+<div class="w-full h-48 rounded-xl overflow-hidden bg-surface-container-highest">
+<img alt="Office detail" class="w-full h-full object-cover grayscale-[20%] opacity-90" data-alt="A close-up, highly detailed photograph of a beautifully organized, modern reception desk in a high-end psychiatric clinic. The desk features light oak wood and smooth ivory stone. A minimalist ceramic vase holding a few fresh, muted green eucalyptus branches sits near a sleek computer monitor. The lighting is bright, natural, and inviting, creating a warm, professional, and calming atmosphere that perfectly embodies unhurried excellence and compassionate care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7n4bzfBufJYjGRaejq_uVAu7NUGCEYbOhQWoZMM1GQIzQXIRLHSlHZ7EznteRgy_5mzuzWcCGiU9yxIMq6qrmRt2hW5UNIGacAyI1ftrBPfMwVcYN7CJXPOAsx5tBehDUqddTqCTHOx9R3rMI9kQ-WrvVk7yMAxO4EzICTnb4_CDzQvBM3HG4sKvZF0BUCFAh-TT9mjkg-3vuZvOBo5Hq_mEvlvydOAMeuf4fdhup-eKcPjGa4puBxg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop text-center flex flex-col items-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6 max-w-[600px]">
+                Ready to begin your journey?
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-[500px]">
+                Take the first step by accessing our secure portal to view availability and request your initial consultation.
+            </p>
+<a class="inline-flex items-center justify-center bg-primary text-on-primary px-8 py-4 rounded font-label-md text-label-md hover:opacity-90 transition-opacity shadow-sm" href="#">
+                Schedule Through SimplePractice
+                <span class="material-symbols-outlined ml-2 text-[20px]">open_in_new</span>
+</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-background-ivory border-t border-on-surface/10 py-10 md:py-12">
+<div class="max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop space-y-8">
+<!-- Top Tier: Brand & Contact, Crisis Notice, Social & BBB -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<!-- Left: Logo & Contact Info -->
+<div class="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left gap-3">
+<a href="/index.html" aria-label="Ischys Mental Wellness Home" class="inline-flex items-center hover:opacity-90 transition-opacity mb-1">
+<img src="/assets/logo.png" alt="Ischys Mental Wellness" class="h-20 md:h-28 w-auto object-contain" />
+</a>
+<div class="space-y-1 text-xs text-on-surface-variant">
+<p class="flex items-center justify-center md:justify-start gap-2 font-medium text-primary">
+<span class="material-symbols-outlined text-sm text-sage-muted">call</span>
+<a href="tel:8017962552" class="hover:underline">(801) 796-2552</a>
+</p>
+<p class="flex items-center justify-center md:justify-start gap-2">
+<span class="material-symbols-outlined text-sm text-sage-muted">location_on</span>
+<span>802 Bamberger Dr, American Fork, UT 84003</span>
+</p>
+</div>
+</div>
+
+<!-- Center: Crisis Notice -->
+<div class="md:col-span-5 bg-error-container/20 border border-error/15 rounded-xl p-4 text-center md:text-left flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-xl shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">error</span>
+<div class="text-xs text-on-surface-variant leading-relaxed">
+<p class="font-semibold text-error mb-0.5">If you are in crisis, do not use this service.</p>
+<p>Please dial <strong class="text-primary font-bold">911</strong> or the suicide and crisis hotline at <strong class="text-primary font-bold">988</strong>.</p>
+</div>
+</div>
+
+<!-- Right: Social Icons & BBB Seal -->
+<div class="md:col-span-3 flex flex-col items-center md:items-end gap-4">
+<!-- Social Icons -->
+<div class="flex items-center gap-2.5">
+<a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+</a>
+<a href="#" aria-label="Twitter" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.936 9.936 0 0024 4.59z"/></svg>
+</a>
+<a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+</a>
+<a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+</a>
+<a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525 0h3.08c.024 1.343.469 2.502 1.336 3.477.866.974 1.993 1.545 3.38 1.71v3.31a8.03 8.03 0 01-3.328-.73 6.946 6.946 0 01-1.388-.865v7.26c0 1.832-.505 3.432-1.516 4.8-1.011 1.368-2.38 2.053-4.108 2.053-1.637 0-3.037-.638-4.2-1.914C4.564 17.876 3.98 16.32 3.98 14.47c0-1.85.584-3.407 1.752-4.67 1.168-1.264 2.568-1.896 4.205-1.896.48 0 .978.064 1.494.192v3.36a3.869 3.869 0 00-1.494-.288c-.91 0-1.677.312-2.302.936-.625.624-.937 1.392-.937 2.304 0 .912.312 1.68.937 2.304.625.624 1.392.936 2.302.936.912 0 1.68-.312 2.304-.936.624-.624.936-1.392.936-2.304V0z"/></svg>
+</a>
+</div>
+
+<!-- Right: BBB Badge -->
+<div class="flex items-center gap-2.5 border border-on-surface/10 bg-surface-bright px-3.5 py-2 rounded-lg shadow-2xs">
+<img src="/assets/bbb_accredited.png" alt="BBB Accredited Business A+ Rating" class="h-10 md:h-11 w-auto object-contain rounded" />
+<div class="flex flex-col text-xs leading-tight font-medium text-primary">
+<span class="font-semibold">BBB Accredited</span>
+<span class="text-sage-muted text-[11px]">A+ Rating</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Divider -->
+<div class="w-full border-t border-on-surface/10"></div>
+
+<!-- Bottom Row: Copyright & Legal Links -->
+<div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+<span>© 2026 Ischys Mental Wellness. Licensed in TX &amp; CA.</span>
+<nav class="flex items-center gap-6 font-label-md text-label-md">
+<a href="/privacy_policy/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Privacy Policy</a>
+<a href="/legal/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Legal</a>
+</nav>
+</div>
+</div>
+</footer>
+</body></html>
