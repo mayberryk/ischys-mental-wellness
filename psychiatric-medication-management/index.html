@@ -1,50 +1,184 @@
 <!DOCTYPE html>
 
-<html class="scroll-smooth" lang="en"><head>
+<html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Legal Terms &amp; Practice Notices | Ischys Mental Wellness</title>
+<title>Medication management | Ischys Mental Wellness</title>
 <link rel="icon" type="image/png" href="/assets/favicon.png"/>
 <link rel="shortcut icon" href="/favicon.ico"/>
-<!-- Google Fonts -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
         tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#0e4f55',
-                        'secondary': '#2e494a',
-                        'background': '#fbfaf4',
-                        'background-ivory': '#fbfaf4',
-                        'surface-bright': '#ffffff',
-                        'surface-container-high': '#edece6',
-                        'on-surface': '#2b3131',
-                        'on-surface-variant': '#475354',
-                        'on-primary': '#ffffff',
-                        'sage-muted': '#586b6a'
-                    },
-                    fontFamily: {
-                        'display': ['Playfair Display', 'serif'],
-                        'body': ['Inter', 'sans-serif'],
-                        'label': ['Inter', 'sans-serif']
-                    },
-                    spacing: {
-                        'margin-mobile': '20px',
-                        'margin-desktop': '80px',
-                        'section-gap': '80px'
-                    }
-                }
-            }
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "on-secondary": "#ffffff",
+                      "surface-bright": "#fbf9f2",
+                      "on-error-container": "#93000a",
+                      "background-ivory": "#F2F0E9",
+                      "surface-variant": "#e4e2dc",
+                      "on-primary-fixed-variant": "#41493c",
+                      "tertiary": "#424e5b",
+                      "tertiary-fixed-dim": "#bbc8d7",
+                      "on-surface-variant": "#454841",
+                      "clay-warm": "#C89547",
+                      "on-primary": "#ffffff",
+                      "inverse-primary": "#c1c9b8",
+                      "on-surface": "#1b1c18",
+                      "secondary": "#C89547",
+                      "inverse-on-surface": "#f3f1ea",
+                      "on-tertiary-fixed": "#101d28",
+                      "on-tertiary-fixed-variant": "#3c4854",
+                      "on-background": "#1b1c18",
+                      "surface-dim": "#dcdad3",
+                      "secondary-container": "#fec69c",
+                      "background": "#fbf9f2",
+                      "sage-muted": "#0B4F54",
+                      "on-error": "#ffffff",
+                      "surface": "#fbf9f2",
+                      "primary": "#0B4F54",
+                      "text-charcoal": "#1A1A1A",
+                      "outline-variant": "#c5c7bf",
+                      "surface-container-highest": "#e4e2dc",
+                      "on-primary-fixed": "#161e13",
+                      "slate-blue": "#0B4F54",
+                      "on-secondary-fixed-variant": "#633e1e",
+                      "primary-fixed-dim": "#c1c9b8",
+                      "on-tertiary-container": "#d7e4f3",
+                      "outline": "#757871",
+                      "surface-container-high": "#eae8e1",
+                      "secondary-fixed-dim": "#f2bb92",
+                      "inverse-surface": "#30312c",
+                      "on-primary-container": "#dde5d4",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#d7e4f3",
+                      "primary-fixed": "#dde5d4",
+                      "primary-container": "#0B4F54",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#115D63",
+                      "surface-container-low": "#f6f4ec",
+                      "secondary-fixed": "#ffdcc3",
+                      "on-secondary-container": "#79512f",
+                      "tertiary-container": "#5a6673",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed": "#2f1500",
+                      "surface-container": "#f0eee7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "80px",
+                      "gutter": "24px",
+                      "content-gap": "32px",
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.03em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
         }
     </script>
 </head>
-<body class="bg-background text-on-surface antialiased flex flex-col min-h-screen">
-<!-- Header (Shared Component) -->
+<body class="bg-background text-on-surface antialiased">
+<!-- TopNavBar -->
 <header class="w-full top-0 sticky bg-background-ivory border-b border-on-surface/10 z-50">
 <div class="flex justify-between items-center max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop py-2 h-24 lg:h-28">
 <a href="/index.html" aria-label="Ischys Mental Wellness Home" class="relative z-10 inline-flex items-center hover:opacity-90 transition-opacity"><img src="/assets/logo.png" alt="Ischys Mental Wellness" class="h-32 lg:h-36 w-auto object-contain" /></a>
@@ -161,71 +295,28 @@ document.addEventListener('keydown', event => {
   }
 });
 </script>
-<main class="flex-grow max-w-[1100px] w-full mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
-<!-- Hero Header -->
-<div class="border-b border-on-surface/10 pb-8 mb-10">
-<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-surface-container-high w-fit mb-4">
-<span class="font-label-sm text-xs text-primary uppercase font-semibold tracking-wider">Practice Information &amp; Terms</span>
-</div>
-<h1 class="font-display text-3xl md:text-4xl lg:text-5xl text-primary font-semibold leading-tight mb-4">Legal Terms &amp; Practice Notices</h1>
-<p class="text-on-surface-variant text-sm md:text-base">Effective Date: January 1, 2026 | Practice Disclosures &amp; Terms of Use</p>
-</div>
-
-<!-- Emergency Notice Callout Box -->
-<div class="bg-red-50/80 border border-red-200 p-6 rounded-2xl mb-10 text-red-900 space-y-2">
-<div class="flex items-center gap-2 font-semibold text-red-950 text-lg">
-<span class="material-symbols-outlined text-red-700">warning</span>
-<span>Medical Crisis &amp; Emergency Notice</span>
-</div>
-<p class="text-sm leading-relaxed">If you or someone you know is experiencing a mental health emergency, suicidal thoughts, or self-harm, please do not use this website to request urgent care. Call <strong>911</strong> or go to your nearest emergency room immediately. You can also reach the Suicide &amp; Crisis Lifeline by calling or texting <strong>988</strong> (available 24/7, free, and confidential).</p>
-</div>
-
-<!-- Legal Sections -->
-<div class="space-y-10 font-body text-on-surface-variant text-base leading-relaxed">
-
-<section class="space-y-3">
-<h2 class="font-display text-xl md:text-2xl text-primary font-semibold">1. Medical &amp; Clinical Disclaimer</h2>
-<p>The information provided on this website is for educational and general informational purposes only and does not constitute medical, psychiatric, or healthcare advice. Browsing this website or submitting an inquiry form does not establish a provider-patient relationship. A formal provider-patient relationship is established only after completing an initial comprehensive evaluation and signing a mutual clinical care agreement.</p>
+<main>
+<section class="max-w-[1100px] mx-auto px-margin-mobile md:px-margin-desktop py-14 md:py-20">
+<a href="/comprehensive_services_medication_management/code.html" class="text-sm text-primary underline underline-offset-4">All services</a>
+<p class="text-xs uppercase tracking-widest text-primary mt-10 mb-4">Thoughtful care. Shared decisions.</p>
+<h1 class="font-display-lg text-4xl md:text-5xl text-primary max-w-3xl leading-tight">Psychiatric medication management</h1>
+<p class="text-xl text-primary mt-5">In American Fork &amp; throughout Utah</p>
+<p class="text-lg text-on-surface-variant leading-relaxed max-w-2xl mt-6">Thoughtful prescribing starts with understanding you. Explore your concerns, review your current medications, and make decisions together.</p>
+<a href="/schedule_contact_ischys_mental_wellness/code.html" class="inline-flex mt-8 bg-primary text-on-primary rounded-full px-7 py-4 text-sm font-semibold">Schedule an Appointment</a>
 </section>
-
-<section class="space-y-3">
-<h2 class="font-display text-xl md:text-2xl text-primary font-semibold">2. Provider Licensure &amp; Geographic Boundaries</h2>
-<p>Laura Jane Hyte Garner, APRN, PMHNP-BC, is a board-certified Psychiatric Mental Health Nurse Practitioner licensed to provide clinical psychiatric evaluation and medication management services to individuals residing in and physically located within Utah, Texas, and California at the time of service.</p>
-<p>Patients participating in telehealth sessions must be physically located in a state where the provider holds active licensure during every virtual visit.</p>
-</section>
-
-<section class="space-y-3">
-<h2 class="font-display text-xl md:text-2xl text-primary font-semibold">3. Terms of Website Use</h2>
-<p>By accessing or using this website, you agree to comply with these terms. All content on this website, including text, graphics, practice logos, imagery, and software layout, is the property of Ischys Mental Wellness and is protected by United States intellectual property and copyright laws. Unauthorized reproduction or redistribution is strictly prohibited.</p>
-</section>
-
-<section class="space-y-3">
-<h2 class="font-display text-xl md:text-2xl text-primary font-semibold">4. Limitation of Liability</h2>
-<p>Ischys Mental Wellness makes reasonable efforts to ensure the accuracy and timeliness of information published on this site. However, we assume no legal liability or responsibility for errors, omissions, or delays in website content, nor for any damage resulting from technical interruptions or third-party links.</p>
-</section>
-
-<section class="space-y-3">
-<h2 class="font-display text-xl md:text-2xl text-primary font-semibold">5. Notice of Nondiscrimination</h2>
-<p>Ischys Mental Wellness complies with applicable Federal and State civil rights laws. We do not discriminate, exclude, or treat individuals differently on the basis of race, color, national origin, age, disability, sex, sexual orientation, or gender identity in access to psychiatric care and treatment services.</p>
-</section>
-
-<section class="space-y-3">
-<h2 class="font-display text-xl md:text-2xl text-primary font-semibold">6. Contact &amp; Legal Notices</h2>
-<p>For official legal inquiries or practice notices, please direct correspondence to:</p>
-<div class="bg-surface-bright border border-on-surface/10 p-6 rounded-xl space-y-1">
-<p class="font-semibold text-primary">Ischys Mental Wellness LLC</p>
-<p>Laura Jane Hyte Garner, APRN, PMHNP-BC</p>
-<p>Email: <a href="mailto:legal@ischysmentalwellness.com" class="text-primary underline">legal@ischysmentalwellness.com</a></p>
-<p>Salt Lake City, Utah Practice &amp; Telehealth Services</p>
-</div>
-</section>
-
-</div>
-</main>
-
-<!-- Footer -->
-<footer class="w-full bg-background-ivory border-t border-on-surface/10 py-10 md:py-12">
-<div class="max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop space-y-8">
+<section class="bg-surface-container-low"><div class="max-w-[1100px] mx-auto px-margin-mobile md:px-margin-desktop py-14 grid md:grid-cols-2 gap-10">
+<div><h2 class="font-headline-lg text-3xl text-primary mb-4">Start with a conversation.</h2><p class="text-on-surface-variant leading-relaxed">Your evaluation is a chance to discuss your symptoms, health history, current medications, and goals. Laura will work with you to consider next steps based on your individual needs.</p></div>
+<div><h2 class="font-headline-lg text-3xl text-primary mb-4">Know what comes next.</h2><p class="text-on-surface-variant leading-relaxed mb-5">Care may include medication management and follow-up visits to discuss your response, questions, and concerns.</p><a href="/what_to_expect_patient_journey/code.html" class="text-sm font-semibold text-primary underline underline-offset-4">Explore the patient journey →</a></div>
+</div></section>
+<section class="max-w-[1100px] mx-auto px-margin-mobile md:px-margin-desktop py-14"><h2 class="font-headline-lg text-3xl text-primary mb-4">Plan your first visit.</h2><p class="text-on-surface-variant mb-6">Meet in person in American Fork or through telehealth in Utah. Review pricing and insurance, or learn more about Laura’s approach.</p><div class="flex flex-wrap gap-6 text-primary text-sm font-semibold"><a class="underline underline-offset-4" href="/fees_and_insurance/code.html">Insurance &amp; pricing →</a><a class="underline underline-offset-4" href="/meet_laura_jane_hyte_garner/code.html">Meet Laura →</a></div></section>
+</main><!-- Footer -->
+<footer class="w-full bg-background-ivory border-t border-on-surface/10">
+<!-- Insurance overview -->
+<section class="border-y border-outline-variant/50 bg-surface-container-lowest">
+<div class="max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop py-6 md:py-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-4"><div><h2 class="font-headline-md text-xl text-primary">Care that fits your life.</h2><p class="text-sm text-on-surface-variant mt-2">Explore accepted insurance and appointment pricing before you book.</p></div><a href="/fees_and_insurance/code.html" class="text-sm font-semibold text-primary underline underline-offset-4">View insurance &amp; pricing →</a></div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 items-center"><div class="h-12 flex items-center justify-center p-3"><img src="/assets/insurance/bcbs.svg" alt="BlueCross BlueShield" class="max-h-10 max-w-full object-contain" /></div><div class="h-12 flex items-center justify-center p-3"><img src="/assets/insurance/aetna.svg" alt="Aetna" class="max-h-10 max-w-full object-contain" /></div><div class="h-12 flex items-center justify-center p-3"><img src="/assets/insurance/cigna.svg" alt="Cigna" class="max-h-10 max-w-full object-contain" /></div><div class="h-12 flex items-center justify-center p-3"><img src="/assets/insurance/uhc.svg" alt="UnitedHealthcare" class="max-h-10 max-w-full object-contain" /></div><div class="h-12 flex items-center justify-center p-3"><img src="/assets/insurance/selecthealth.svg" alt="SelectHealth" class="max-h-10 max-w-full object-contain" /></div><div class="h-12 flex items-center justify-center p-3"><img src="/assets/insurance/medicare.svg" alt="Medicare" class="max-h-10 max-w-full object-contain" /></div></div><p class="text-xs text-on-surface-variant mt-5">Coverage varies by plan. Please confirm your benefits before your appointment.</p></div></section>
+<div class="max-w-[1400px] mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-12 space-y-8">
 <!-- Top Tier: Brand & Contact, Crisis Notice, Social & BBB -->
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
 <!-- Left: Logo & Contact Info -->
@@ -234,6 +325,8 @@ document.addEventListener('keydown', event => {
 <img src="/assets/logo.png" alt="Ischys Mental Wellness" class="h-20 md:h-28 w-auto object-contain" />
 </a>
 <div class="space-y-1 text-xs text-on-surface-variant">
+<p>In person in American Fork</p>
+<p class="pb-2">Telehealth across Utah</p>
 <p class="flex items-center justify-center md:justify-start gap-2 font-medium text-primary">
 <span class="material-symbols-outlined text-sm text-sage-muted">call</span>
 <a href="tel:8017962552" class="hover:underline">(801) 796-2552</a>
@@ -256,25 +349,6 @@ document.addEventListener('keydown', event => {
 
 <!-- Right: Social Icons & BBB Seal -->
 <div class="md:col-span-3 flex flex-col items-center md:items-end gap-4">
-<!-- Social Icons -->
-<div class="flex items-center gap-2.5">
-<a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
-<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-</a>
-<a href="#" aria-label="Twitter" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
-<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.936 9.936 0 0024 4.59z"/></svg>
-</a>
-<a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
-<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-</a>
-<a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
-<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-</a>
-<a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full border border-on-surface/10 bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300 shadow-2xs">
-<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525 0h3.08c.024 1.343.469 2.502 1.336 3.477.866.974 1.993 1.545 3.38 1.71v3.31a8.03 8.03 0 01-3.328-.73 6.946 6.946 0 01-1.388-.865v7.26c0 1.832-.505 3.432-1.516 4.8-1.011 1.368-2.38 2.053-4.108 2.053-1.637 0-3.037-.638-4.2-1.914C4.564 17.876 3.98 16.32 3.98 14.47c0-1.85.584-3.407 1.752-4.67 1.168-1.264 2.568-1.896 4.205-1.896.48 0 .978.064 1.494.192v3.36a3.869 3.869 0 00-1.494-.288c-.91 0-1.677.312-2.302.936-.625.624-.937 1.392-.937 2.304 0 .912.312 1.68.937 2.304.625.624 1.392.936 2.302.936.912 0 1.68-.312 2.304-.936.624-.624.936-1.392.936-2.304V0z"/></svg>
-</a>
-</div>
-
 <!-- BBB Badge -->
 <div class="flex items-center gap-2.5 border border-on-surface/10 bg-surface-bright px-3.5 py-2 rounded-lg shadow-2xs">
 <img src="/assets/bbb_accredited.png" alt="BBB Accredited Business A+ Rating" class="h-10 md:h-11 w-auto object-contain rounded" />
@@ -292,7 +366,7 @@ document.addEventListener('keydown', event => {
 <!-- Bottom Tier: Copyright & Legal Links -->
 <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
 <span>© 2026 All rights reserved</span>
-<nav class="flex items-center gap-6 font-label-md text-label-md">
+<nav class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 font-label-md text-label-md">
 <a href="/fees_and_insurance/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Pricing &amp; Insurance</a>
 <a href="/privacy_policy/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Privacy Policy</a>
 <a href="/legal/code.html" class="relative py-0.5 text-on-surface-variant hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary hover:after:w-full after:transition-all after:duration-300">Legal</a>
@@ -300,4 +374,5 @@ document.addEventListener('keydown', event => {
 </div>
 </div>
 </footer>
+
 </body></html>
