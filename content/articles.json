@@ -1,0 +1,201 @@
+[
+  {
+    "key": "medication",
+    "title": "Psychiatric Medication Management: How to Get the Most From Treatment",
+    "path": "/learning/psychiatric-medication-management-treatment/",
+    "description": "Medication works best as an ongoing, collaborative process: identify target symptoms and functional goals, take medication as directed, track benefits and side effects, report other medications/substances/supplements, and make changes with the prescriber—not from someone else’s dose or online experience.",
+    "references": [
+      {
+        "title": "NIMH — Mental Health Medications",
+        "url": "https://www.nimh.nih.gov/health/topics/mental-health-medications"
+      },
+      {
+        "title": "FDA — Drug information and Medication Guides",
+        "url": "https://www.fda.gov/drugs"
+      }
+    ],
+    "services": [
+      "psychiatric-medication-management"
+    ]
+  },
+  {
+    "key": "caffeine",
+    "title": "Can Caffeine Make Anxiety or ADHD Symptoms Worse?",
+    "path": "/learning/caffeine-anxiety-adhd/",
+    "description": "It can for some people. Caffeine sensitivity varies, but higher intake can contribute to jitteriness, anxiety-like sensations, sleep disruption, palpitations, and blood-pressure changes. Total stimulant exposure matters when caffeine is combined with ADHD medication.",
+    "references": [
+      {
+        "title": "FDA — Spilling the Beans: How Much Caffeine Is Too Much?",
+        "url": "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much"
+      },
+      {
+        "title": "PubMed — Caffeine and sleep systematic review/meta-analysis",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36870101/"
+      },
+      {
+        "title": "PubMed — Caffeine and panic disorder meta-analysis",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34871964/"
+      }
+    ],
+    "services": [
+      "adhd-treatment-utah",
+      "anxiety-depression-treatment",
+      "psychiatric-medication-management"
+    ]
+  },
+  {
+    "key": "sleep",
+    "title": "Sleep and Mental Health: How Poor Sleep Affects Anxiety, Depression and ADHD",
+    "path": "/learning/sleep-mental-health/",
+    "description": "Sleep and mental health influence each other. Poor or insufficient sleep can worsen attention, memory, emotional regulation, anxiety, mood, energy, and impulse control; major changes in sleep can also provide clinically important information about psychiatric or sleep disorders.",
+    "references": [
+      {
+        "title": "NHLBI — Sleep Deprivation and Deficiency",
+        "url": "https://www.nhlbi.nih.gov/health/sleep-deprivation"
+      },
+      {
+        "title": "NIMH — Depression",
+        "url": "https://www.nimh.nih.gov/health/publications/depression"
+      }
+    ],
+    "services": [
+      "adhd-treatment-utah",
+      "anxiety-depression-treatment",
+      "trauma-ptsd"
+    ]
+  },
+  {
+    "key": "hobbies",
+    "title": "Hobbies for Mental Health: How Meaningful Activities Can Help Depression, Anxiety and Stress",
+    "path": "/learning/hobbies-mental-health/",
+    "description": "Meaningful activity can add pleasure, mastery, connection, movement, creativity, and structure. Hobbies are not a replacement for treatment, but they can support behavioral activation and help rebuild parts of life that shrink during depression, anxiety, burnout, or recovery.",
+    "references": [
+      {
+        "title": "NIMH — Depression",
+        "url": "https://www.nimh.nih.gov/health/publications/depression"
+      },
+      {
+        "title": "CDC — Social Connection",
+        "url": "https://www.cdc.gov/social-connectedness/about/"
+      }
+    ],
+    "services": [
+      "anxiety-depression-treatment",
+      "addiction-recovery"
+    ]
+  },
+  {
+    "key": "regulation",
+    "title": "How to Regulate Your Nervous System When You Feel Overwhelmed",
+    "path": "/learning/nervous-system-regulation/",
+    "description": "Start by identifying whether your system feels overactivated or shut down. Different states may need different tools. Breathing, grounding, sensory input, movement, environmental changes, and connection can be practical ways to experiment with regulation.",
+    "references": [
+      {
+        "title": "NIMH — Generalized Anxiety Disorder",
+        "url": "https://www.nimh.nih.gov/health/publications/generalized-anxiety-disorder-gad"
+      },
+      {
+        "title": "988 Suicide & Crisis Lifeline",
+        "url": "https://988lifeline.org/"
+      }
+    ],
+    "services": [
+      "anxiety-depression-treatment",
+      "trauma-ptsd"
+    ]
+  },
+  {
+    "key": "substances",
+    "title": "Alcohol, Cannabis and Nicotine: How They Can Affect Mental Health and Psychiatric Medications",
+    "path": "/learning/substances-mental-health-medications/",
+    "description": "Because substances can change sleep, mood, anxiety, attention, cardiovascular effects, withdrawal symptoms, medication tolerability, and safety. Accurate information supports safer prescribing; the purpose is better clinical information, not judgment.",
+    "references": [
+      {
+        "title": "SAMHSA — Substance Use Disorder Treatment Options",
+        "url": "https://www.samhsa.gov/substance-use/treatment/options"
+      },
+      {
+        "title": "SAMHSA — Find Treatment",
+        "url": "https://findtreatment.gov/"
+      }
+    ],
+    "services": [
+      "addiction-recovery",
+      "psychiatric-medication-management"
+    ]
+  },
+  {
+    "key": "nutrition",
+    "title": "Nutrition and Mental Health: What We Know—and What We Don’t",
+    "path": "/learning/nutrition-mental-health/",
+    "description": "Nutrition is not a cure for psychiatric disorders, but regular nourishment, protein, fiber-rich foods, hydration, and medication-specific food considerations can affect energy, concentration, physical health, and treatment tolerability. Evidence for supplements and “gut-brain” products varies.",
+    "references": [
+      {
+        "title": "Dietary Guidelines for Americans",
+        "url": "https://www.dietaryguidelines.gov/"
+      },
+      {
+        "title": "NIH Office of Dietary Supplements",
+        "url": "https://ods.od.nih.gov/"
+      }
+    ],
+    "services": [
+      "integrative-psychiatry",
+      "adhd-treatment-utah",
+      "psychiatric-medication-management"
+    ]
+  },
+  {
+    "key": "movement",
+    "title": "Exercise and Mental Health: How Movement Supports Mood, Anxiety, ADHD and Sleep",
+    "path": "/learning/movement-mental-health/",
+    "description": "Physical activity can support mood, anxiety, sleep, cognition, and physical health. The useful starting point is often realistic, repeatable movement rather than an all-or-nothing exercise plan.",
+    "references": [
+      {
+        "title": "CDC — Benefits of Physical Activity",
+        "url": "https://www.cdc.gov/physical-activity-basics/benefits/"
+      },
+      {
+        "title": "HHS — Physical Activity Guidelines for Americans",
+        "url": "https://odphp.health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines"
+      }
+    ],
+    "services": [
+      "anxiety-depression-treatment",
+      "adhd-treatment-utah",
+      "integrative-psychiatry"
+    ]
+  },
+  {
+    "key": "connection",
+    "title": "Loneliness and Mental Health: How Social Connection Affects Emotional Well-Being",
+    "path": "/learning/loneliness-social-connection-mental-health/",
+    "description": "Explore meaningful connection, isolation, relationships, and practical ways to find support in your daily life.",
+    "references": [
+      {
+        "title": "CDC — Social Connection",
+        "url": "https://www.cdc.gov/social-connectedness/about/"
+      }
+    ],
+    "services": [
+      "anxiety-depression-treatment",
+      "addiction-recovery",
+      "trauma-ptsd"
+    ]
+  },
+  {
+    "key": "fermented",
+    "title": "Fermented Foods, the Gut Microbiome and Mental Health: What We Know So Far",
+    "path": "/learning/fermented-foods-gut-microbiome-mental-health/",
+    "description": "A careful look at fermented foods and the gut microbiome, with practical food ideas and clear limits on what the research can tell us.",
+    "references": [
+      {
+        "title": "NIH/NCCIH — Probiotics: What Do We Know?",
+        "url": "https://www.nccih.nih.gov/health/probiotics-what-do-we-know"
+      }
+    ],
+    "services": [
+      "integrative-psychiatry"
+    ]
+  }
+]

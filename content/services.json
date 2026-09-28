@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "psychiatric-medication-management",
+    "title": "Psychiatric Medication Management",
+    "h1": "Psychiatric Medication Management in American Fork & Throughout Utah",
+    "audience": "People who want a thoughtful medication evaluation, a second look at prior treatment, help with side effects/tolerability, or ongoing psychiatric prescribing.",
+    "approach": "Medication decisions are an ongoing process: understand the target symptoms, review prior response and adverse effects, consider medical/sleep/substance/lifestyle factors, choose thoughtfully, monitor function and safety, and adjust based on real response."
+  },
+  {
+    "slug": "adhd-treatment-utah",
+    "title": "ADHD Evaluation & Medication Management",
+    "h1": "ADHD Evaluation & Medication Management in Utah",
+    "audience": "Children, adolescents, and adults with attention, executive-function, impulsivity, organization, task-initiation, or treatment-tolerability concerns.",
+    "approach": "Evaluation should consider developmental history, impairment across settings, sleep, anxiety/mood, substance use, medical factors, prior medication trials, and alternative explanations. Treatment may include medication plus practical behavioral/environmental supports."
+  },
+  {
+    "slug": "anxiety-depression-treatment",
+    "title": "Anxiety & Depression Treatment",
+    "h1": "Anxiety & Depression Psychiatric Care in American Fork & Utah",
+    "audience": "People with persistent worry, panic, social anxiety, low mood, anhedonia, irritability, fatigue, sleep disruption, or incomplete response to prior treatment.",
+    "approach": "Clarify symptom pattern, severity, function, safety, sleep, medical contributors, substances, therapy, prior medication response, and patient goals. Medication may be one part of a broader plan."
+  },
+  {
+    "slug": "womens-mental-health",
+    "title": "Women’s Mental Health",
+    "h1": "Women’s Mental Health & Psychiatric Medication Management in Utah",
+    "audience": "Women seeking psychiatric care across reproductive and life-stage transitions, including mood/anxiety/ADHD concerns and medication questions around pregnancy or postpartum when clinically appropriate.",
+    "approach": "Keep this page within current psychiatric scope. Emphasize individualized risk-benefit decisions, coordination with OB/GYN/PCP/therapist when authorized, and avoidance of one-size-fits-all medication claims."
+  },
+  {
+    "slug": "addiction-recovery",
+    "title": "Addiction & Recovery Psychiatry",
+    "h1": "Psychiatric Care for Addiction Recovery & Co-Occurring Mental Health Needs",
+    "audience": "People in recovery or treatment who also need psychiatric evaluation/medication management for ADHD, anxiety, depression, trauma, sleep, mood symptoms, or substance-use treatment.",
+    "approach": "Position Ischys as outpatient psychiatric continuity: addiction-informed care, co-occurring psychiatric treatment, medication for opioid use disorder when appropriate, and collaboration with treatment/recovery teams with consent."
+  },
+  {
+    "slug": "trauma-ptsd",
+    "title": "Trauma & PTSD Psychiatric Care",
+    "h1": "Trauma & PTSD Psychiatric Medication Management in Utah",
+    "audience": "People with trauma-related symptoms who need psychiatric evaluation or medication management alongside therapy or other trauma-focused care.",
+    "approach": "Medication management can target specific symptoms/conditions while respecting the role of evidence-based psychotherapy. Avoid implying medication erases trauma. Coordinate with therapists when authorized."
+  },
+  {
+    "slug": "integrative-psychiatry",
+    "title": "Integrative Psychiatry",
+    "h1": "Integrative Psychiatry in American Fork & Throughout Utah",
+    "audience": "Patients who want standard psychiatric care plus thoughtful discussion of sleep, nutrition, movement, supplements or other evidence-informed adjuncts when relevant.",
+    "approach": "Define “integrative” as adding clinically relevant context—not replacing evidence-based care. Discuss evidence strength, interactions, medical conditions, product quality, and uncertainty. Natural does not automatically mean safe or effective."
+  },
+  {
+    "slug": "first-visit",
+    "title": "What to Expect at Your First Visit",
+    "h1": "What to Expect at Your First Psychiatric Visit at Ischys",
+    "audience": "New patients and families preparing for an evaluation.",
+    "approach": "Explain the 60-minute new-patient evaluation, history/review of prior treatment, current symptoms/function, medications/supplements/substances, medical/sleep factors, goals, records when clinically appropriate, and shared decision-making."
+  },
+  {
+    "slug": "referring-providers",
+    "title": "Referring Providers",
+    "h1": "Psychiatric Medication Management for Your Therapy & Medical Referrals",
+    "audience": "Therapists, psychologists, PCPs, OB/GYN clinicians, treatment programs, discharge teams, and other professionals.",
+    "approach": "Core promise: psychiatric medication management that supports the existing treatment relationship. With patient authorization, close the loop and coordinate relevant care. Make referral steps obvious."
+  }
+]

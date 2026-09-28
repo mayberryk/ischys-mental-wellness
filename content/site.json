@@ -1,0 +1,32 @@
+{
+  "name": "Ischys Integrative Mental Wellness",
+  "author": "Laura Jane Hyte-Garner, MSN, APRN, PMHNP-BC",
+  "phone": "801-796-2552",
+  "phone_href": "tel:+18017962552",
+  "address": "802 E Bamberger Dr, Suite D, American Fork, UT 84003",
+  "production_url": "",
+  "scheduling_url": "",
+  "consultation_url": "",
+  "portal_url": "",
+  "referral_url": "",
+  "original_logo_path": "assets/ischys-original-logo.png",
+  "ga4_measurement_id": "",
+  "analytics_enabled": false,
+  "analytics_review_complete": false,
+  "clinical_approval_complete": false,
+  "referral_sources": [
+    "Insurance",
+    "Google",
+    "Psychology Today",
+    "Another provider",
+    "Event/community",
+    "Social media",
+    "AI/ChatGPT/AI search",
+    "Other"
+  ],
+  "future_sections": [
+    "For Healthcare Organizations",
+    "For Senior Living & Long-Term Care",
+    "Women’s Mental Wellness program"
+  ]
+}

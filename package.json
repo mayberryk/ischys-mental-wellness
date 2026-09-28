@@ -1,10 +1,13 @@
 {
-  "name": "stitch-ischys-mental-wellness-redesign",
-  "version": "1.0.0",
-  "description": "Ischys Mental Wellness Redesign Web Application",
-  "main": "index.html",
+  "name": "ischys-mental-wellness",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Content-first static website for Ischys Integrative Mental Wellness",
   "scripts": {
-    "start": "python3 -m http.server 8080",
-    "dev": "python3 -m http.server 8080"
+    "dev": "python3 scripts/dev.py",
+    "start": "python3 scripts/dev.py",
+    "build": "python3 scripts/build.py",
+    "build:production": "python3 scripts/build.py --production",
+    "test": "python3 scripts/check_site.py"
   }
 }
