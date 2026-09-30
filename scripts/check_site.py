@@ -60,6 +60,18 @@ for item in json.loads((ROOT/'content/articles.json').read_text()):
  for block in source[item['key']]['blocks']:
   if norm(block['text']) not in norm(text):errors.append(f'{item["key"]}: missing source block {block["text"][:60]}')
 if len(list((OUT/'downloads').glob('*.pdf')))!=13:errors.append('Expected 13 downloadable PDFs')
+# The web toolkit may regroup print lines, but must retain the supplied wording.
+resource_keys=('welcome','starting-point','wellness-plan','hard-day','resources')
+resource_norm=lambda value:re.sub(r'[^\w]+',' ',value).strip().casefold()
+for key in resource_keys:
+ page=parsed[OUT/'patient-resources'/key/'index.html']
+ visible=resource_norm(' '.join(page.all_text))
+ for block in source[key]['blocks']:
+  text=block['text']
+  if text.startswith('QR CODE:') or '→' in text or text=='Area of My Life My Rating':continue
+  if re.fullmatch(r'[\d\s]+',text):continue
+  text=re.sub(r'\s+0 1 2 3 4 5 6 7 8 9$','',text)
+  if resource_norm(text) not in visible:errors.append(f'{key}: missing resource wording {text[:70]}')
 for pdf in (OUT/'downloads').glob('*.pdf'):
  if not pdf.read_bytes().startswith(b'%PDF-'):errors.append(f'Invalid PDF {pdf}')
 # The incomplete live configuration must not accidentally pass a production build.

@@ -1,0 +1,33 @@
+{
+  "method": "Built-in image_gen",
+  "images": [
+    {
+      "slug": "womens-mental-health",
+      "prompt": "Use case: photorealistic-natural. Asset: standalone website service hero photograph for Ischys Mental Wellness. A cheerful woman in her early 40s, naturally smiling, seated beside a sunlit window with a ceramic mug in a warm welcoming home. Candid authentic moment, sage cardigan, healthy realistic skin texture, waist-up portrait. Cohesive editorial lifestyle photography, soft natural daylight, warm cream, sage and muted teal palette, realistic diverse people, no glossy advertising look. Landscape 3:2 composition, subjects centered with comfortable space around heads, crop safe. No text, watermarks, logos, pills, medical props or before-after framing. Fictional illustrative people, not actual patients or staff."
+    },
+    {
+      "slug": "psychiatric-medication-management",
+      "prompt": "Use case: photorealistic-natural. Asset: standalone website service hero photograph for Ischys Mental Wellness. A thoughtful adult man in his late 30s sitting comfortably on a cream sofa, talking with a listener just outside frame, relaxed attentive expression, hands resting naturally, soft teal shirt. A supportive conversation, no clinician shown. Cohesive editorial lifestyle photography, soft natural daylight, warm cream, sage and muted teal palette, realistic diverse people, no glossy advertising look. Landscape 3:2 composition, subjects centered with comfortable space around heads, crop safe. No text, watermarks, logos, pills, medical props or before-after framing. Fictional illustrative people, not actual patients or staff."
+    },
+    {
+      "slug": "adhd-treatment-utah",
+      "prompt": "Use case: photorealistic-natural. Asset: standalone website service hero photograph for Ischys Mental Wellness. A young adult woman at an oak desk in a bright home, making a simple plan in an open notebook, pausing with a gentle smile. Natural thoughtful moment, uncluttered surroundings, muted blue shirt. No readable writing. Cohesive editorial lifestyle photography, soft natural daylight, warm cream, sage and muted teal palette, realistic diverse people, no glossy advertising look. Landscape 3:2 composition, subjects centered with comfortable space around heads, crop safe. No text, watermarks, logos, pills, medical props or before-after framing. Fictional illustrative people, not actual patients or staff."
+    },
+    {
+      "slug": "anxiety-depression-treatment",
+      "prompt": "Use case: photorealistic-natural. Asset: standalone website service hero photograph for Ischys Mental Wellness. An adult woman in her 30s sitting on a garden bench in soft morning light, peaceful thoughtful expression and relaxed shoulders, hands in lap, warm knitted cardigan. A quiet grounded moment outdoors. Cohesive editorial lifestyle photography, soft natural daylight, warm cream, sage and muted teal palette, realistic diverse people, no glossy advertising look. Landscape 3:2 composition, subjects centered with comfortable space around heads, crop safe. No text, watermarks, logos, pills, medical props or before-after framing. Fictional illustrative people, not actual patients or staff."
+    },
+    {
+      "slug": "addiction-recovery",
+      "prompt": "Use case: photorealistic-natural. Asset: standalone website service hero photograph for Ischys Mental Wellness. Two adult friends, a man and a woman in their 40s, walking together on a gentle leafy park path, sharing an easy encouraging conversation. Natural smiles, ordinary clothes, warm daylight, waist-up medium composition. Cohesive editorial lifestyle photography, soft natural daylight, warm cream, sage and muted teal palette, realistic diverse people, no glossy advertising look. Landscape 3:2 composition, subjects centered with comfortable space around heads, crop safe. No text, watermarks, logos, pills, medical props or before-after framing. Fictional illustrative people, not actual patients or staff."
+    },
+    {
+      "slug": "trauma-ptsd",
+      "prompt": "Use case: photorealistic-natural. Asset: standalone website service hero photograph for Ischys Mental Wellness. An adult woman in her 50s relaxing in a comfortable armchair near a bright window and indoor plant, holding a warm mug, quietly composed expression, soft terracotta sweater, sense of safety and personal space. Cohesive editorial lifestyle photography, soft natural daylight, warm cream, sage and muted teal palette, realistic diverse people, no glossy advertising look. Landscape 3:2 composition, subjects centered with comfortable space around heads, crop safe. No text, watermarks, logos, pills, medical props or before-after framing. Fictional illustrative people, not actual patients or staff."
+    },
+    {
+      "slug": "integrative-psychiatry",
+      "prompt": "Use case: photorealistic-natural. Asset: standalone website service hero photograph for Ischys Mental Wellness. An adult man in his 50s and a woman in her 40s enjoying a gentle walk in a green garden, morning light, relaxed conversation, natural linen and sage clothing, soft foliage. Everyday connection and movement. Cohesive editorial lifestyle photography, soft natural daylight, warm cream, sage and muted teal palette, realistic diverse people, no glossy advertising look. Landscape 3:2 composition, subjects centered with comfortable space around heads, crop safe. No text, watermarks, logos, pills, medical props or before-after framing. Fictional illustrative people, not actual patients or staff."
+    }
+  ]
+}

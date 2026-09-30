@@ -66,6 +66,7 @@
   },
   {
     "key": "hobbies",
+    "homepage_image_service": "integrative-psychiatry",
     "title": "Hobbies for Mental Health: How Meaningful Activities Can Help Depression, Anxiety and Stress",
     "path": "/learning/hobbies-mental-health/",
     "description": "Meaningful activity can add pleasure, mastery, connection, movement, creativity, and structure. Hobbies are not a replacement for treatment, but they can support behavioral activation and help rebuild parts of life that shrink during depression, anxiety, burnout, or recovery.",
@@ -168,6 +169,7 @@
   },
   {
     "key": "connection",
+    "homepage_image_service": "addiction-recovery",
     "title": "Loneliness and Mental Health: How Social Connection Affects Emotional Well-Being",
     "path": "/learning/loneliness-social-connection-mental-health/",
     "description": "Explore meaningful connection, isolation, relationships, and practical ways to find support in your daily life.",

@@ -4,6 +4,8 @@ from string import Template
 from html import escape as esc
 import argparse, json, re, shutil, xml.etree.ElementTree as ET
 from urllib.parse import urlparse
+from resource_layout import render_resource
+from datetime import date
 ROOT=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser();parser.add_argument('--production',action='store_true');parser.add_argument('--output',default='dist');args=parser.parse_args()
 OUT=(ROOT/args.output).resolve()
@@ -47,8 +49,8 @@ def framework():return '<ol class="framework" aria-label="Our patient-care frame
 def nav_group(label,items):
  return '<details class="nav-group"><summary>'+esc(label)+'<svg class="chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="nav-panel">'+''.join(a(p,t,'all' if p=='/services/' else '') for p,t in items)+'</div></details>'
 service_items=[('/'+s['slug']+'/',s['title']) for s in SERVICES[:7]]+[('/services/','All services →')]
-patient_items=[('/first-visit/','What to Expect'),('/learning/','Learning Center'),('/patient-resources/','Patient Resource Library'),('/fees-insurance/','Fees & Insurance'),('/portal/','Patient Portal')]
-nav=nav_group('Services',service_items)+nav_group('For Patients',patient_items)+a('/about/','About Laura')+a('/referring-providers/','For Providers')
+patient_items=[('/first-visit/','What to Expect'),('/patient-resources/','Patient Resource Library'),('/fees-insurance/','Fees & Insurance'),('/portal/','Patient Portal')]
+nav=nav_group('Services',service_items)+nav_group('For Patients',patient_items)+a('/learning/','Learning Center')+a('/about/','About Laura')+a('/referring-providers/','For Providers')
 if C['original_logo_path']:
  brand=f'<img src="/assets/{esc(Path(C["original_logo_path"]).name)}" alt="Ischys Integrative Mental Wellness" width="2172" height="724">'
 else:brand='<span class="brand-type"><strong>ISCHYS</strong><small>Integrative Mental Wellness</small></span>'
@@ -75,23 +77,65 @@ def write(path,title,description,body,kind='WebPage',article=None):
   analytics='<script src="/assets/analytics.js" defer data-measurement-id="'+C['ga4_measurement_id']+'"></script>'
  dest.write_text(TEMPLATE.substitute(title=esc(title+' | Ischys'),description=esc(description),seo=seo,analytics=analytics,header=HEADER,footer=FOOTER,body=body))
  PAGES.append({'path':path,'title':title,'file':str(dest.relative_to(OUT))})
-def hero(title,desc,eyebrow='Thoughtful care. Shared decisions.',actions=True):
- return '<section class="page-hero"><div class="wrap"><p class="breadcrumbs">'+a('/','Home')+' / '+esc(eyebrow)+'</p><p class="eyebrow">'+esc(eyebrow)+'</p><h1>'+esc(title)+'</h1><p class="lead">'+esc(desc)+'</p>'+(ctas() if actions else '')+'</div></section>'
+def hero(title,desc,eyebrow='Thoughtful care. Shared decisions.',actions=True,photo=None):
+ copy='<p class="breadcrumbs">'+a('/','Home')+' / '+esc(eyebrow)+'</p><p class="eyebrow">'+esc(eyebrow)+'</p><h1>'+esc(title)+'</h1><p class="lead">'+esc(desc)+'</p>'+(ctas() if actions else '')
+ if photo:
+  # Illustrative photography is decorative, never presented as a patient or provider.
+  picture='<img class="service-photo" src="/assets/service-'+esc(photo)+'-960.webp" srcset="/assets/service-'+esc(photo)+'-480.webp 480w, /assets/service-'+esc(photo)+'-960.webp 960w" sizes="(max-width:900px) calc(100vw - 44px), 42vw" width="960" height="640" alt="" fetchpriority="high">'
+  return '<section class="page-hero service-hero"><div class="wrap service-hero-grid"><div>'+copy+'</div>'+picture+'</div></section>'
+ return '<section class="page-hero"><div class="wrap">'+copy+'</div></section>'
 def end_cta():return '<section class="cta"><div class="wrap"><h2>Ready to feel heard?</h2><p>Thoughtful psychiatric care in American Fork and through telehealth across Utah.</p>'+ctas()+'<p class="small">'+CONSULT+'</p></div></section>'
 def article_cards(items):
  return '<div class="cards">'+''.join('<a class="card" data-article data-categories="'+' '.join(x['services'])+'" href="'+x['path']+'"><span class="tag">Patient education</span><h3>'+esc(x['title'])+'</h3><p>'+esc(x['description'])+'</p><span class="text-link">Read the article →</span></a>' for x in items)+'</div>'
 def faq(items):return '<div class="faq">'+''.join('<details><summary>'+esc(q)+'</summary><p>'+esc(answer)+'</p></details>' for q,answer in items)+'</div>'
+
+def featured_articles():
+ # Use real publication dates when supplied; undated material is curated, not called recent.
+ dated=[item for item in ARTICLES if item.get('published_at')]
+ for item in dated:date.fromisoformat(item['published_at'])
+ dated.sort(key=lambda item:item['published_at'],reverse=True)
+ by_key={item['key']:item for item in ARTICLES}
+ fallback=[by_key[key] for key in C.get('homepage_featured_articles',[]) if key in by_key]
+ selected=[]
+ for item in dated+fallback+ARTICLES:
+  if item not in selected:selected.append(item)
+  if len(selected)==3:break
+ cards=[]
+ for item in selected:
+  slug=item.get('homepage_image_service') or next((s for s in item['services'] if s in CARE_ART),'integrative-psychiatry')
+  if slug not in CARE_ART:raise SystemExit('Unknown homepage_image_service: '+slug)
+  stamp='<time datetime="'+item['published_at']+'">'+date.fromisoformat(item['published_at']).strftime('%B %d, %Y')+'</time>' if item.get('published_at') else 'Patient education'
+  cards.append('<a class="card featured-article" href="'+esc(item['path'])+'"><img src="/assets/service-'+slug+'-480.webp" width="480" height="320" alt="" loading="lazy"><div class="featured-article-copy"><span class="tag">'+stamp+'</span><h3>'+esc(item['title'])+'</h3><p>'+esc(item['description'])+'</p><span class="text-link">Read the article →</span></div></a>')
+ return '<section class="section home-learning" aria-labelledby="home-learning-title"><div class="wrap"><div class="home-learning-heading"><div><p class="eyebrow">Understanding is a good place to start</p><h2 id="home-learning-title">From the Learning Center</h2><p>Explore mental wellness, everyday habits, and questions to bring to your next visit.</p></div>'+a('/learning/','View all articles →','button secondary')+'</div><div class="cards">'+''.join(cards)+'</div></div></section>'
+
+# Decorative, locally rendered illustrations; the adjacent headings name each service.
+CARE_ART = {
+ 'psychiatric-medication-management': ('sage', '<path d="m20 36 16-16a10 10 0 0 1 14 14L34 50a10 10 0 0 1-14-14Z"/><path d="m28 28 14 14M43 49c0-10 5-16 16-16 0 11-6 16-16 16Zm0 0 9-9"/>'),
+ 'adhd-treatment-utah': ('gold', '<path d="M12 24c16-20 20 36 40 16M12 40c14 17 20-34 40-16M12 32h16"/><circle cx="45" cy="32" r="12"/><circle cx="45" cy="32" r="3"/>'),
+ 'anxiety-depression-treatment': ('peach', '<circle cx="39" cy="25" r="10"/><path d="M39 8V4m15 10 3-3M56 25h5M24 14l-3-3M18 49h31a9 9 0 0 0 0-18 13 13 0 0 0-25-1 10 10 0 1 0-6 19Z"/>'),
+ 'womens-mental-health': ('peach', '<path d="M32 39c-14 0-22-11-19-24 10 0 16 6 19 13 3-7 9-13 19-13 3 13-5 24-19 24Zm0 0V21m-8 1c-1-7 3-14 8-18 5 4 9 11 8 18M32 55V39m0 10c-10 0-16-5-18-11 9 0 15 4 18 11Zm0 4c10 0 16-5 18-11-9 0-15 4-18 11Z"/>'),
+ 'addiction-recovery': ('sage', '<path d="M32 53V29m0 9C18 38 11 29 12 17c13 0 20 7 20 21Zm0-9C32 16 40 9 53 10c0 13-8 20-21 19M17 55c8-5 22-5 30 0"/>'),
+ 'trauma-ptsd': ('gold', '<path d="M32 32 21 21c-8-9 4-18 11-9 7-9 19 0 11 9L32 32ZM26 53l-13-9-6-17c-1-5 5-6 7-2l5 11m7 6-8-6c-4-3-8 2-4 5m24 12 13-9 6-17c1-5-5-6-7-2l-5 11m-7 6 8-6c4-3 8 2 4 5"/>'),
+ 'integrative-psychiatry': ('sage', '<circle cx="32" cy="25" r="9"/><path d="M32 9V5M17 13l-3-3m33 3 3-3M16 25h-5m37 0h5M32 56V42m0 8C17 50 9 41 10 29c13 1 21 8 22 21Zm0-6c1-13 9-20 22-21 1 12-7 21-22 21Z"/>'),
+}
+
+def care_card(service, description, heading='h3', label='Explore our care →'):
+ tone, paths = CARE_ART[service['slug']]
+ wide = ' care-card-wide' if service['slug'] == 'integrative-psychiatry' else ''
+ illustration = '<span class="care-art" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">'+paths+'</svg></span>'
+ return '<a class="card care-card care-'+tone+wide+'" href="/'+service['slug']+'/">'+illustration+'<div class="care-copy"><'+heading+'>'+esc(service['title'])+'</'+heading+'><p>'+esc(description)+'</p><span class="text-link">'+label+'</span></div></a>'
 # Home
 home='<section class="wrap hero"><div><span class="pill">Where Strength Meets Healing</span><h1>Psychiatric medication management<span class="location">in American Fork &amp; throughout Utah.</span></h1><p class="lead">Thoughtful psychiatric care that combines evidence-based medication management with integrative treatment options—so you feel heard, understood, and supported.</p>'+ctas()+'<p class="small muted">In-person care in American Fork · Telehealth throughout Utah</p><div class="trust"><span>30+ years in nursing</span><span>MSN, APRN, PMHNP-BC</span><span>Collaborative care</span></div></div><img class="hero-photo" src="/assets/hero-800.webp" srcset="/assets/hero-480.webp 480w, /assets/hero-800.webp 800w, /assets/hero-1200.webp 1200w" sizes="(max-width:760px) 100vw, 50vw" width="800" height="1000" fetchpriority="high" alt="A woman sitting comfortably in a warmly lit room"></section>'
 home+='<section class="soft section"><div class="wrap"><div class="section-head"><p class="eyebrow">Personal care. Shared decisions.</p><h2>Support for what you’re carrying.</h2><p>Psychiatric evaluation and medication management grounded in your whole story. We welcome collaboration with your therapist as part of your care.</p></div><div class="cards">'
 short=['Thoughtful prescribing, ongoing monitoring, and a second look at what has and has not worked.','Evaluation and medication management for children, adolescents, and adults.','Care for persistent worry, low mood, and the ways they affect daily life.','Psychiatric care that considers your experiences and stage of life.','Outpatient psychiatric care for recovery and co-occurring mental health needs.','Medication management alongside trauma-informed, collaborative care.','Evidence-based psychiatry with thoughtful attention to sleep, nutrition, movement, and other relevant factors.']
-for s,desc in zip(SERVICES[:7],short):home+='<a class="card" href="/'+s['slug']+'/"'+(' style="grid-column:1 / -1"' if s==SERVICES[6] else '')+'><h3>'+esc(s['title'])+'</h3><p>'+esc(desc)+'</p><span class="text-link">Explore our care →</span></a>'
+for s,desc in zip(SERVICES[:7],short):home+=care_card(s,desc)
 home+='</div></div></section><section class="section"><div class="wrap two-col"><div><p class="eyebrow">Meet your provider</p><h2>A person to talk to.<br>A partner in your care.</h2><p>Laura Jane Hyte-Garner<br><span class="small muted">MSN, APRN, PMHNP-BC</span></p>'+a('/about/','Get to know Laura →','text-link')+'</div><blockquote class="quote"><p>“I believe healing happens when people feel truly seen, heard, and connected.”</p><p>Psychiatric medication management without the rushed medication visit.</p><p class="muted">We look at symptoms, prior medication trials, sleep, medical factors, lifestyle, therapy, side effects, goals, and what has and has not worked before making treatment decisions.</p></blockquote></div></section>'
+home+=featured_articles()
 home+='<section class="soft section"><div class="wrap"><p class="eyebrow">One step at a time</p><h2>What care looks like.</h2><ol class="steps">'+''.join('<li><span class="number">'+num+'</span><h3>'+title+'</h3><p>'+copy+'</p></li>' for num,title,copy in [('01 / GET TO KNOW YOU','An unhurried evaluation','A 60-minute first appointment to discuss your history, current concerns, and what you want to change.'),('02 / DECIDE TOGETHER','A shared treatment plan','Understand your options and consider medication, therapy collaboration, and other relevant supports.'),('03 / KEEP IN TOUCH','Support as you go','Follow-up care to discuss response, side effects, questions, and next steps.')])+'</ol>'+framework()+a('/first-visit/','Explore your first visit →','text-link')+'</div></section>'
 home+='<div class="wrap"><section class="reflection"><div><h2>A moment to check in with yourself.</h2><p>Explore Laura’s “My Starting Point” worksheet. A reflection tool, not a test or diagnosis.</p></div>'+a('/patient-resources/starting-point/','Explore My Starting Point →','button secondary')+'</section></div>'+end_cta()
 write('/','Psychiatric Medication Management in American Fork & Utah','Psychiatric medication management with Laura Jane Hyte-Garner in American Fork and through Utah telehealth. Explore services, insurance, and a free consultation.',home)
 # Service overview and seven substantive service pages.
-write('/services/','Psychiatric services at Ischys','Explore seven areas of psychiatric care, in-person in American Fork and via telehealth throughout Utah.',hero('Care that starts with understanding you.','Explore psychiatric evaluation and medication management, with time to consider your whole story.','Our services')+'<section class="section soft"><div class="wrap cards">'+''.join('<a class="card" href="/'+s['slug']+'/"><h2>'+esc(s['title'])+'</h2><p>'+esc(d)+'</p><span class="text-link">Learn more →</span></a>' for s,d in zip(SERVICES[:7],short))+'</div></section>'+end_cta())
+write('/services/','Psychiatric services at Ischys','Explore seven areas of psychiatric care, in-person in American Fork and via telehealth throughout Utah.',hero('Care that starts with understanding you.','Explore psychiatric evaluation and medication management, with time to consider your whole story.','Our services')+'<section class="section soft"><div class="wrap cards">'+''.join(care_card(s,d,'h2','Learn more →') for s,d in zip(SERVICES[:7],short))+'</div></section>'+end_cta())
 EVAL={
 'psychiatric-medication-management':['The symptoms and everyday activities you want treatment to improve','Previous medication trials, benefits, side effects, and current prescriptions','Sleep, medical conditions, supplements, substance use, and therapy','Your preferences, questions, and treatment goals'],
 'adhd-treatment-utah':['Developmental history and how concerns affect more than one setting','Attention, organization, task initiation, impulsivity, and daily functioning','Sleep, mood, anxiety, substance use, medical factors, and alternative explanations','Prior treatment response, tolerability, and practical behavioral or environmental supports'],
@@ -108,7 +152,7 @@ APPROACH={
 for s in SERVICES[:7]:
  slug=s['slug']; related=[x for x in ARTICLES if slug in x['services']]
  intro=s['audience'].replace('Who it is for: ','')
- body=hero(s['h1'],intro,s['title'])
+ body=hero(s['h1'],intro,s['title'],photo=slug)
  body+='<section class="section"><div class="wrap service-layout"><div class="service-body"><section><h2>When you might seek care</h2><p>'+esc(intro)+'</p><p>You do not need to have all the answers before your first visit. Bring the concerns that are affecting your life and the questions you want to discuss.</p></section><section><h2>What your evaluation considers</h2><ul>'+''.join('<li>'+esc(x)+'</li>' for x in EVAL[slug])+'</ul></section><section><h2>A thoughtful approach to treatment</h2><p>'+esc(APPROACH.get(slug,s['approach']))+'</p></section><section><h2>How medication management works</h2><p>We identify the symptoms and functional goals that matter to you, review your prior response and side effects, and discuss the potential benefits and risks of treatment options. Decisions are made together.</p><p>Follow-up appointments are a chance to review what has changed, how you are functioning, and whether the plan needs adjustment. Sleep, medical factors, substances, lifestyle, and therapy remain part of that conversation.</p><div class="callout"><p>'+MEDICATION+'</p></div></section><section><h2>Care without the rushed medication visit</h2><p>Laura’s approach looks at the whole person: what you have tried, what has helped, what has not, and what matters in your everyday life. You have a voice in your treatment.</p>'+framework()+a('/first-visit/','What to expect at your first visit →','text-link')+'</section><section><h2>Common questions</h2>'+faq([('Can I meet through telehealth?','Ischys provides in-person care in American Fork and telehealth throughout Utah. Contact the practice to discuss which appointment format fits your needs.'),('Does an evaluation guarantee a prescription?','No. Medication decisions are individualized and depend on clinical appropriateness, safety, and prescribing requirements.'),('Can you work with my therapist?','With your authorization, Laura can coordinate relevant care with your therapist or other treating professionals. Psychiatric medication management supports your existing treatment relationship.'),('What is the free consultation?',CONSULT),('Can I use insurance?',INSURANCE_COPY)])+'</section>'+credit()+'</div><aside class="aside-card"><h2>Plan your visit</h2><p>In person in American Fork<br>Telehealth throughout Utah</p><p>'+esc(C['address'])+'</p>'+ctas()+'<p>'+CONSULT+'</p><hr><p>'+INSURANCE_COPY+'</p>'+a('/fees-insurance/','View insurance details →','text-link')+'</aside></div></section><section class="soft section"><div class="wrap"><h2>Learn more at your own pace.</h2>'+article_cards(related)+'</div></section>'+end_cta()
  write('/'+slug+'/',s['h1'],short[SERVICES.index(s)]+' In-person care in American Fork and Utah telehealth.',body,'MedicalWebPage')
 # First visit
@@ -183,8 +227,15 @@ for key,tracker in TRACKERS.items():body+='<a class="card" href="/downloads/'+ke
 body+='</div></div></section>'
 write('/patient-resources/','Printable Mental Health Patient Resources','Download patient check-ins, wellness plans, hard-day support, resource directories, and practical trackers from Ischys.',body,'CollectionPage')
 for key,title in RESOURCE_TITLES.items():
- text,toc=rendered_blocks(key,True)
- body=hero(title,RESOURCE_DESCS[key],'Patient resources',False)+'<div class="wrap"><div class="resource-tools">'+a('/downloads/'+key+'.pdf','Download printable PDF ↓','button')+'<button type="button" class="button secondary" data-print>Print this page</button></div><p class="print-note">For your own use. This website does not collect or store your responses.</p></div><section class="section"><div class="wrap article-layout"><nav class="toc" aria-label="In this resource"><strong>In this resource</strong>'+''.join(a('#'+ident,title) for ident,title in toc)+'</nav><article class="article-body">'+text+'<p class="disclaimer">'+DISCLAIMER+'</p></article></div></section>'
+ resource_links={'PATIENT PORTAL':('/portal/','Patient portal'),'ISCHYS LEARNING CENTER':('/learning/','Learning Center'),'USARA':REFS[1][::-1],'ARP':REFS[6][::-1],'SMART RECOVERY':REFS[2][::-1],'LOCAL MEETING RESOURCES':REFS[7][::-1],'FAMILY SUPPORT RESOURCES':REFS[3][::-1],'NAMI UTAH':REFS[5][::-1]}
+ text,toc=render_resource(key,SOURCE[key]['blocks'],resource_links)
+ body='<section class="resource-hero"><div class="wrap"><p class="breadcrumbs">'+a('/patient-resources/','← Patient Resource Library')+'</p><p class="eyebrow">A little support between visits</p><h1>'+esc(title)+'</h1><p class="lead">'+RESOURCE_DESCS[key]+'</p><div class="resource-tools">'+a('/downloads/'+key+'.pdf','Download printable PDF ↓','button')+'<button type="button" class="button secondary" data-print>Print this page</button></div><p class="print-note">Read at your own pace, or use the printable version to write your responses. This website does not collect or store your responses.</p></div></section>'
+ if key in ('hard-day','resources'):
+  crisis_anchor='section-124' if key=='hard-day' else 'section-53'
+  body+='<div class="wrap"><div class="resource-safety">'+a('#'+crisis_anchor,'Need urgent support? Jump to crisis contacts →','text-link')+'</div></div>'
+ body+='<section class="section resource-reading"><div class="wrap resource-layout"><nav class="toc resource-nav" aria-label="In this resource"><strong>On this page</strong>'+''.join(a('#'+ident,label) for ident,label in toc)+'<a class="resource-back" href="/patient-resources/">← All patient resources</a></nav><article class="resource-content">'
+ if key!='welcome':body+='<div class="resource-reading-tools no-print"><p>Choose the section you need today.</p><button class="button secondary" type="button" data-resource-expand>Expand all sections</button></div>'
+ body+=text+'<p class="disclaimer">'+DISCLAIMER+'</p><div class="resource-end">'+a('/patient-resources/','Explore the other patient tools →','text-link')+'</div></article></div></section>'
  if key=='resources':body+='<section class="soft section"><div class="wrap narrow"><h2>Community & support links</h2><ul>'+''.join('<li>'+a(url,title)+'</li>' for title,url in REFS)+'</ul></div></section>'
  write('/patient-resources/'+key+'/',title+' | Patient Resources',RESOURCE_DESCS[key],body)
 # Existing legal content remains available for practice approval. Add precise site implementation disclosures.

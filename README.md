@@ -18,6 +18,8 @@ For a public launch, configure the production domain, approved integration URLs,
 
 ## Editing
 
+The homepage features three Learning Center articles. Add an optional `published_at` date (`YYYY-MM-DD`) to an article in `content/articles.json` to place newer published posts first. Undated slots use the article keys in `homepage_featured_articles` in `content/site.json`, then the remaining article order. Only use actual publication dates; undated articles display “Patient education.”
+
 - `content/`: site settings, client content, articles, and resource definitions.
 - `templates/page.html`: shared page shell.
 - `scripts/build.py`: page assembly and metadata.

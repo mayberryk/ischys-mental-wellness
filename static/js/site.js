@@ -56,6 +56,33 @@
     filters.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
     filterArticles();
   }));
+  const resourceSections = [...document.querySelectorAll('.resource-fold')];
+  const expandResources = document.querySelector('[data-resource-expand]');
+  function updateResourceToggle() {
+    if (expandResources) expandResources.textContent = resourceSections.every(section => section.open) ? 'Collapse all sections' : 'Expand all sections';
+  }
+  expandResources?.addEventListener('click', () => {
+    const open = !resourceSections.every(section => section.open);
+    resourceSections.forEach(section => section.open = open);
+    updateResourceToggle();
+  });
+  resourceSections.forEach(section => section.addEventListener('toggle', updateResourceToggle));
+  function revealResourceAnchor() {
+    const target = document.getElementById(location.hash.slice(1));
+    if (target?.classList.contains('resource-fold')) target.open = true;
+  }
+  window.addEventListener('hashchange', revealResourceAnchor);
+  revealResourceAnchor();
+  let resourcePrintState;
+  window.addEventListener('beforeprint', () => {
+    resourcePrintState = resourceSections.map(section => section.open);
+    resourceSections.forEach(section => section.open = true);
+  });
+  window.addEventListener('afterprint', () => {
+    if (resourcePrintState) resourceSections.forEach((section, i) => section.open = resourcePrintState[i]);
+    resourcePrintState = undefined;
+    updateResourceToggle();
+  });
   document.querySelectorAll('[data-print]').forEach(button => button.addEventListener('click', () => window.print()));
   // Conversion hooks deliberately contain no page URLs, titles, query strings, form values,
   // search terms, health topics, referrers, or patient identifiers. No network calls here.
