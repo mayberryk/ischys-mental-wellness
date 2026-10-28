@@ -12,7 +12,7 @@ Run `python3 scripts/check_site.py` to build and validate pages, internal links,
 
 Run `python3 scripts/build.py`. Publish **dist/**, not the repository root. On Render Static Sites, set Build Command to `python3 scripts/build.py` and Publish Directory to `dist`. Existing service settings must be updated manually if they still publish the old HTML files from the repository root.
 
-This default build is a review preview: search indexing and analytics are disabled. Scheduling, consultation, portal, and referral destinations remain placeholders until configured in `content/site.json`.
+This default build is a review preview: search indexing and analytics are disabled. New-patient scheduling uses Laura’s verified SimplePractice link. Consultations use the practice phone number. Portal and referral destinations are configured independently in `content/site.json`; unset routes show phone assistance.
 
 For a public launch, configure the production domain, approved integration URLs, original logo, and clinical approval in `content/site.json`, then use `python3 scripts/build.py --production`. The production build fails when required configuration is missing. Optional analytics also requires its configuration and review. Configure the host to honor the generated `_redirects` and `_headers`, or translate them into the host's equivalent rules. HTML redirect fallbacks are generated for legacy pages.
 
@@ -30,3 +30,7 @@ The homepage features three Learning Center articles. Add an optional `published
 Keep client-directed wording unchanged during visual design work. PDF regeneration uses `scripts/build_pdfs.py` and requires ReportLab and suitable fonts; generated PDFs are already included. PDF visual/editorial review remains part of launch preparation.
 
 Do not commit or push changes unless explicitly requested.
+
+## Client review and editing
+
+See [client review and outstanding confirmations](docs/CLIENT-REVIEW.md) and [insurance/article editing instructions](docs/CONTENT-UPDATES.md). Run `python3 scripts/check_client_revisions.py` for isolated publication and insurance regression checks.

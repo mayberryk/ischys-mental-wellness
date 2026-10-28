@@ -1,5 +1,5 @@
 """Generate printable patient resources from client-owned content. Requires reportlab."""
-import json,re
+import json,re,argparse
 from pathlib import Path
 from html import escape
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, KeepTogether
@@ -8,6 +8,7 @@ from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+parser=argparse.ArgumentParser();parser.add_argument('--only');args=parser.parse_args()
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'output/pdf';OUT.mkdir(parents=True,exist_ok=True)
 FONT=Path('/home/keithmayberry/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/libreoffice-headless/libreoffice/share/fonts/truetype')
 # Font names are environment-configurable for use outside the bundled runtime.
@@ -28,10 +29,12 @@ def footer(canvas,doc):
 def build(key,title,story):
  SimpleDocTemplate(str(OUT/(key+'.pdf')),pagesize=(612,792),leftMargin=48,rightMargin=48,topMargin=42,bottomMargin=58,title=title,author='Laura Jane Hyte-Garner, MSN, APRN, PMHNP-BC').build(story,onFirstPage=footer,onLaterPages=footer)
 for key,title in titles.items():
+ if args.only and key!=args.only:continue
  story=[p('ISCHYS INTEGRATIVE MENTAL WELLNESS','Fine'),p(title,'PageTitle'),p('By Laura Jane Hyte-Garner, MSN, APRN, PMHNP-BC','Fine')]
  skipratings=False
  for block in S[key]['blocks']:
   text=block['text'];typ=block['type']
+  if text.startswith('Notice Understand Experiment Track Discuss'):text='Notice → Understand → Experiment → Track → Discuss'
   if key=='starting-point' and text=='How Am I Doing Right Now?':
    story.append(p(text,'Section'));story.append(p('Think about the past 1–2 weeks. 0 = Really struggling; 5 = Somewhere in the middle; 10 = Doing very well.'))
    rows=[[p('Area of my life','Fine'),p('Circle a rating','Fine')]]
@@ -52,6 +55,7 @@ for key,title in titles.items():
    if ('_' in text or text.endswith(':')) and len(text)<100:story.append(Spacer(1,10))
  build(key,title,story)
 for key,t in T.items():
+ if args.only and key!=args.only:continue
  story=[p('ISCHYS INTEGRATIVE MENTAL WELLNESS','Fine'),p(t['title'],'PageTitle'),p(t['description']),p('Name (optional): ____________________    Date: ____________________','Fine')]
  for field in t['fields']:
   story.append(KeepTogether([p(field,'Copy'),Spacer(1,6),Table([['']],colWidths=[516],style=[('LINEBELOW',(0,0),(-1,-1),.5,colors.HexColor('#b7c1b6'))]),Spacer(1,7)]))

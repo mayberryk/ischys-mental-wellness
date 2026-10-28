@@ -1,142 +1,46 @@
 [
   {
-    "type": "h1",
-    "text": "Privacy Policy"
+    "type": "h2",
+    "text": "This website"
   },
   {
     "type": "p",
-    "text": "Effective Date: January 1, 2026 | Last Updated: February 2026"
+    "text": "This informational website does not provide a form for collecting patient or referral information. Article search and printable resources do not submit search terms or worksheet responses to the practice."
   },
   {
     "type": "h2",
-    "text": "1. Our Commitment to Patient Confidentiality & HIPAA"
+    "text": "Scheduling and other services"
   },
   {
     "type": "p",
-    "text": "At Ischys Mental Wellness, preserving your privacy and safeguarding your Protected Health Information (PHI) is fundamental to our care philosophy. We operate in strict compliance with the Health Insurance Portability and Accountability Act (HIPAA), state health privacy laws in Utah, Texas, and California, and applicable federal confidentiality standards."
+    "text": "New-patient scheduling opens SimplePractice, a separate service. Information entered there is handled by that service and the practice’s approved policies. The existing-patient portal opens the separately verified SimplePractice sign-in page. The secure referral destination is awaiting verification. Call the practice for assistance; do not send clinical records through this public website."
   },
   {
     "type": "h2",
-    "text": "2. Information We Collect"
+    "text": "Hosting and privacy review"
   },
   {
     "type": "p",
-    "text": "We collect personal and clinical information necessary to evaluate, diagnose, and manage psychiatric care safely and effectively:"
-  },
-  {
-    "type": "li",
-    "text": "Personal Identifiers: Name, date of birth, contact information (email, phone, address)."
-  },
-  {
-    "type": "li",
-    "text": "Medical & Psychiatric History: Prior diagnoses, current medications, symptom history, and therapy notes."
-  },
-  {
-    "type": "li",
-    "text": "Insurance & Billing Details: Payment card details, superbill reimbursement info, and insurance policy data."
-  },
-  {
-    "type": "li",
-    "text": "Website Usage Data: Anonymized analytical data, browser type, and cookie preferences for website performance optimization."
+    "text": "The hosting provider may process technical request information such as IP addresses and browser details. Hosting logs, retention, third-party arrangements, and the practice’s patient privacy notices require confirmation before launch. This draft does not replace the practice’s approved Notice of Privacy Practices."
   },
   {
     "type": "h2",
-    "text": "3. How Your Information is Used"
+    "text": "Practice contact"
   },
   {
     "type": "p",
-    "text": "Your health and personal data are used solely for clinical and practice administration purposes, including:"
-  },
-  {
-    "type": "li",
-    "text": "Providing psychiatric evaluations, medication management, and therapeutic consultations."
-  },
-  {
-    "type": "li",
-    "text": "Scheduling appointments, issuing prescription refills, and maintaining your electronic health record (EHR)."
-  },
-  {
-    "type": "li",
-    "text": "Processing billing transactions and providing superbills for out-of-network insurance reimbursement."
-  },
-  {
-    "type": "li",
-    "text": "Communicating securely regarding appointment reminders and lab results."
-  },
-  {
-    "type": "h2",
-    "text": "4. Telehealth & Secure Technology"
+    "text": "Ischys Integrative Mental Wellness"
   },
   {
     "type": "p",
-    "text": "All virtual appointments are conducted via encrypted, HIPAA-compliant video conferencing platforms. We do not record virtual therapy or psychiatric evaluation sessions. Patient communications via our encrypted portal adhere to high-grade security protocols to protect data during transmission."
-  },
-  {
-    "type": "h2",
-    "text": "5. Sharing & Disclosure Restrictions"
+    "text": "802 E Bamberger Dr, Suite D, American Fork, UT 84003"
   },
   {
     "type": "p",
-    "text": "We will never sell or rent your personal health data to third parties or advertisers. Information is disclosed only under the following limited circumstances:"
-  },
-  {
-    "type": "li",
-    "text": "With Your Explicit Consent: To coordinate care with your therapist, primary care physician, or family members via a signed Release of Information (ROI)."
-  },
-  {
-    "type": "li",
-    "text": "Legal Requirements: As required by law, court order, or mandatory reporting requirements (e.g., imminent harm to self or others, child or elder abuse)."
-  },
-  {
-    "type": "li",
-    "text": "Healthcare Operations: With HIPAA-compliant business associates (e.g., lab facilities, e-prescribing services) bound by strict Business Associate Agreements (BAAs)."
-  },
-  {
-    "type": "h2",
-    "text": "6. Your Rights Under HIPAA"
+    "text": "801-796-2552"
   },
   {
     "type": "p",
-    "text": "As a patient, you hold specific statutory rights regarding your health record:"
-  },
-  {
-    "type": "li",
-    "text": "The right to inspect and request copies of your medical records."
-  },
-  {
-    "type": "li",
-    "text": "The right to request amendments or corrections to inaccurate records."
-  },
-  {
-    "type": "li",
-    "text": "The right to request restrictions on how your health information is used or disclosed."
-  },
-  {
-    "type": "li",
-    "text": "The right to receive an accounting of disclosures of your health data."
-  },
-  {
-    "type": "h2",
-    "text": "7. Contact & Privacy Officer"
-  },
-  {
-    "type": "p",
-    "text": "If you have questions regarding this Privacy Policy or wish to exercise your privacy rights, please contact our privacy coordinator:"
-  },
-  {
-    "type": "p",
-    "text": "Ischys Mental Wellness — Privacy Office"
-  },
-  {
-    "type": "p",
-    "text": "Laura Jane Hyte Garner, APRN, PMHNP-BC"
-  },
-  {
-    "type": "p",
-    "text": "Email: privacy@ischysmentalwellness.com"
-  },
-  {
-    "type": "p",
-    "text": "Utah Practice & Telehealth Services (TX & CA)"
+    "text": "If you live in Utah, I offer in-person appointments in American Fork and telehealth throughout the state."
   }
 ]

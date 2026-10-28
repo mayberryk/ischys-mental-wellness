@@ -46,7 +46,7 @@ for entry in manifest:
  if not p.jsons:errors.append(f'{entry["path"]}: missing schema')
  titles.append(p.title);descriptions.append(p.description)
  text=' '.join(p.all_text)
- for forbidden in ['90-minute','90-Minute','$350','$175','$225','href="#"','QR CODE:']:
+ for forbidden in ['90-minute','90-Minute','$350','$175','$225','href="#"','QR CODE:','Texas','California','TX & CA','Salt Lake City','Ischys Mental Wellness','privacy@ischysmentalwellness.com','legal@ischysmentalwellness.com']:
   if forbidden in text:errors.append(f'{entry["path"]}: stale content {forbidden}')
  if entry['path'] not in ('/404.html',) and '802 E Bamberger Dr, Suite D' not in text:errors.append(f'{entry["path"]}: address missing')
  if 'cdn.tailwindcss.com' in (OUT/entry['file']).read_text():errors.append('Runtime Tailwind remains')
@@ -55,6 +55,8 @@ if len(descriptions)!=len(set(descriptions)):errors.append('Duplicate page descr
 # All source content is retained in article output, after documented whitespace/encoding repairs.
 source=json.loads((ROOT/'content/source-sections.json').read_text())
 for item in json.loads((ROOT/'content/articles.json').read_text()):
+ if item.get('status')!='published' or item.get('approved') is not True:continue
+ if item.get('source_file'):source[item['key']]=json.loads((ROOT/'content'/item['source_file']).read_text())
  text=' '.join(parsed[OUT/item['path'].lstrip('/')/'index.html'].all_text)
  norm=lambda v:re.sub(r'\s+',' ',v).strip()
  for block in source[item['key']]['blocks']:
@@ -78,6 +80,23 @@ for pdf in (OUT/'downloads').glob('*.pdf'):
 r=subprocess.run([sys.executable,str(ROOT/'scripts/build.py'),'--production'],capture_output=True,text=True)
 config=json.loads((ROOT/'content/site.json').read_text())
 if not config['production_url'] and r.returncode==0:errors.append('Production build should reject missing domain')
+# Regression checks for the client-requested routes and shared insurance list.
+booking=config['scheduling_url']
+for service in json.loads((ROOT/'content/services.json').read_text()):
+ page=parsed[OUT/service['slug']/'index.html']
+ if booking not in page.refs:errors.append('Service missing exact scheduling link: '+service['slug'])
+ if config['phone_href'] not in page.refs:errors.append('Service missing phone consultation: '+service['slug'])
+for route in ('portal','referral','consultation'):
+ page=parsed[OUT/route/'index.html']
+ target=config[{'portal':'portal_url','referral':'referral_url','consultation':'consultation_url'}[route]]
+ if not target and 'http-equiv="refresh"' in (OUT/route/'index.html').read_text():errors.append(route+' must not redirect before independent verification')
+ if target and target not in page.refs:errors.append(route+' missing verified destination')
+ if config['phone_href'] not in page.refs:errors.append(route+' missing phone assistance')
+for plan in json.loads((ROOT/'content/insurance.json').read_text()):
+ for file in ('index.html','fees-insurance/index.html'):
+  text=' '.join(parsed[OUT/file].all_text)
+  if plan['status']=='active' and plan['name'] not in text:errors.append('Active insurance missing: '+plan['name'])
+  if plan['status']!='active' and plan['name'] in text:errors.append('Pending insurance exposed: '+plan['name'])
 if errors:
  print('\n'.join(errors));raise SystemExit(1)
 print(f'PASS: {len(manifest)} pages; local assets/links/fragments, unique metadata, schema, source article coverage, 13 PDFs, and production configuration gate.')

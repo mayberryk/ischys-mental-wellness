@@ -16,7 +16,9 @@
     ],
     "services": [
       "psychiatric-medication-management"
-    ]
+    ],
+    "status": "published",
+    "approved": true
   },
   {
     "key": "caffeine",
@@ -41,7 +43,9 @@
       "adhd-treatment-utah",
       "anxiety-depression-treatment",
       "psychiatric-medication-management"
-    ]
+    ],
+    "status": "published",
+    "approved": true
   },
   {
     "key": "sleep",
@@ -62,7 +66,9 @@
       "adhd-treatment-utah",
       "anxiety-depression-treatment",
       "trauma-ptsd"
-    ]
+    ],
+    "status": "published",
+    "approved": true
   },
   {
     "key": "hobbies",
@@ -83,7 +89,9 @@
     "services": [
       "anxiety-depression-treatment",
       "addiction-recovery"
-    ]
+    ],
+    "status": "published",
+    "approved": true
   },
   {
     "key": "regulation",
@@ -103,7 +111,9 @@
     "services": [
       "anxiety-depression-treatment",
       "trauma-ptsd"
-    ]
+    ],
+    "status": "published",
+    "approved": true
   },
   {
     "key": "substances",
@@ -123,7 +133,9 @@
     "services": [
       "addiction-recovery",
       "psychiatric-medication-management"
-    ]
+    ],
+    "status": "published",
+    "approved": true
   },
   {
     "key": "nutrition",
@@ -144,7 +156,9 @@
       "integrative-psychiatry",
       "adhd-treatment-utah",
       "psychiatric-medication-management"
-    ]
+    ],
+    "status": "published",
+    "approved": true
   },
   {
     "key": "movement",
@@ -165,7 +179,9 @@
       "anxiety-depression-treatment",
       "adhd-treatment-utah",
       "integrative-psychiatry"
-    ]
+    ],
+    "status": "published",
+    "approved": true
   },
   {
     "key": "connection",
@@ -183,7 +199,9 @@
       "anxiety-depression-treatment",
       "addiction-recovery",
       "trauma-ptsd"
-    ]
+    ],
+    "status": "published",
+    "approved": true
   },
   {
     "key": "fermented",
@@ -198,6 +216,8 @@
     ],
     "services": [
       "integrative-psychiatry"
-    ]
+    ],
+    "status": "published",
+    "approved": true
   }
 ]

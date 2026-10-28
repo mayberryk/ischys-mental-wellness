@@ -1,82 +1,54 @@
 [
   {
-    "type": "h1",
-    "text": "Legal Terms & Practice Notices"
+    "type": "h2",
+    "text": "Website information"
   },
   {
     "type": "p",
-    "text": "Effective Date: January 1, 2026 | Practice Disclosures & Terms of Use"
-  },
-  {
-    "type": "p",
-    "text": "If you or someone you know is experiencing a mental health emergency, suicidal thoughts, or self-harm, please do not use this website to request urgent care. Call 911 or go to your nearest emergency room immediately. You can also reach the Suicide & Crisis Lifeline by calling or texting 988 (available 24/7, free, and confidential)."
+    "text": "This website provides general educational information and is not individualized medical advice. Contact the practice to discuss care and its approved patient policies."
   },
   {
     "type": "h2",
-    "text": "1. Medical & Clinical Disclaimer"
+    "text": "Current service area"
   },
   {
     "type": "p",
-    "text": "The information provided on this website is for educational and general informational purposes only and does not constitute medical, psychiatric, or healthcare advice. Browsing this website or submitting an inquiry form does not establish a provider-patient relationship. A formal provider-patient relationship is established only after completing an initial comprehensive evaluation and signing a mutual clinical care agreement."
+    "text": "If you live in Utah, I offer in-person appointments in American Fork and telehealth throughout the state."
   },
   {
     "type": "h2",
-    "text": "2. Provider Licensure & Geographic Boundaries"
+    "text": "Appointments and referrals"
   },
   {
     "type": "p",
-    "text": "Laura Jane Hyte Garner, APRN, PMHNP-BC, is a board-certified Psychiatric Mental Health Nurse Practitioner licensed to provide clinical psychiatric evaluation and medication management services to individuals residing in and physically located within Utah, Texas, and California at the time of service."
-  },
-  {
-    "type": "p",
-    "text": "Patients participating in telehealth sessions must be physically located in a state where the provider holds active licensure during every virtual visit."
+    "text": "New-patient scheduling is available through the linked SimplePractice service. Availability must be confirmed with the practice. A free 15-minute consultation is for general questions about fit, not a psychiatric evaluation or treatment visit. Call 801-796-2552 to arrange a consultation or confirm the appropriate secure referral process."
   },
   {
     "type": "h2",
-    "text": "3. Terms of Website Use"
+    "text": "Terms awaiting approval"
   },
   {
     "type": "p",
-    "text": "By accessing or using this website, you agree to comply with these terms. All content on this website, including text, graphics, practice logos, imagery, and software layout, is the property of Ischys Mental Wellness and is protected by United States intellectual property and copyright laws. Unauthorized reproduction or redistribution is strictly prohibited."
+    "text": "The legal entity name, policy effective date, official legal contact, and final terms require practice confirmation. These draft website notes are not finalized practice policies."
   },
   {
     "type": "h2",
-    "text": "4. Limitation of Liability"
+    "text": "Practice contact"
   },
   {
     "type": "p",
-    "text": "Ischys Mental Wellness makes reasonable efforts to ensure the accuracy and timeliness of information published on this site. However, we assume no legal liability or responsibility for errors, omissions, or delays in website content, nor for any damage resulting from technical interruptions or third-party links."
-  },
-  {
-    "type": "h2",
-    "text": "5. Notice of Nondiscrimination"
+    "text": "Ischys Integrative Mental Wellness"
   },
   {
     "type": "p",
-    "text": "Ischys Mental Wellness complies with applicable Federal and State civil rights laws. We do not discriminate, exclude, or treat individuals differently on the basis of race, color, national origin, age, disability, sex, sexual orientation, or gender identity in access to psychiatric care and treatment services."
-  },
-  {
-    "type": "h2",
-    "text": "6. Contact & Legal Notices"
+    "text": "802 E Bamberger Dr, Suite D, American Fork, UT 84003"
   },
   {
     "type": "p",
-    "text": "For official legal inquiries or practice notices, please direct correspondence to:"
+    "text": "801-796-2552"
   },
   {
     "type": "p",
-    "text": "Ischys Mental Wellness LLC"
-  },
-  {
-    "type": "p",
-    "text": "Laura Jane Hyte Garner, APRN, PMHNP-BC"
-  },
-  {
-    "type": "p",
-    "text": "Email: legal@ischysmentalwellness.com"
-  },
-  {
-    "type": "p",
-    "text": "Salt Lake City, Utah Practice & Telehealth Services"
+    "text": "If you live in Utah, I offer in-person appointments in American Fork and telehealth throughout the state."
   }
 ]

@@ -5,16 +5,20 @@
   "phone_href": "tel:+18017962552",
   "address": "802 E Bamberger Dr, Suite D, American Fork, UT 84003",
   "production_url": "",
-  "scheduling_url": "",
+  "scheduling_url": "https://laura-jane-hyte-garner7671.clientsecure.me/",
   "consultation_url": "",
-  "portal_url": "",
+  "portal_url": "https://laura-jane-hyte-garner7671.clientsecure.me/sign-in",
   "referral_url": "",
-  "original_logo_path": "assets/ischys-original-logo.png",
+  "original_logo_path": "assets/ischys-original-logo-vector.svg",
   "ga4_measurement_id": "",
   "analytics_enabled": false,
   "analytics_review_complete": false,
   "clinical_approval_complete": false,
-  "homepage_featured_articles": ["medication", "hobbies", "connection"],
+  "homepage_featured_articles": [
+    "medication",
+    "hobbies",
+    "connection"
+  ],
   "referral_sources": [
     "Insurance",
     "Google",
@@ -29,5 +33,11 @@
     "For Healthcare Organizations",
     "For Senior Living & Long-Term Care",
     "Women’s Mental Wellness program"
-  ]
+  ],
+  "service_area_copy": "If you live in Utah, I offer in-person appointments in American Fork and telehealth throughout the state.",
+  "policies_approved": false,
+  "legal_entity_name": "",
+  "legal_email": "",
+  "privacy_email": "",
+  "policy_effective_date": ""
 }

@@ -79,3 +79,47 @@ h1,h2,h3,h4{font-weight:600}h1{letter-spacing:-.025em}h2{letter-spacing:-.02em}
 .featured-article{padding:0;overflow:hidden}.featured-article>img{width:100%;aspect-ratio:3/2;object-fit:cover}.featured-article-copy{padding:26px;display:flex;flex-direction:column;flex:1}.featured-article-copy h3{font-size:22px;line-height:1.35}.featured-article-copy .tag{display:block}.featured-article-copy p{font-size:14px}.featured-article-copy .text-link{padding-top:18px}
 @media(min-width:761px) and (max-width:1100px){.home-learning .cards{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-article-copy{padding:20px}.featured-article-copy h3{font-size:20px}}
 @media(max-width:760px){.home-learning-heading{flex-direction:column;align-items:flex-start;gap:20px}.featured-article-copy{padding:24px}}
+/* Client-supplied portraits; framing is CSS only, original photographs are unchanged. */
+.provider-grid{display:grid;grid-template-columns:minmax(250px,360px) minmax(0,1fr);column-gap:60px;row-gap:24px;align-items:start}
+.provider-photo{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:70px 18px 18px 18px}
+.provider-grid>.provider-photo{grid-row:span 2}
+.provider-grid>.quote{margin:0}
+.about-layout{display:grid;grid-template-columns:minmax(240px,350px) minmax(0,1fr);gap:60px;align-items:start}
+.insurance-strip .insurance-logos{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.insurance-strip .insurance-card{padding:14px 10px;background:transparent;border:0;font-size:12px;line-height:1.4}
+.insurance-strip .insurance-card img{margin:0 auto 8px;height:26px}
+.insurance-strip .insurance-card p{font-size:11px;margin-top:8px}
+.insurance-card p{margin:12px 0 0;font-size:12px;line-height:1.5}
+@media(max-width:760px){.provider-grid,.about-layout{grid-template-columns:1fr;gap:28px}.provider-grid>.provider-photo{grid-row:auto;max-width:420px}.about-layout>.provider-photo{max-width:420px}.insurance-strip .insurance-logos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Align the provider story as one column alongside a balanced portrait. */
+.provider-grid{grid-template-columns:minmax(280px,400px) minmax(0,1fr);gap:64px;align-items:center}
+.provider-grid>.provider-photo{grid-row:auto;aspect-ratio:4/5}
+.provider-copy{min-width:0}.provider-copy h2{font-size:36px;margin-bottom:20px}.provider-copy>.eyebrow{margin-bottom:16px}
+.provider-copy .quote{margin:24px 0 20px;padding:24px 0 0;border-left:0;border-top:1px solid #c8cdbd}
+.provider-copy .quote p:first-child{font-size:25px;line-height:1.45;margin-bottom:16px}
+.provider-copy .quote p:not(:first-child){font-size:16px;line-height:1.7;margin-bottom:12px}
+.provider-copy .quote p:last-child{margin-bottom:0}
+/* Equal logo tiles with larger, centered artwork and notes outside the grid. */
+.insurance-strip{padding:44px 0}.insurance-strip .insurance-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:28px 0 24px}
+.insurance-strip .insurance-card{flex:0 0 calc((100% - 48px)/4);min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:124px;padding:18px 12px;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:12px;line-height:1.4;text-align:center}
+.insurance-strip .insurance-card img{width:180px;max-width:100%;height:58px;object-fit:contain;margin:0 0 14px}
+.insurance-strip .insurance-card strong{display:flex;align-items:center;justify-content:center;min-height:34px}
+.insurance-note{max-width:850px;margin-bottom:8px}
+.insurance-grid .insurance-card img{width:180px;max-width:100%;height:58px}
+@media(max-width:1100px){.provider-grid{gap:36px;grid-template-columns:minmax(260px,340px) minmax(0,1fr)}.provider-copy h2{font-size:31px}.provider-copy .quote p:first-child{font-size:23px}}
+@media(max-width:760px){.provider-grid{grid-template-columns:1fr;gap:28px;align-items:start}.provider-grid>.provider-photo{max-width:440px;margin:auto}.provider-copy h2{font-size:30px}.insurance-strip .insurance-card{flex-basis:calc((100% - 12px)/2);padding:16px 10px;min-height:118px}.insurance-strip .insurance-logos{gap:12px}.insurance-strip .insurance-card img{width:150px;height:48px}.insurance-strip{padding:32px 0}}
+
+/* Resolution-independent symbol and browser-rendered wordmark. */
+.brand{gap:10px}.brand-symbol{display:block;flex:none;width:72px;height:72px}.brand-wording{display:flex;flex-direction:column;gap:5px;white-space:nowrap;color:#092c3b;line-height:1}
+.brand-name{font-family:var(--serif);font-weight:600;font-size:23px;letter-spacing:-.6px}
+.brand-subtitle{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:2.1px;text-transform:uppercase}
+.footer-brand{margin:0 0 20px;max-width:none}.footer-brand .brand-symbol{width:68px;height:68px}.footer-brand .brand-name{font-size:22px}
+@media(min-width:1101px) and (max-width:1220px){.header-inner .brand-symbol{width:56px;height:56px}.header-inner .brand-name{font-size:20px}.header-inner .brand-subtitle{font-size:9px;letter-spacing:1.7px}}
+@media(max-width:760px){.brand{gap:8px}.brand-symbol{width:57px;height:57px}.brand-name{font-size:20px;letter-spacing:-.5px}.brand-subtitle{font-size:9px;letter-spacing:1.8px}.footer-brand .brand-symbol{width:60px;height:60px}.footer-brand .brand-name{font-size:20px}}
+@media(max-width:380px){.header-inner .brand-symbol{width:46px;height:46px}.header-inner .brand-name{font-size:17px}.header-inner .brand-subtitle{font-size:8px;letter-spacing:1.3px}.header-inner .brand{gap:6px}}
+
+/* Fit the descriptor to the wordmark's exact width at every breakpoint. */
+.brand-wording{width:max-content}
+.brand-subtitle{display:flex;justify-content:space-between;width:100%;letter-spacing:0!important}
+.brand-word-gap{flex:0 0 .6em}
