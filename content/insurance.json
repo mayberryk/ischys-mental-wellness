@@ -1,100 +1,102 @@
-[
-  {
-    "id": "aetna",
-    "name": "Aetna",
-    "logo": "/assets/insurance/aetna.svg",
-    "status": "active",
-    "details": ""
-  },
-  {
-    "id": "bcbs",
-    "name": "Blue Cross Blue Shield",
-    "logo": "/assets/insurance/bcbs.svg",
-    "status": "active",
-    "details": ""
-  },
-  {
-    "id": "emi",
-    "name": "EMI Health",
-    "logo": "/assets/insurance/emi.svg",
-    "status": "active",
-    "details": ""
-  },
-  {
-    "id": "cigna",
-    "name": "Evernorth / Cigna",
-    "logo": "/assets/insurance/cigna.svg",
-    "status": "active",
-    "details": ""
-  },
-  {
-    "id": "medicaid",
-    "name": "Medicaid*",
-    "logo": "/assets/insurance/medicaid.svg",
-    "status": "active",
-    "details": "Behavioral-health benefits and network participation can vary by Medicaid plan. Verify individual benefits before scheduling."
-  },
-  {
-    "id": "medicare",
-    "name": "Medicare",
-    "logo": "/assets/insurance/medicare.svg",
-    "status": "active",
-    "details": ""
-  },
-  {
-    "id": "multiplan",
-    "name": "MultiPlan / Claritev",
-    "logo": "/assets/insurance/multiplan.svg",
-    "status": "active",
-    "details": ""
-  },
-  {
-    "id": "pehp",
-    "name": "PEHP",
-    "logo": "/assets/insurance/pehp.svg",
-    "status": "active",
-    "details": ""
-  },
-  {
-    "id": "selecthealth",
-    "name": "Select Health",
-    "logo": "/assets/insurance/selecthealth.svg",
-    "status": "active",
-    "details": ""
-  },
-  {
-    "id": "tricare",
-    "name": "TRICARE West / TriWest VA CCN",
-    "logo": "/assets/insurance/tricare.svg",
-    "status": "active",
-    "details": ""
-  },
-  {
-    "id": "uhc",
-    "name": "UnitedHealthcare",
-    "logo": "/assets/insurance/uhc.svg",
-    "status": "active",
-    "details": ""
-  },
-  {
-    "id": "molina",
-    "name": "Molina",
-    "logo": "",
-    "status": "pending",
-    "details": ""
-  },
-  {
-    "id": "uofu",
-    "name": "University of Utah Health Plans",
-    "logo": "",
-    "status": "pending",
-    "details": ""
-  },
-  {
-    "id": "wise",
-    "name": "Wise / Imagine360",
-    "logo": "",
-    "status": "pending",
-    "details": ""
-  }
-]
+{
+  "plans": [
+    {
+      "id": "aetna",
+      "name": "Aetna",
+      "logo": "/assets/insurance/aetna.svg",
+      "status": "active",
+      "details": ""
+    },
+    {
+      "id": "bcbs",
+      "name": "Blue Cross Blue Shield",
+      "logo": "/assets/insurance/bcbs.svg",
+      "status": "active",
+      "details": ""
+    },
+    {
+      "id": "emi",
+      "name": "EMI Health",
+      "logo": "/assets/insurance/emi.svg",
+      "status": "active",
+      "details": ""
+    },
+    {
+      "id": "cigna",
+      "name": "Evernorth / Cigna",
+      "logo": "/assets/insurance/cigna.svg",
+      "status": "active",
+      "details": ""
+    },
+    {
+      "id": "medicaid",
+      "name": "Medicaid*",
+      "logo": "/assets/insurance/medicaid.svg",
+      "status": "active",
+      "details": "Behavioral-health benefits and network participation can vary by Medicaid plan. Verify individual benefits before scheduling."
+    },
+    {
+      "id": "medicare",
+      "name": "Medicare",
+      "logo": "/assets/insurance/medicare.svg",
+      "status": "active",
+      "details": ""
+    },
+    {
+      "id": "multiplan",
+      "name": "MultiPlan / Claritev",
+      "logo": "/assets/insurance/multiplan.svg",
+      "status": "active",
+      "details": ""
+    },
+    {
+      "id": "pehp",
+      "name": "PEHP",
+      "logo": "/assets/insurance/pehp.svg",
+      "status": "active",
+      "details": ""
+    },
+    {
+      "id": "selecthealth",
+      "name": "Select Health",
+      "logo": "/assets/insurance/selecthealth.svg",
+      "status": "active",
+      "details": ""
+    },
+    {
+      "id": "tricare",
+      "name": "TRICARE West / TriWest VA CCN",
+      "logo": "/assets/insurance/tricare.svg",
+      "status": "active",
+      "details": ""
+    },
+    {
+      "id": "uhc",
+      "name": "UnitedHealthcare",
+      "logo": "/assets/insurance/uhc.svg",
+      "status": "active",
+      "details": ""
+    },
+    {
+      "id": "molina",
+      "name": "Molina",
+      "logo": "",
+      "status": "pending",
+      "details": ""
+    },
+    {
+      "id": "uofu",
+      "name": "University of Utah Health Plans",
+      "logo": "",
+      "status": "pending",
+      "details": ""
+    },
+    {
+      "id": "wise",
+      "name": "Wise / Imagine360",
+      "logo": "",
+      "status": "pending",
+      "details": ""
+    }
+  ]
+}

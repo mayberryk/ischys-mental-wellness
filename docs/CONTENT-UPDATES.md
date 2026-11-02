@@ -1,6 +1,6 @@
 # Updating insurance and articles
 
-The website is file-based; it does not currently have a login/dashboard for editing. Changes need a build and an authorized deployment before appearing online. Keith can handle this initially. A CMS can be added later if a browser-based editor is preferred.
+A local Decap CMS trial is available; see [CMS instructions](CMS-LOCAL.md). Live login and deployment integration are not connected yet. The file-based instructions below remain available for maintenance. Changes need a build and an authorized deployment before appearing online.
 
 ## Insurance — one place
 
@@ -15,11 +15,10 @@ The website is file-based; it does not currently have a login/dashboard for edit
 
 Existing client-package articles are marked `status: published` and `approved: true` to preserve the current review preview. This does not constitute final website launch approval. New entries missing either field remain unpublished.
 
-1. Add a body file under `content/article-bodies/`, for example `new-topic.json`:
-   `{"blocks":[{"type":"h2","text":"Section heading"},{"type":"p","text":"Laura’s supplied wording."}]}`
-2. Add metadata to `content/articles.json` with unique `key`, `title`, `path` (e.g. `/learning/new-topic/`), `description`, `services` (related service slugs), `references` (objects with `title` and `url`), `source_file: article-bodies/new-topic.json`, `status: draft`, and `approved: false`.
+1. Create `content/articles/new-topic.json` with a unique `key`, `title`, `description`, `services`, `references`, a Markdown `body`, `status: draft`, and `approved: false`.
+2. The default URL is `/learning/<key>/`. Existing articles retain their explicit `path` to preserve links. Optional cover images and attachments belong under `assets/uploads/`; a cover image also needs `image_alt`.
 3. Review drafts locally with `python3 scripts/build.py --include-drafts --output .draft-preview`. This output remains noindex and must not be deployed. Serve that separate directory locally if needed. Default builds exclude drafts from article pages, lists, related links and sitemap, and remove formerly published article HTML on rebuild.
 4. Only after Laura approves the article, set `approved: true` and `status: published`. Add `published_at` only for an actual publication date, not a planned date.
 5. Run checks and obtain Keith's instruction before pushing/deploying. To unpublish an article, change it back to draft, rebuild and redeploy.
 
-The source wording from the original package is in `content/source-sections.json`. New body files avoid needing to edit that large import. No article content should be rewritten during a visual design update.
+The source wording from the original package is in `content/source-sections.json`. The CMS edits individual files in `content/articles/`; the original import is retained as a comparison archive. No article content should be rewritten during a visual design update.

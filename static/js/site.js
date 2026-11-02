@@ -37,7 +37,8 @@
   matchMedia('(min-width:1101px)').addEventListener('change', event => { if (event.matches) closeMobile(); });
   const input = document.querySelector('#article-search');
   const filters = [...document.querySelectorAll('[data-filter]')];
-  let category = 'all';
+  const requestedTopic = new URLSearchParams(location.search).get('topic');
+  let category = filters.some(button => button.dataset.filter === requestedTopic) ? requestedTopic : 'all';
   function filterArticles() {
     const term = (input?.value || '').toLocaleLowerCase().trim();
     let count = 0;
@@ -56,6 +57,10 @@
     filters.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
     filterArticles();
   }));
+  if (input) {
+    filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === category)));
+    filterArticles();
+  }
   const resourceSections = [...document.querySelectorAll('.resource-fold')];
   const expandResources = document.querySelector('[data-resource-expand]');
   function updateResourceToggle() {

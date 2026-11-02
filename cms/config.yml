@@ -1,0 +1,246 @@
+{
+  "backend": {
+    "name": "git-gateway",
+    "branch": "main"
+  },
+  "local_backend": {
+    "url": "http://localhost:8082/api/v1"
+  },
+  "publish_mode": "editorial_workflow",
+  "site_url": "http://localhost:8090",
+  "display_url": "http://localhost:8090",
+  "logo_url": "http://localhost:8090/assets/ischys-original-logo-vector.svg",
+  "media_folder": "assets/uploads",
+  "public_folder": "/assets/uploads",
+  "collections": [
+    {
+      "name": "articles",
+      "label": "Articles",
+      "label_singular": "Article",
+      "folder": "content/articles",
+      "format": "json",
+      "extension": "json",
+      "create": true,
+      "identifier_field": "key",
+      "slug": "{{key}}",
+      "summary": "{{title}}",
+      "preview_path": "{{path}}",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Article title",
+          "widget": "string"
+        },
+        {
+          "name": "key",
+          "label": "URL name",
+          "widget": "string",
+          "hint": "Use lowercase words separated by hyphens. Keep this unchanged after publishing.",
+          "pattern": [
+            "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "Use lowercase letters, numbers and hyphens."
+          ]
+        },
+        {
+          "name": "description",
+          "label": "Short introduction",
+          "widget": "text"
+        },
+        {
+          "name": "body",
+          "label": "Article",
+          "widget": "richtext",
+          "modes": [
+            "rich_text"
+          ],
+          "buttons": [
+            "bold",
+            "italic",
+            "link",
+            "heading-two",
+            "heading-three",
+            "quote",
+            "bulleted-list",
+            "numbered-list"
+          ],
+          "editor_components": [
+            "image"
+          ]
+        },
+        {
+          "name": "image",
+          "label": "Cover image",
+          "widget": "image",
+          "required": false
+        },
+        {
+          "name": "image_alt",
+          "label": "Describe the cover image",
+          "widget": "string",
+          "required": false,
+          "hint": "Required when a cover image is added."
+        },
+        {
+          "name": "attachment",
+          "label": "Downloadable attachment (optional)",
+          "widget": "file",
+          "required": false,
+          "hint": "Attach a PDF or Word file. This does not convert a document into an article."
+        },
+        {
+          "name": "services",
+          "label": "Article topics",
+          "widget": "select",
+          "multiple": true,
+          "required": true,
+          "options": [
+            {
+              "label": "Medication Management",
+              "value": "psychiatric-medication-management"
+            },
+            {
+              "label": "ADHD",
+              "value": "adhd-treatment-utah"
+            },
+            {
+              "label": "Anxiety & Depression",
+              "value": "anxiety-depression-treatment"
+            },
+            {
+              "label": "Women’s Mental Health",
+              "value": "womens-mental-health"
+            },
+            {
+              "label": "Addiction & Recovery",
+              "value": "addiction-recovery"
+            },
+            {
+              "label": "Trauma & PTSD",
+              "value": "trauma-ptsd"
+            },
+            {
+              "label": "Integrative Psychiatry",
+              "value": "integrative-psychiatry"
+            }
+          ],
+          "hint": "Choose one or more topics. These labels appear on article cards and pages, and connect the article to related services."
+        },
+        {
+          "name": "references",
+          "label": "References",
+          "widget": "list",
+          "required": false,
+          "fields": [
+            {
+              "name": "title",
+              "label": "Source name",
+              "widget": "string"
+            },
+            {
+              "name": "url",
+              "label": "Link",
+              "widget": "string",
+              "pattern": [
+                "^https://",
+                "Use a secure https:// link."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "status",
+          "widget": "hidden",
+          "default": "draft"
+        },
+        {
+          "name": "approved",
+          "label": "Approved for publication",
+          "widget": "boolean",
+          "default": false,
+          "hint": "Leave off while writing. After Laura approves: enable this, Save, set the top status to Ready, then Publish. Saving alone never publishes."
+        },
+        {
+          "name": "path",
+          "label": "Existing article address",
+          "widget": "hidden",
+          "required": false
+        },
+        {
+          "name": "order",
+          "label": "Display order",
+          "widget": "hidden",
+          "required": false
+        },
+        {
+          "name": "homepage_image_service",
+          "label": "Existing homepage image",
+          "widget": "hidden",
+          "required": false
+        },
+        {
+          "name": "published_at",
+          "label": "Publication date",
+          "widget": "datetime",
+          "required": false,
+          "format": "YYYY-MM-DD",
+          "date_format": "YYYY-MM-DD",
+          "time_format": false
+        }
+      ]
+    },
+    {
+      "name": "insurance",
+      "label": "Insurance",
+      "files": [
+        {
+          "name": "plans",
+          "label": "Insurance plans",
+          "file": "content/insurance.json",
+          "fields": [
+            {
+              "name": "plans",
+              "label": "Plans",
+              "widget": "list",
+              "summary": "{{fields.name}} — {{fields.status}}",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "Plan ID",
+                  "widget": "string",
+                  "hint": "A unique short name, such as aetna."
+                },
+                {
+                  "name": "name",
+                  "label": "Insurance name",
+                  "widget": "string"
+                },
+                {
+                  "name": "logo",
+                  "label": "Logo",
+                  "widget": "image",
+                  "required": false
+                },
+                {
+                  "name": "status",
+                  "label": "Status",
+                  "widget": "select",
+                  "options": [
+                    "active",
+                    "pending",
+                    "inactive"
+                  ]
+                },
+                {
+                  "name": "details",
+                  "label": "Additional information",
+                  "widget": "text",
+                  "required": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

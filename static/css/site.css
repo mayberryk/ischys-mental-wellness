@@ -123,3 +123,13 @@ h1,h2,h3,h4{font-weight:600}h1{letter-spacing:-.025em}h2{letter-spacing:-.02em}
 .brand-wording{width:max-content}
 .brand-subtitle{display:flex;justify-content:space-between;width:100%;letter-spacing:0!important}
 .brand-word-gap{flex:0 0 .6em}
+
+/* CMS-uploaded article images retain their proportions on every screen. */
+.article-cover { display:block; max-width:100%; max-height:520px; margin:24px auto; object-fit:contain; border-radius:16px; }
+.article-body img { max-width:100%; height:auto; }
+
+.article-topics { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; }
+.topic-chip { display:inline-block; background:#e6eee3; color:#174f4f; padding:5px 11px; border:1px solid #cddbc9; border-radius:20px; font-size:.78rem; font-weight:600; line-height:1.5; }
+a.topic-chip:hover, a.topic-chip:focus-visible { background:#d5e4cf; text-decoration:underline; }
+.article-topic-nav { padding-top:24px; }
+.article-topic-nav .eyebrow { display:block; margin-bottom:10px; }

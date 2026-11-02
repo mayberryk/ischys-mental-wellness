@@ -1,6 +1,6 @@
 # Ischys Integrative Mental Wellness
 
-Static website generated from shared templates and structured content. Requires Python 3.10 or newer; the website build uses only the standard library.
+Static website generated from shared templates and structured content. Requires Python 3.10 or newer; the website build uses the standard library plus the bundled Mistune Markdown renderer (no pip installation needed).
 
 ## Local development
 
@@ -18,7 +18,7 @@ For a public launch, configure the production domain, approved integration URLs,
 
 ## Editing
 
-The homepage features three Learning Center articles. Add an optional `published_at` date (`YYYY-MM-DD`) to an article in `content/articles.json` to place newer published posts first. Undated slots use the article keys in `homepage_featured_articles` in `content/site.json`, then the remaining article order. Only use actual publication dates; undated articles display “Patient education.”
+The homepage features three Learning Center articles. Add an optional `published_at` date (`YYYY-MM-DD`) to an article file in `content/articles/` to place newer published posts first. Undated slots use the article keys in `homepage_featured_articles` in `content/site.json`, then the remaining article order. Only use actual publication dates; undated articles display “Patient education.”
 
 - `content/`: site settings, client content, articles, and resource definitions.
 - `templates/page.html`: shared page shell.
@@ -34,3 +34,9 @@ Do not commit or push changes unless explicitly requested.
 ## Client review and editing
 
 See [client review and outstanding confirmations](docs/CLIENT-REVIEW.md) and [insurance/article editing instructions](docs/CONTENT-UPDATES.md). Run `python3 scripts/check_client_revisions.py` for isolated publication and insurance regression checks.
+
+## Local CMS trial
+
+Run `npm ci` then `npm run cms`. Open http://localhost:8090/admin/. See [CMS trial instructions and limitations](docs/CMS-LOCAL.md). The trial uses an isolated copy and never pushes to GitHub. The admin is not included in public builds.
+
+Production CMS preparation and unresolved hosting/authentication requirements: [deployment checklist](docs/CMS-DEPLOYMENT.md). Validate the configuration adapter with `python3 scripts/check_cms_production.py`.

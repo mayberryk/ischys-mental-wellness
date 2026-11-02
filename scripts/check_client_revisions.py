@@ -13,23 +13,23 @@ with tempfile.TemporaryDirectory(prefix='ischys-check-') as tmp:
  shutil.copy2(ROOT/logo,root/logo)
  def save(path,value):path.write_text(json.dumps(value))
  def build(*extra):subprocess.run([sys.executable,str(root/'scripts/build.py'),*extra],check=True,capture_output=True,text=True)
- articles_path=root/'content/articles.json';articles=json.loads(articles_path.read_text())
+ articles_path=root/'content/articles/draft-check.json'
  draft={'key':'draft-check','path':'/learning/draft-check/','title':'Unapproved draft check','description':'Not for publication','services':[],'references':[],'source_file':'article-bodies/draft-check.json'}
  (root/'content/article-bodies').mkdir(exist_ok=True)
  save(root/'content/article-bodies/draft-check.json',{'blocks':[{'type':'p','text':'Unapproved content must stay private.'}]})
- articles.append(draft);save(articles_path,articles);build()
+ save(articles_path,draft);build()
  assert not (root/'dist/learning/draft-check/index.html').exists()
  assert 'draft-check' not in (root/'dist/learning/index.html').read_text()
- draft.update(status='published',approved=False);save(articles_path,articles);build()
+ draft.update(status='published',approved=False);save(articles_path,draft);build()
  assert not (root/'dist/learning/draft-check/index.html').exists()
- draft['approved']=True;save(articles_path,articles);build()
+ draft['approved']=True;save(articles_path,draft);build()
  assert (root/'dist/learning/draft-check/index.html').exists()
- draft['status']='draft';save(articles_path,articles);build()
+ draft['status']='draft';save(articles_path,draft);build()
  assert not (root/'dist/learning/draft-check/index.html').exists(), 'Formerly published draft remained accessible'
  build('--include-drafts','--output','.draft-preview')
  assert (root/'.draft-preview/learning/draft-check/index.html').exists()
  assert 'noindex,nofollow' in (root/'.draft-preview/learning/draft-check/index.html').read_text()
- plans_path=root/'content/insurance.json';plans=json.loads(plans_path.read_text());plans[0]['name']='Renamed insurance fixture';plans[1]['status']='inactive';save(plans_path,plans);build()
+ plans_path=root/'content/insurance.json';plans=json.loads(plans_path.read_text())['plans'];plans[0]['name']='Renamed insurance fixture';plans[1]['status']='inactive';save(plans_path,{'plans':plans});build()
  for path in ('index.html','fees-insurance/index.html'):
   text=(root/'dist'/path).read_text()
   assert 'Renamed insurance fixture' in text

@@ -6,13 +6,14 @@ import argparse, json, re, shutil, xml.etree.ElementTree as ET
 from urllib.parse import urlparse
 from resource_layout import render_resource
 from datetime import date
+from cms_content import load_articles, render_article, load_insurance
 ROOT=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser();parser.add_argument('--production',action='store_true');parser.add_argument('--output',default='dist');parser.add_argument('--include-drafts',action='store_true');args=parser.parse_args()
 if args.production and args.include_drafts:raise SystemExit('Drafts cannot be included in production.')
 OUT=(ROOT/args.output).resolve()
 if ROOT not in OUT.parents:raise SystemExit('Output must be a child of the repository.')
 def load(name):return json.loads((ROOT/'content'/name).read_text())
-C=load('site.json');SERVICES=load('services.json');ARTICLES=load('articles.json');SOURCE=load('source-sections.json');TEMPLATE=Template((ROOT/'templates/page.html').read_text())
+C=load('site.json');SERVICES=load('services.json');ARTICLES=load_articles(ROOT);SOURCE=load('source-sections.json');TEMPLATE=Template((ROOT/'templates/page.html').read_text())
 ALL_ARTICLES=ARTICLES
 ARTICLES=[item for item in ALL_ARTICLES if args.include_drafts or (item.get('status')=='published' and item.get('approved') is True)]
 for item in ARTICLES:
@@ -45,9 +46,10 @@ shutil.copytree(ROOT/'static/fonts',OUT/'assets/fonts',dirs_exist_ok=True)
 shutil.copy2(ROOT/'static/favicon.svg',OUT/'assets/favicon.svg')
 shutil.copytree(ROOT/'assets/insurance',OUT/'assets/insurance',dirs_exist_ok=True)
 if C['original_logo_path']:shutil.copy2(ROOT/C['original_logo_path'].lstrip('/'),OUT/'assets'/Path(C['original_logo_path']).name)
+if (ROOT/'assets/uploads').exists():shutil.copytree(ROOT/'assets/uploads',OUT/'assets/uploads',dirs_exist_ok=True)
 if (ROOT/'output/pdf').exists():shutil.copytree(ROOT/'output/pdf',OUT/'downloads',dirs_exist_ok=True)
 PAGES=[]
-INSURANCE=[plan for plan in load('insurance.json') if plan['status']=='active']
+INSURANCE=[plan for plan in load_insurance(ROOT) if plan['status']=='active']
 SERVICE_AREA=C['service_area_copy']
 def insurance_cards(footer=False):
  return ''.join('<div class="insurance-card">'+(f'<img src="{esc(plan["logo"],quote=True)}" alt="" width="160" height="40" loading="lazy">' if plan['logo'] else '')+'<strong>'+esc(plan['name'])+'</strong>'+('<p class="small">'+esc(plan['details'])+'</p>' if plan['details'] and not footer else '')+'</div>' for plan in INSURANCE)
@@ -110,8 +112,15 @@ def hero(title,desc,eyebrow='Thoughtful care. Shared decisions.',actions=True,ph
   return '<section class="page-hero service-hero"><div class="wrap service-hero-grid"><div>'+copy+'</div>'+picture+'</div></section>'
  return '<section class="page-hero"><div class="wrap">'+copy+'</div></section>'
 def end_cta():return '<section class="cta"><div class="wrap"><h2>Ready to feel heard?</h2><p>Thoughtful psychiatric care in American Fork and through telehealth across Utah.</p>'+ctas()+'<p class="small">'+CONSULT+'</p></div></section>'
+TOPICS={'psychiatric-medication-management': 'Medication Management', 'adhd-treatment-utah': 'ADHD', 'anxiety-depression-treatment': 'Anxiety & Depression', 'womens-mental-health': 'Women’s Mental Health', 'addiction-recovery': 'Addiction & Recovery', 'trauma-ptsd': 'Trauma & PTSD', 'integrative-psychiatry': 'Integrative Psychiatry'}
+def topic_labels(article,linked=False):
+ labels=[]
+ for key in article.get('services',[]):
+  if key not in TOPICS:continue
+  labels.append(a('/learning/?topic='+key,TOPICS[key],'topic-chip') if linked else '<span class="topic-chip">'+esc(TOPICS[key])+'</span>')
+ return '<div class="article-topics" aria-label="Article topics">'+''.join(labels)+'</div>' if labels else ''
 def article_cards(items):
- return '<div class="cards">'+''.join('<a class="card" data-article data-categories="'+' '.join(x['services'])+'" href="'+x['path']+'"><span class="tag">Patient education</span><h3>'+esc(x['title'])+'</h3><p>'+esc(x['description'])+'</p><span class="text-link">Read the article →</span></a>' for x in items)+'</div>'
+ return '<div class="cards">'+''.join('<a class="card" data-article data-categories="'+' '.join(x['services'])+'" href="'+x['path']+'">'+topic_labels(x)+'<h3>'+esc(x['title'])+'</h3><p>'+esc(x['description'])+'</p><span class="text-link">Read the article →</span></a>' for x in items)+'</div>'
 def faq(items):return '<div class="faq">'+''.join('<details><summary>'+esc(q)+'</summary><p>'+esc(answer)+'</p></details>' for q,answer in items)+'</div>'
 
 def featured_articles():
@@ -130,7 +139,7 @@ def featured_articles():
   slug=item.get('homepage_image_service') or next((s for s in item['services'] if s in CARE_ART),'integrative-psychiatry')
   if slug not in CARE_ART:raise SystemExit('Unknown homepage_image_service: '+slug)
   stamp='<time datetime="'+item['published_at']+'">'+date.fromisoformat(item['published_at']).strftime('%B %d, %Y')+'</time>' if item.get('published_at') else 'Patient education'
-  cards.append('<a class="card featured-article" href="'+esc(item['path'])+'"><img src="/assets/service-'+slug+'-480.webp" width="480" height="320" alt="" loading="lazy"><div class="featured-article-copy"><span class="tag">'+stamp+'</span><h3>'+esc(item['title'])+'</h3><p>'+esc(item['description'])+'</p><span class="text-link">Read the article →</span></div></a>')
+  cards.append('<a class="card featured-article" href="'+esc(item['path'])+'"><img src="/assets/service-'+slug+'-480.webp" width="480" height="320" alt="" loading="lazy"><div class="featured-article-copy"><span class="tag">'+stamp+'</span>'+topic_labels(item)+'<h3>'+esc(item['title'])+'</h3><p>'+esc(item['description'])+'</p><span class="text-link">Read the article →</span></div></a>')
  return '<section class="section home-learning" aria-labelledby="home-learning-title"><div class="wrap"><div class="home-learning-heading"><div><p class="eyebrow">Understanding is a good place to start</p><h2 id="home-learning-title">From the Learning Center</h2><p>Explore mental wellness, everyday habits, and questions to bring to your next visit.</p></div>'+a('/learning/','View all articles →','button secondary')+'</div><div class="cards">'+''.join(cards)+'</div></div></section>'
 
 # Decorative, locally rendered illustrations; the adjacent headings name each service.
@@ -221,7 +230,7 @@ body+='</div></div></section>'+end_cta()
 write('/about/','Laura Jane Hyte-Garner MSN APRN PMHNP-BC','Meet Laura Jane Hyte-Garner and learn about her collaborative approach to psychiatric medication management at Ischys.',body)
 # Learning center, with client-side filtering that never leaves the page.
 body=hero('Understand more. Take one small step.','Practical education from Laura Jane Hyte-Garner on medication, mental health, and the things that shape everyday life.','The Learning Center',False)
-body+='<section class="section"><div class="wrap"><label for="article-search">Find a topic</label><input type="search" class="search" id="article-search" placeholder="Search sleep, medication, connection…" autocomplete="off"><div class="filters" aria-label="Filter articles"><button type="button" data-filter="all" aria-pressed="true">All topics</button>'+''.join('<button type="button" data-filter="'+s['slug']+'" aria-pressed="false">'+esc(label)+'</button>' for s,label in [(SERVICES[0],'Medication'),(SERVICES[1],'ADHD'),(SERVICES[2],'Mood & anxiety'),(SERVICES[4],'Recovery'),(SERVICES[6],'Integrative care')])+'</div><p id="search-results" class="small muted" role="status" aria-live="polite">10 articles</p>'+article_cards(ARTICLES)+'<p id="no-results" class="empty-state" hidden>No articles match. Try another topic or choose All topics.</p></div></section><section class="soft section"><div class="wrap"><h2>Looking for something you can use?</h2><p>Explore printable check-ins, trackers, and plans to bring to your next conversation.</p>'+a('/patient-resources/','Visit the Patient Resource Library →','button secondary')+'</div></section>'
+body+='<section class="section"><div class="wrap"><label for="article-search">Find a topic</label><input type="search" class="search" id="article-search" placeholder="Search sleep, medication, connection…" autocomplete="off"><div class="filters" aria-label="Filter articles"><button type="button" data-filter="all" aria-pressed="true">All topics</button>'+''.join('<button type="button" data-filter="'+s['slug']+'" aria-pressed="false">'+esc(label)+'</button>' for s,label in [(s,TOPICS[s['slug']]) for s in SERVICES[:7]])+'</div><p id="search-results" class="small muted" role="status" aria-live="polite">' +str(len(ARTICLES))+' articles</p>'+article_cards(ARTICLES)+'<p id="no-results" class="empty-state" hidden>No articles match. Try another topic or choose All topics.</p></div></section><section class="soft section"><div class="wrap"><h2>Looking for something you can use?</h2><p>Explore printable check-ins, trackers, and plans to bring to your next conversation.</p>'+a('/patient-resources/','Visit the Patient Resource Library →','button secondary')+'</div></section>'
 write('/learning/','Mental Health Learning Center','Read substantive patient education on medication, sleep, caffeine, nutrition, movement, recovery, and more from Laura Jane Hyte-Garner.',body,'CollectionPage')
 def rendered_blocks(key,resource=False):
  parts=[];toc=[]
@@ -239,8 +248,11 @@ def rendered_blocks(key,resource=False):
   else:parts.append('<p>'+esc(text)+'</p>')
  return ''.join(parts),toc
 for article in ARTICLES:
- text,toc=rendered_blocks(article['key'])
+ text,toc=render_article(article) if 'body' in article else rendered_blocks(article['key'])
  body=hero(article['title'],article['description'],'Patient education',False)
+ body+='<div class="wrap article-topic-nav"><span class="eyebrow">Explore topics</span>'+topic_labels(article,True)+'</div>'
+ if article.get('image'):body+='<div class="wrap"><img class="article-cover" src="'+esc(article['image'],quote=True)+'" alt="'+esc(article.get('image_alt',''),quote=True)+'"></div>'
+ if article.get('attachment'):text+='<p>'+a(article['attachment'],'Download article attachment')+'</p>'
  if article.get('status')!='published' or article.get('approved') is not True:body+='<div class="wrap callout"><strong>Draft — awaiting Laura’s publication approval.</strong></div>'
  body+='<div class="wrap"><p class="meta">By '+esc(C['author'])+'<br>'+('Content supplied September 2026 · ' if not article.get('source_file') else '')+a('/about/','About the author')+'</p></div><section class="section"><div class="wrap article-layout"><nav class="toc" aria-label="In this article"><strong>In this article</strong>'+''.join(a('#'+ident,title) for ident,title in toc)+'</nav><article class="article-body">'+text+'<section class="references"><h2>References & trusted resources</h2><ul>'+''.join('<li>'+a(ref['url'],ref['title'])+'</li>' for ref in article['references'])+'</ul></section><p class="disclaimer">'+DISCLAIMER+'</p><div class="callout"><h2>Bring what you notice to your next visit.</h2><p>Use the printable patient tools to keep track of what matters to you.</p>'+a('/patient-resources/','Explore printable resources →','text-link')+'</div></article></div></section><section class="soft section"><div class="wrap"><h2>Related care at Ischys</h2><div class="cards">'+''.join('<a class="card" href="/'+s['slug']+'/"><h3>'+esc(s['title'])+'</h3><p>Explore evaluation, treatment, and what to expect.</p><span class="text-link">Explore care →</span></a>' for s in SERVICES if s['slug'] in article['services'])+'</div></div></section>'+end_cta()
  write(article['path'],article['title'],article['description'],body,'Article',article)

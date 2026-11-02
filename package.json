@@ -8,6 +8,12 @@
     "start": "python3 scripts/dev.py",
     "build": "python3 scripts/build.py",
     "build:production": "python3 scripts/build.py --production",
-    "test": "python3 scripts/check_site.py"
+    "test": "python3 scripts/check_site.py",
+    "cms": "python3 scripts/cms_local.py",
+    "test:cms": "python3 scripts/check_cms.py"
+  },
+  "devDependencies": {
+    "decap-cms": "3.17.3",
+    "decap-server": "3.11.6"
   }
 }

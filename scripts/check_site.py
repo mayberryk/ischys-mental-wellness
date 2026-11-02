@@ -3,6 +3,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 import json,subprocess,sys,re
+from cms_content import load_articles
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'dist'
 subprocess.run([sys.executable,str(ROOT/'scripts/build.py')],check=True)
 class Page(HTMLParser):
@@ -54,12 +55,12 @@ if len(titles)!=len(set(titles)):errors.append('Duplicate page titles')
 if len(descriptions)!=len(set(descriptions)):errors.append('Duplicate page descriptions')
 # All source content is retained in article output, after documented whitespace/encoding repairs.
 source=json.loads((ROOT/'content/source-sections.json').read_text())
-for item in json.loads((ROOT/'content/articles.json').read_text()):
+for item in load_articles(ROOT):
  if item.get('status')!='published' or item.get('approved') is not True:continue
  if item.get('source_file'):source[item['key']]=json.loads((ROOT/'content'/item['source_file']).read_text())
  text=' '.join(parsed[OUT/item['path'].lstrip('/')/'index.html'].all_text)
  norm=lambda v:re.sub(r'\s+',' ',v).strip()
- for block in source[item['key']]['blocks']:
+ for block in source.get(item['key'],{}).get('blocks',[]):
   if norm(block['text']) not in norm(text):errors.append(f'{item["key"]}: missing source block {block["text"][:60]}')
 if len(list((OUT/'downloads').glob('*.pdf')))!=13:errors.append('Expected 13 downloadable PDFs')
 # The web toolkit may regroup print lines, but must retain the supplied wording.
@@ -92,7 +93,7 @@ for route in ('portal','referral','consultation'):
  if not target and 'http-equiv="refresh"' in (OUT/route/'index.html').read_text():errors.append(route+' must not redirect before independent verification')
  if target and target not in page.refs:errors.append(route+' missing verified destination')
  if config['phone_href'] not in page.refs:errors.append(route+' missing phone assistance')
-for plan in json.loads((ROOT/'content/insurance.json').read_text()):
+for plan in json.loads((ROOT/'content/insurance.json').read_text())['plans']:
  for file in ('index.html','fees-insurance/index.html'):
   text=' '.join(parsed[OUT/file].all_text)
   if plan['status']=='active' and plan['name'] not in text:errors.append('Active insurance missing: '+plan['name'])

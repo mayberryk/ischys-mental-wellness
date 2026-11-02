@@ -1,0 +1,75 @@
+{
+  "review_date": "2026-11-02",
+  "versions": {
+    "decap-cms": "3.17.3",
+    "decap-server": "3.11.6"
+  },
+  "counts": {
+    "info": 0,
+    "low": 1,
+    "moderate": 26,
+    "high": 11,
+    "critical": 0,
+    "total": 38
+  },
+  "nonbreaking_fix_changes": 0,
+  "production_approved": false,
+  "advisories": [
+    {
+      "package": "@hapi/joi",
+      "severity": "low",
+      "title": "joi: Prototype pollution via a `__proto__` language key in custom messages",
+      "url": "https://github.com/advisories/GHSA-6w3j-5fw6-r9vr",
+      "affected_range": ">=16.0.0 <=17.1.1"
+    },
+    {
+      "package": "@hapi/joi",
+      "severity": "high",
+      "title": "joi: quadratic-time split in `string().email({ multiple: true })` allows denial of service",
+      "url": "https://github.com/advisories/GHSA-4528-x5fx-h6hg",
+      "affected_range": ">=16.0.0 <=17.1.1"
+    },
+    {
+      "package": "@platejs/core",
+      "severity": "moderate",
+      "title": "@platejs/core HTML deserialization can trigger browser behavior during parsing",
+      "url": "https://github.com/advisories/GHSA-qrfj-mgw8-j9c6",
+      "affected_range": "<53.3.11"
+    },
+    {
+      "package": "deepmerge",
+      "severity": "low",
+      "title": "deepmerge mergeObject() allows prototype poisoning of returned objects",
+      "url": "https://github.com/advisories/GHSA-gcqx-w48m-w2h4",
+      "affected_range": ">=4.2.0 <=4.3.1"
+    },
+    {
+      "package": "minimatch",
+      "severity": "moderate",
+      "title": "minimatch has potential denial of service via globparts amplification",
+      "url": "https://github.com/advisories/GHSA-g3hv-75wg-m249",
+      "affected_range": "<11.0.1"
+    },
+    {
+      "package": "trim",
+      "severity": "high",
+      "title": "Regular Expression Denial of Service in trim",
+      "url": "https://github.com/advisories/GHSA-w5p7-h5w8-2hfq",
+      "affected_range": "<0.0.3"
+    },
+    {
+      "package": "uuid",
+      "severity": "moderate",
+      "title": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided",
+      "url": "https://github.com/advisories/GHSA-w5hq-g745-h8pq",
+      "affected_range": "<11.1.1"
+    },
+    {
+      "package": "zod",
+      "severity": "high",
+      "title": "Zod can exhaust memory while validating oversized constrained collections",
+      "url": "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5",
+      "affected_range": "<4.6.6"
+    }
+  ]
+}

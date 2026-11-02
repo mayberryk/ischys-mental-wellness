@@ -5,3 +5,8 @@ __pycache__/
 .test-dist/
 
 .draft-preview/
+
+node_modules/
+.cms-local/
+.cms-release/
+cms/production-settings.json
